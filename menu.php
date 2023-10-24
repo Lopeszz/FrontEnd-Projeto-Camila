@@ -63,11 +63,7 @@
                                 </a>
                             </li>
                             <li>
-<<<<<<< HEAD
                                 <a href="#offcanvas-about" class="offacnvas offside-about offcanvas-toggle">
-=======
-                                <a href="#mobile-menu-offcanvas" class="offcanvas-toggle offside-menu">
->>>>>>> 9c05e823ec936af6d8b7229c86d521108796a337
                                     <i class="icon-menu"></i>
                                 </a>
                             </li>
