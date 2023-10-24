@@ -302,6 +302,9 @@
         <ul class="user-link">
             <li><a href="register.php">Register</a></li>
         </ul>
+        <ul class="user-link">
+            <li><a href="login_admin.php">Login como Admin</a></li>
+        </ul>
     </div>
     <!-- End Mobile contact Info -->
 </div> <!-- ...:::: End Offcanvas Mobile Menu Section:::... -->
