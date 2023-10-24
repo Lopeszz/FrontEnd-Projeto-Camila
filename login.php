@@ -108,21 +108,19 @@ if (isset($_POST['submit'])) {
                 <div class="col-lg-6 col-md-6">
                     <div class="account_form" data-aos="fade-up" data-aos-delay="0">
                         <h3>login</h3>
-                        <form action="#" method="POST">
+                        <form action="" method="post">
                             <div class="default-form-box">
                                 <label>Email <span>*</span></label>
-                                <input type="email" name="email" required placeholder="enter your email" class="box"
-                                    maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')">
+                                <input type="email" name="email" required placeholder="enter your email" class="box" maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')">
                             </div>
 
                             <div class="default-form-box">
                                 <label>Passwords <span>*</span></label>
-                                <input type="password" name="pass" required placeholder="enter your password"
-                                    class="box" maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')">
+                                <input type="password" name="pass" required placeholder="enter your password" class="box" maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')">
+
                             </div>
                             <div class="login_submit">
-                                <button class="btn btn-md btn-black-default-hover mb-4" type="submit"
-                                    value="login now">login</button>
+                                <button class="btn btn-md btn-black-default-hover mb-4" type="submit" value="login now" name="submit">login</button>
                                 <p>don't have an account? <a href="register.php">register now</a></p>
                             </div>
                         </form>
@@ -167,8 +165,6 @@ if (isset($_POST['submit'])) {
 
     <!-- Main JS -->
     <script src="assets/js/main.js"></script>
-    <script src="js/script.js"></script>
-
 </body>
 
 
