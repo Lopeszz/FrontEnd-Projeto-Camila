@@ -103,8 +103,8 @@ if (isset($_POST['submit'])) {
                         <div class="breadcrumb-nav breadcrumb-nav-color--black breadcrumb-nav-hover-color--golden">
                             <nav aria-label="breadcrumb">
                                 <ul>
-                                    <li><a href="index.html">Home</a></li>
-                                    <li><a href="shop-grid-sidebar-left.html">Shop</a></li>
+                                    <li><a href="index.php">Home</a></li>
+                                    <li><a href="shop-grid-sidebar-left.php">Shop</a></li>
                                     <li class="active" aria-current="page">Register</li>
                                 </ul>
                             </nav>
@@ -143,7 +143,10 @@ if (isset($_POST['submit'])) {
                             </div>
                             <div class="login_submit">
                                 <button class="btn btn-md btn-black-default-hover" type="submit" value="register now" name="submit" >Register</button>
+                                <p>already have an account? <a href="login.php">login now</a></p>
+
                             </div>
+                            
                         </form>
                     </div>
                 </div>  

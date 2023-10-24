@@ -299,6 +299,9 @@
         <ul class="user-link">
             <li><a href="login.php">Login</a></li>
         </ul>
+        <ul class="user-link">
+            <li><a href="register.php">Register</a></li>
+        </ul>
     </div>
     <!-- End Mobile contact Info -->
 </div> <!-- ...:::: End Offcanvas Mobile Menu Section:::... -->
