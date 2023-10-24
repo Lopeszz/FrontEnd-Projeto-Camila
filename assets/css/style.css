@@ -18722,6 +18722,7 @@ Pages - Contact
 /*Mobile Menu Bottom Area*/
 .offcanvas-menu {
     margin: 20px 0;
+    margin-bottom: 50%;
 }
 
 .offcanvas-menu li {

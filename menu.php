@@ -104,18 +104,7 @@
                                 <i class="icon-magnifier"></i>
                             </a>
                         </li>
-                        <li>
-                            <a href="#offcanvas-wishlish" class="offcanvas-toggle">
-                                <i class="icon-heart"></i>
-                                <span class="item-count">3</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#offcanvas-add-cart" class="offcanvas-toggle">
-                                <i class="icon-bag"></i>
-                                <span class="item-count">3</span>
-                            </a>
-                        </li>
+
                         <li>
                             <a href="#mobile-menu-offcanvas" class="offcanvas-toggle offside-menu">
                                 <i class="icon-menu"></i>
@@ -144,62 +133,20 @@
             <div class="offcanvas-menu">
                 <ul>
                     <li>
-                        <a href="#"><span>Home</span></a>
-                        <ul class="mobile-sub-menu">
-                            <li><a href="index.php">Home 1</a></li>
-                            <li><a href="index-2.php">Home 2</a></li>
-                            <li><a href="index-3.php">Home 3</a></li>
-                            <li><a href="index-4.php">Home 4</a></li>
-                        </ul>
+                        <a href="#"><span>Apresentação</span></a>
+                    </li>
+                   
+                    <li>
+                        <a href="centro-documentacao.php">Centro de Documentação</a>
+                    </li>
+
+                    <li>
+                        <a href="pesquisas.php">Pesquisas</a>
                     </li>
                     <li>
-                        <a href="#"><span>Shop</span></a>
-                        <ul class="mobile-sub-menu">
-                            <li>
-                                <a href="#">Shop Layout</a>
-                                <ul class="mobile-sub-menu">
-                                    <li><a href="shop-grid-sidebar-left.php">Grid Left Sidebar</a></li>
-                                    <li><a href="shop-grid-sidebar-right.php">Grid Right Sidebar</a></li>
-                                    <li><a href="shop-full-width.php">Full Width</a></li>
-                                    <li><a href="shop-list-sidebar-left.php">List Left Sidebar</a></li>
-                                    <li><a href="shop-list-sidebar-right.php">List Right Sidebar</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <ul class="mobile-sub-menu">
-                            <li>
-                                <a href="#">Shop Pages</a>
-                                <ul class="mobile-sub-menu">
-                                    <li><a href="cart.php">Cart</a></li>
-                                    <li><a href="empty-cart.php">Empty Cart</a></li>
-                                    <li><a href="wishlist.php">Wishlist</a></li>
-                                    <li><a href="compare.php">Compare</a></li>
-                                    <li><a href="checkout.php">Checkout</a></li>
-                                    <li><a href="login.php">Login</a></li>
-                                    <li><a href="my-account.php">My Account</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <!-- <ul class="mobile-sub-menu">
-                            <li>
-                                <a href="#">Product Single</a>
-                                <ul class="mobile-sub-menu">
-                                    <li><a href="product-details-default.php">Product Default</a></li>
-                                    <li><a href="product-details-variable.php">Product Variable</a></li>
-                                    <li><a href="product-details-affiliate.php">Product Referral</a></li>
-                                    <li><a href="product-details-group.php">Product Group</a></li>
-                                    <li><a href="product-details-single-slide.php">Product Slider</a></li>
-                                    <li><a href="product-details-tab-left.php">Product Tab Left</a></li>
-                                    <li><a href="product-details-tab-right.php">Product Tab Right</a></li>
-                                    <li><a href="product-details-gallery-left.php">Product Gallery Left</a></li>
-                                    <li><a href="product-details-gallery-right.php">Product Gallery Right</a></li>
-                                    <li><a href="product-details-sticky-left.php">Product Sticky Left</a></li>
-                                    <li><a href="product-details-sticky-right.php">Product Sticky right</a></li>
-                                </ul>
-                            </li>
-                        </ul> -->
+                        <a href="contact-us.php">Colabore</a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="#"><span>Blogs</span></a>
                         <ul class="mobile-sub-menu">
                             <li>
@@ -227,17 +174,7 @@
                                 </ul>
                             </li>
                         </ul>
-                    </li>
-                    <li>
-                        <a href="#"><span>Pages</span></a>
-                        <ul class="mobile-sub-menu">
-                            <li><a href="faq.php">Frequently Questions</a></li>
-                            <li><a href="privacy-policy.php">Privacy Policy</a></li>
-                            <li><a href="404.php">404 Page</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="about-us.php">About Us</a></li>
-                    <li><a href="contact-us.php">Contact Us</a></li>
+                    </li> -->
                 </ul>
             </div> <!-- End Mobile Menu Nav -->
         </div> <!-- End Mobile Menu -->
@@ -261,9 +198,8 @@
             </ul>
 
             <ul class="user-link">
-                <li><a href="wishlist.php">Wishlist</a></li>
-                <li><a href="cart.php">Cart</a></li>
-                <li><a href="checkout.php">Checkout</a></li>
+                <li><a href="wishlist.php">login</a></li>
+                <li><a href="cart.php">registro</a></li>
             </ul>
         </div>
         <!-- End Mobile contact Info -->
@@ -298,8 +234,6 @@
 
         <ul class="user-link">
             <li><a href="login.php">Login</a></li>
-        </ul>
-        <ul class="user-link">
             <li><a href="register.php">Register</a></li>
         </ul>
     </div>
