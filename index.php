@@ -39,7 +39,6 @@
 </head>
 
 <body>
-<<<<<<< HEAD:index.html
     <!-- Start Header Area -->
     <header class="header-section d-none d-xl-block">
         <div class="header-wrapper">
@@ -439,11 +438,6 @@
 
     <!-- Offcanvas Overlay -->
     <div class="offcanvas-overlay"></div>
-=======
-<?php
-require_once("menu.php");
-?>
->>>>>>> c4b17eeaf348904c77477012baf6a9084e102521:index.php
 
     <!-- Start Hero Slider Section-->
     <div class="hero-slider-section">
@@ -781,46 +775,6 @@ require_once("menu.php");
         </div>
     </div>
     <!-- End Blog Slider Section -->
-
-    <!-- Start Instagramr Section -->
-    <div class="instagram-section section-top-gap-100 section-inner-bg">
-        <div class="instagram-wrapper" data-aos="fade-up" data-aos-delay="0">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="instagram-box">
-                            <div id="instagramFeed" class="instagram-grid clearfix">
-                                <a href="https://www.instagram.com/p/CCFOZKDDS6S/" target="_blank"
-                                    class="instagram-image-link float-left banner-animation"><img
-                                        src="assets/images/instagram/instagram-1.jpg" alt=""></a>
-                                <a href="https://www.instagram.com/p/CCFOYDNjWF5/" target="_blank"
-                                    class="instagram-image-link float-left banner-animation"><img
-                                        src="assets/images/instagram/instagram-2.jpg" alt=""></a>
-                                <a href="https://www.instagram.com/p/CCFOXH6D-zQ/" target="_blank"
-                                    class="instagram-image-link float-left banner-animation"><img
-                                        src="assets/images/instagram/instagram-3.jpg" alt=""></a>
-                                <a href="https://www.instagram.com/p/CCFOVcrDDOo/" target="_blank"
-                                    class="instagram-image-link float-left banner-animation"><img
-                                        src="assets/images/instagram/instagram-4.jpg" alt=""></a>
-                                <a href="https://www.instagram.com/p/CCFOUajjABP/" target="_blank"
-                                    class="instagram-image-link float-left banner-animation"><img
-                                        src="assets/images/instagram/instagram-5.jpg" alt=""></a>
-                                <a href="https://www.instagram.com/p/CCFOS2MDmjj/" target="_blank"
-                                    class="instagram-image-link float-left banner-animation"><img
-                                        src="assets/images/instagram/instagram-6.jpg" alt=""></a>
-                            </div>
-                            <div class="instagram-link">
-                                <h5><a href="https://www.instagram.com/myfurniturecom/" target="_blank"
-                                        rel="noopener noreferrer">HONOTEMPLATE</a></h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Instagramr Section -->
-
     <?php
     require_once("footer.php");
     ?>
