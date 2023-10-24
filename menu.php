@@ -22,7 +22,7 @@
                                     </li>
 
                                     <li>
-                                        <a href="#">Centro de Documentação</a>
+                                        <a href="centro-documentacao.php">Centro de Documentação</a>
                                     </li>
 
                                     <li>
