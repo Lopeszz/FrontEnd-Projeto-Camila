@@ -41,9 +41,9 @@
 </head>
 
 <body>
-<?php
-   require_once("menu.php");
-   ?>
+    <?php
+    require_once("menu.php");
+    ?>
 
     <!-- ...:::: Start Breadcrumb Section:::... -->
     <div class="breadcrumb-section breadcrumb-bg-color--golden">
@@ -51,7 +51,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h3 class="breadcrumb-title">Contact Us</h3>
+                        <h3 class="breadcrumb-title">Nós Contate</h3>
                         <div class="breadcrumb-nav breadcrumb-nav-color--black breadcrumb-nav-hover-color--golden">
                             <nav aria-label="breadcrumb">
                                 <ul>
@@ -154,7 +154,7 @@
                                     <div class="default-form-box mb-20">
                                         <label for="contact-email">Arquivo</label>
                                         <input type="file" name="attachment" accept="image/png, image/jpeg"
-                                            class="form-control input-file" style = "font-size: auto;">
+                                            class="form-control input-file" style="font-size: auto;">
 
                                     </div>
                                 </div>
