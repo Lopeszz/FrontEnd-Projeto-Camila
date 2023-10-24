@@ -44,9 +44,6 @@
     require_once("menu.php");
     ?>
 
-    <!-- Offcanvas Overlay -->
-    <div class="offcanvas-overlay"></div>
-
     <!-- Start Hero Slider Section-->
     <div class="hero-slider-section">
         <!-- Slider main container -->
