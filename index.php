@@ -41,10 +41,8 @@
 <body>
     
     <?php
-    require_once("header.php");
+    require_once("menu.php");
     ?>
-
-
 
     <!-- Offcanvas Overlay -->
     <div class="offcanvas-overlay"></div>

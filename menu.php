@@ -112,18 +112,6 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#offcanvas-wishlish" class="offcanvas-toggle">
-                                    <i class="icon-heart"></i>
-                                    <span class="item-count">3</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#offcanvas-add-cart" class="offcanvas-toggle">
-                                    <i class="icon-bag"></i>
-                                    <span class="item-count">3</span>
-                                </a>
-                            </li>
-                            <li>
                                 <a href="#mobile-menu-offcanvas" class="offcanvas-toggle offside-menu">
                                     <i class="icon-menu"></i>
                                 </a>
