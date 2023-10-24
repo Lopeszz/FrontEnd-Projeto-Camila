@@ -167,6 +167,8 @@ if (isset($_POST['submit'])) {
 
     <!-- Main JS -->
     <script src="assets/js/main.js"></script>
+    <script src="js/script.js"></script>
+
 </body>
 
 
