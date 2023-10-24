@@ -16407,22 +16407,22 @@ a.ui-button:active,
 *****************************/
 .breadcrumb-wrapper {
     padding-top: 60px;
-    padding-bottom: 60px;
-    margin-bottom: 60px;
+   
+   
     text-align: center;
 }
 @media (min-width: 768px) {
     .breadcrumb-wrapper {
-        margin-bottom: 80px;
+       
         padding-top: 90px;
-        padding-bottom: 90px;
+  
     }
 }
 @media (min-width: 992px) {
     .breadcrumb-wrapper {
-        margin-bottom: 100px;
+        
         padding-top: 120px;
-        padding-bottom: 120px;
+        
     }
 }
 
