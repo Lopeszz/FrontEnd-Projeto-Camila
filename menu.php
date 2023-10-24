@@ -26,7 +26,7 @@
                                     </li>
 
                                     <li>
-                                        <a href="#">Pesquisas</a>
+                                        <a href="pesquisas.php">Pesquisas</a>
                                     </li>
                                     <li>
                                         <a href="contact-us.php">Colabore</a>
@@ -180,7 +180,7 @@
                                 </ul>
                             </li>
                         </ul>
-                        <ul class="mobile-sub-menu">
+                        <!-- <ul class="mobile-sub-menu">
                             <li>
                                 <a href="#">Product Single</a>
                                 <ul class="mobile-sub-menu">
@@ -197,7 +197,7 @@
                                     <li><a href="product-details-sticky-right.php">Product Sticky right</a></li>
                                 </ul>
                             </li>
-                        </ul>
+                        </ul> -->
                     </li>
                     <li>
                         <a href="#"><span>Blogs</span></a>
