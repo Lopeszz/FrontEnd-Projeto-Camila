@@ -1,3 +1,53 @@
+<?php
+
+include 'components/connect.php';
+
+session_start();
+
+if (isset($_SESSION['user_id'])) {
+    $user_id = $_SESSION['user_id'];
+} else {
+    $user_id = '';
+}
+;
+
+if (isset($_POST['submit'])) {
+
+    $name = $_POST['name'];
+    $name = filter_var($name, FILTER_SANITIZE_STRING);
+    $email = $_POST['email'];
+    $email = filter_var($email, FILTER_SANITIZE_STRING);
+    $pass = sha1($_POST['pass']);
+    $pass = filter_var($pass, FILTER_SANITIZE_STRING);
+    $cpass = sha1($_POST['cpass']);
+    $cpass = filter_var($cpass, FILTER_SANITIZE_STRING);
+
+    $select_user = $conn->prepare("SELECT * FROM `users` WHERE email = ?");
+    $select_user->execute([$email]);
+    $row = $select_user->fetch(PDO::FETCH_ASSOC);
+
+    if ($select_user->rowCount() > 0) {
+        $message[] = 'email already exists!';
+    } else {
+        if ($pass != $cpass) {
+            $message[] = 'confirm password not matched!';
+        } else {
+            $insert_user = $conn->prepare("INSERT INTO `users`(name, email, password) VALUES(?,?,?)");
+            $insert_user->execute([$name, $email, $cpass]);
+            $select_user = $conn->prepare("SELECT * FROM `users` WHERE email = ? AND password = ?");
+            $select_user->execute([$email, $pass]);
+            $row = $select_user->fetch(PDO::FETCH_ASSOC);
+            if ($select_user->rowCount() > 0) {
+                $_SESSION['user_id'] = $row['id'];
+                header('location:home.php');
+            }
+        }
+    }
+
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -100,21 +150,29 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="account_form register" data-aos="fade-up" data-aos-delay="200">
                         <h3>Register</h3>
-                        <form action="#">
+                        <form action="" method="post">
                             <div class="default-form-box">
-                                <label>Email address <span>*</span></label>
-                                <input type="text">
+                                <label> Nome <span>*</span></label>
+                                <input type="text" name="name" required placeholder="enter your name" class="box" maxlength="50">
                             </div>
                             <div class="default-form-box">
-                                <label>Passwords <span>*</span></label>
-                                <input type="password">
+                                <label>Email<span>*</span></label>
+                                <input type="email" name="email" required placeholder="enter your email" class="box" maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')">
+                            </div>
+                            <div class="default-form-box">
+                                <label> Senha <span>*</span></label>
+                                <input type="password" name="pass" required placeholder="enter your password" class="box" maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')">
+                            </div>
+                            <div class="default-form-box">
+                                <label> Senha <span>*</span></label>
+                                <input type="password" name="cpass" required placeholder="confirm your password" class="box" maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')">
                             </div>
                             <div class="login_submit">
-                                <button class="btn btn-md btn-black-default-hover" type="submit">Register</button>
+                                <button class="btn btn-md btn-black-default-hover" type="submit" value="register now" name="submit" >Register</button>
                             </div>
                         </form>
                     </div>
-                </div>
+                </div>  
                 <!--register area end-->
             </div>
         </div>
