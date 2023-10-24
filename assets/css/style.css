@@ -19329,3 +19329,9 @@ Pages - Contact
     font-size: 10%;
     padding: 5%;
 }
+
+.text-apresentacao{
+    text-align: justify;
+    font-size: 150%;
+    padding: 5%;
+}

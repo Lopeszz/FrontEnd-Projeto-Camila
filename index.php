@@ -3,6 +3,7 @@
 
 
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -38,7 +39,7 @@
 </head>
 
 <body>
-    
+
     <?php
     require_once("menu.php");
     ?>
@@ -63,8 +64,8 @@
                                     <div class="hero-slider-content">
                                         <h4 class="subtitle">New collection</h4>
                                         <h2 class="title">Best Of NeoCon <br> Gold Award </h2>
-                                        <a href="product-details-default.php"
-                                            class="btn btn-lg btn-outline-golden">shop now </a>
+                                        <a href="product-details-default.php" class="btn btn-lg btn-outline-golden">shop
+                                            now </a>
                                     </div>
                                 </div>
                             </div>
@@ -85,8 +86,8 @@
                                     <div class="hero-slider-content">
                                         <h4 class="subtitle">New collection</h4>
                                         <h2 class="title">Luxy Chairs <br> Design Award </h2>
-                                        <a href="product-details-default.php"
-                                            class="btn btn-lg btn-outline-golden">shop now </a>
+                                        <a href="product-details-default.php" class="btn btn-lg btn-outline-golden">shop
+                                            now </a>
                                     </div>
                                 </div>
                             </div>
@@ -117,8 +118,8 @@
                                 <img src="assets/images/icons/service-promo-1.png" alt="">
                             </div>
                             <div class="content">
-                                <h6 class="title">FREE SHIPPING</h6>
-                                <p>Get 10% cash back, free shipping, free returns, and more at 1000+ top retailers!</p>
+                                <h6 class="title">HISTÓRIA</h6>
+                                <!-- <p>Get 10% cash back, free shipping, free returns, and more at 1000+ top retailers!</p> -->
                             </div>
                         </div>
                     </div>
@@ -130,8 +131,8 @@
                                 <img src="assets/images/icons/service-promo-2.png" alt="">
                             </div>
                             <div class="content">
-                                <h6 class="title">30 DAYS MONEY BACK</h6>
-                                <p>100% satisfaction guaranteed, or get your money back within 30 days!</p>
+                                <h6 class="title">CULTURA</h6>
+                                <!-- <p>100% satisfaction guaranteed, or get your money back within 30 days!</p> -->
                             </div>
                         </div>
                     </div>
@@ -144,7 +145,7 @@
                             </div>
                             <div class="content">
                                 <h6 class="title">SAFE PAYMENT</h6>
-                                <p>Pay with the world’s most popular and secure payment methods.</p>
+                                <!-- <p>Pay with the world’s most popular and secure payment methods.</p> -->
                             </div>
                         </div>
                     </div>
@@ -157,7 +158,7 @@
                             </div>
                             <div class="content">
                                 <h6 class="title">LOYALTY CUSTOMER</h6>
-                                <p>Card for the other 30% of their purchases at a rate of 1% cash back.</p>
+                                <!-- <p>Card for the other 30% of their purchases at a rate of 1% cash back.</p> -->
                             </div>
                         </div>
                     </div>
@@ -167,6 +168,35 @@
         </div>
     </div>
     <!-- End Service Section -->
+
+    <p class="text-apresentacao">
+        Quando cheguei à São João Evangelista em abril de 2022, tive a estranha sensação de que a história da cidade
+        parecia restrita a algumas poucas famílias consideradas relevantes por grande parte da população. O ofício do
+        historiador, contudo, desconfia dos silêncios e sabe que onde eles reinam é por que muito há para ser extraído.
+        Para tanto, eu me vali do projeto de extensão desenvolvido no decorrer da minha experiência como professora
+        visitante do Instituto Federal de Minas Gerais.
+        Iniciei a prospecção de fontes no Arquivo Público Mineiro, que revelou São João Evangelista como uma cidade
+        devotada a registrar edificações e personalidades políticas, o que também se confirmou à medida que conversava
+        com as pessoas no município. Por meio, contudo, de um detalhe aqui, uma fala acolá, fui percebendo aspectos
+        peculiares da história local: a influência indígena em tradições populares, a relação ambivalente com a antiga
+        Escola Agrícola, hoje IFMG, a presença de uma vida cultural pulsante em outras décadas que se perdeu com o
+        tempo. Observei ainda uma confusão entre o público e o privado, que converte fontes de interesse público e
+        importantíssimas para a memória local em acervo nas mãos de poucos, dificultando tanto o acesso de pessoas
+        comuns quanto de pesquisadores, inclusive para efeitos de divulgação, como é o caso do presente projeto de
+        extensão. Há, também, por parte de uma minoria, a desconfiança em relação ao trabalho do historiador, o que não
+        só dificultou a preservação do patrimônio local como também limitou a atuação do projeto. De modo semelhante,
+        casarões e outros edifícios foram demolidos por incompreensão do que significa o tombamento bem como conflito
+        entre história, memória e obsolescência. Mesmo diante dos obstáculos apontados, pudemos desvelar parte de como a
+        população apreende o passado do município, mas, sobretudo, redescobrir rostos, pessoas, manifestações culturais
+        e práticas sociais.
+        O site em questão, assim, é fruto de um ano e oito meses de trabalho junto ao campus São João Evangelista,
+        período este em que foi coordenado por mim e contou com a dedicação de discentes do Ensino Médio Técnico e da
+        graduação. Somando habilidades e esforços, nos empenhamos em entrevistar moradores e localizar toda a sorte de
+        registros que pudessem nos orientar a respeito da história de São João Evangelista. Todo o material obtido foi
+        disponibilizado neste site, convertido em uma espécie de centro de memória virtual, visando levar ao grande
+        público e a possíveis interessados material de informação e de pesquisa sobre as diferentes conexões com o
+        passado da cidade.
+    </p>
 
     <!-- Start Banner Section -->
     <div class="banner-section section-top-gap-100">
