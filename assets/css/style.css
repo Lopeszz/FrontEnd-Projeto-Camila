@@ -14620,6 +14620,8 @@ input {
     width: 100%;
     height: 395px;
     object-fit: cover;
+    padding: 50px;
+    border-radius: 5rem;
 }
 @media (min-width: 576px) {
     .hero-slider-bg img {
