@@ -37,7 +37,6 @@
     }
 
     $posts = getPosts($conn, $admin_id);
-    var_dump($posts);
     ?>
 
     <?php include 'menu.php'; ?>
