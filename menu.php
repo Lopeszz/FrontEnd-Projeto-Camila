@@ -8,7 +8,7 @@
                         <!-- Start Header Logo -->
                         <div class="header-logo">
                             <div class="logo">
-                                <a href="index.php"><img src="assets/images/logo/logo_black.png" alt=""></a>
+                                <a href="index.php"><img src="assets/images/logo/logo_history.png" alt=""></a>
                             </div>
                         </div>
                         <!-- End Header Logo -->
@@ -88,7 +88,7 @@
                         <li>
                             <a href="index.php">
                                 <div class="logo">
-                                    <img src="assets/images/logo/logo_black.png" alt="">
+                                    <img src="assets/images/logo/logo_history.png" alt="">
                                 </div>
                             </a>
                         </li>
@@ -182,7 +182,7 @@
         <!-- Start Mobile contact Info -->
         <div class="mobile-contact-info">
             <div class="logo">
-                <a href="index.php"><img src="assets/images/logo/logo_white.png" alt=""></a>
+                <a href="index.php"><img src="assets/images/logo/logo_history.png" alt=""></a>
             </div>
 
             <address class="address">
@@ -217,7 +217,7 @@
     <!-- Start Mobile contact Info -->
     <div class="mobile-contact-info">
         <div class="logo">
-            <a href="index.php"><img src="assets/images/logo/logo_white.png" alt=""></a>
+            <a href="index.php"><img src="assets/images/logo/logo_history.png" alt=""></a>
         </div>
 
         <address class="address">
