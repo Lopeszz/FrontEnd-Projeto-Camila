@@ -18242,7 +18242,7 @@ Pages - Contact
     width: 100px;
 }
 .header-logo .logo img {
-    width: 100%;
+    width: 150%;
     height: auto;
 }
 
@@ -18393,7 +18393,7 @@ Pages - Contact
 }
 
 .mobile-menu-logo .logo img {
-    width: 100%;
+    width: 150%;
     height: auto;
 }
 
@@ -19339,4 +19339,7 @@ Pages - Contact
     text-align: justify;
     font-size: 150%;
     padding: 5%;
+}
+.blog-section{
+    margin-top: -5%;
 }

@@ -31,9 +31,9 @@
                                     <li>
                                         <a href="contact-us.php">Colabore</a>
                                     </li>
-                                    <li class="has-dropdown">
+                                    <!-- <li class="has-dropdown">
                                         <a href="blog-single-sidebar-left.php">Blog <i class="fa fa-angle-down"></i></a>
-                                        <!-- Sub Menu -->
+                                        
                                         <ul class="sub-menu">
                                             <li><a href="blog-grid-sidebar-left.php">Blog Grid Sidebar left</a>
                                             </li>
@@ -49,7 +49,7 @@
                                             <li><a href="blog-single-sidebar-right.php">Blog Single Sidebar
                                                     Right</a></li>
                                         </ul>
-                                    </li>
+                                    </li> -->
                                 </ul>
                             </nav>
                         </div>

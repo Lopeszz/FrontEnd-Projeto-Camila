@@ -164,7 +164,7 @@
                                 <p class="form-messege"></p>
                             </div>
                             <input type="hidden" name="_captcha" value="false">
-                            <input type="hidden" name="_next" value="http://127.0.0.1:5500/obrigado.html">
+                            <input type="hidden" name="_next" value="http://localhost/FrontEnd-Projeto-Camila/obrigado.php">
 
                         </form>
                     </div>
