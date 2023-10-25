@@ -14,16 +14,25 @@ if(isset($_POST['delete'])){
 
    $p_id = $_POST['post_id'];
    $p_id = filter_var($p_id, FILTER_SANITIZE_STRING);
+
    $delete_image = $conn->prepare("SELECT * FROM `posts` WHERE id = ?");
+
    $delete_image->execute([$p_id]);
+
    $fetch_delete_image = $delete_image->fetch(PDO::FETCH_ASSOC);
+
    if($fetch_delete_image['image'] != ''){
       unlink('../uploaded_img/'.$fetch_delete_image['image']);
    }
+
    $delete_post = $conn->prepare("DELETE FROM `posts` WHERE id = ?");
+
    $delete_post->execute([$p_id]);
+
    $delete_comments = $conn->prepare("DELETE FROM `comments` WHERE post_id = ?");
+
    $delete_comments->execute([$p_id]);
+   
    $message[] = 'post deleted successfully!';
 
 }
