@@ -67,11 +67,6 @@
 
     <!-- End Service Section -->
 
-
-
-
-
-
     <!-- Start Blog Slider Section -->
     <div class="blog-default-slider-section section-top-gap-100 section-fluid">
         <!-- Start Section Content Text Area -->

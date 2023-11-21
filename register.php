@@ -104,7 +104,6 @@ if (isset($_POST['submit'])) {
                             <nav aria-label="breadcrumb">
                                 <ul>
                                     <li><a href="index.php">Home</a></li>
-                                    <li><a href="shop-grid-sidebar-left.php">Shop</a></li>
                                     <li class="active" aria-current="page">Register</li>
                                 </ul>
                             </nav>
@@ -120,40 +119,44 @@ if (isset($_POST['submit'])) {
     <div class="customer-login">
         <div class="container">
             <div class="row">
-                <!--register area start-->
+                <!-- Início da área de registro -->
                 <div class="col-lg-6 col-md-6">
                     <div class="account_form register" data-aos="fade-up" data-aos-delay="200">
-                        <h3>Register</h3>
+                        <h3>Cadastrar</h3>
                         <form action="" method="post">
                             <div class="default-form-box">
-                                <label> Nome <span>*</span></label>
-                                <input type="text" name="name" required placeholder="enter your name" class="box" maxlength="50">
+                                <label>Nome <span>*</span></label>
+                                <input type="text" name="name" required placeholder="Digite seu nome" class="box"
+                                    maxlength="50">
                             </div>
                             <div class="default-form-box">
-                                <label>Email<span>*</span></label>
-                                <input type="email" name="email" required placeholder="enter your email" class="box" maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')">
+                                <label>Email <span>*</span></label>
+                                <input type="email" name="email" required placeholder="Digite seu email" class="box"
+                                    maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')">
                             </div>
                             <div class="default-form-box">
-                                <label> Senha <span>*</span></label>
-                                <input type="password" name="pass" required placeholder="enter your password" class="box" maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')">
+                                <label>Senha <span>*</span></label>
+                                <input type="password" name="pass" required placeholder="Digite sua senha" class="box"
+                                    maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')">
                             </div>
                             <div class="default-form-box">
-                                <label> Senha <span>*</span></label>
-                                <input type="password" name="cpass" required placeholder="confirm your password" class="box" maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')">
+                                <label>Confirmar Senha <span>*</span></label>
+                                <input type="password" name="cpass" required placeholder="Confirme sua senha"
+                                    class="box" maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')">
                             </div>
                             <div class="login_submit">
-                                <button class="btn btn-md btn-black-default-hover" type="submit" value="register now" name="submit" >Register</button>
-                                <p>already have an account? <a href="login.php">login now</a></p>
-
+                                <button class="btn btn-md btn-black-default-hover" type="submit" value="register now"
+                                    name="submit">Cadastrar</button>
+                                <p>Já tem uma conta? <a href="login.php">Faça login agora</a></p>
                             </div>
-                            
                         </form>
                     </div>
-                </div>  
-                <!--register area end-->
+                </div>
+                <!-- Fim da área de registro -->
             </div>
         </div>
-    </div> <!-- ...:::: End Customer Login Section :::... -->
+    </div>
+    <!-- ...:::: End Customer Login Section :::... -->
 
     <?php
     require_once("footer.php");

@@ -6,21 +6,21 @@ session_start();
 
 $admin_id = $_SESSION['admin_id'];
 
-if(!isset($admin_id)){
+if (!isset($admin_id)) {
    header('location:admin_login.php');
 }
 
-if(isset($_POST['submit'])){
+if (isset($_POST['submit'])) {
 
    $name = $_POST['name'];
    $name = filter_var($name, FILTER_SANITIZE_STRING);
 
-   if(!empty($name)){
+   if (!empty($name)) {
       $select_name = $conn->prepare("SELECT * FROM `admin` WHERE name = ?");
       $select_name->execute([$name]);
-      if($select_name->rowCount() > 0){
-         $message[] = 'username already taken!';
-      }else{
+      if ($select_name->rowCount() > 0) {
+         $message[] = 'Nome de usuário já utilizado!';
+      } else {
          $update_name = $conn->prepare("UPDATE `admin` SET name = ? WHERE id = ?");
          $update_name->execute([$name, $admin_id]);
       }
@@ -38,18 +38,18 @@ if(isset($_POST['submit'])){
    $confirm_pass = sha1($_POST['confirm_pass']);
    $confirm_pass = filter_var($confirm_pass, FILTER_SANITIZE_STRING);
 
-   if($old_pass != $empty_pass){
-      if($old_pass != $prev_pass){
-         $message[] = 'old password not matched!';
-      }elseif($new_pass != $confirm_pass){
-         $message[] = 'confirm password not matched!';
-      }else{
-         if($new_pass != $empty_pass){
+   if ($old_pass != $empty_pass) {
+      if ($old_pass != $prev_pass) {
+         $message[] = 'Senha antiga não corresponde!';
+      } elseif ($new_pass != $confirm_pass) {
+         $message[] = 'Confirmação de senha não corresponde!';
+      } else {
+         if ($new_pass != $empty_pass) {
             $update_pass = $conn->prepare("UPDATE `admin` SET password = ? WHERE id = ?");
             $update_pass->execute([$confirm_pass, $admin_id]);
-            $message[] = 'password updated successfully!';
-         }else{
-            $message[] = 'please enter a new password!';
+            $message[] = 'Senha atualizada com sucesso!';
+         } else {
+            $message[] = 'Por favor, insira uma nova senha!';
          }
       }
    }
@@ -59,51 +59,50 @@ if(isset($_POST['submit'])){
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>profile update</title>
+   <title>Atualização de Perfil</title>
 
-   <!-- font awesome cdn link  -->
+   <!-- Link para a biblioteca Font Awesome via CDN -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
-   <!-- custom css file link  -->
+   <!-- Link para o arquivo CSS personalizado do administrador -->
    <link rel="stylesheet" href="../css/admin_style.css">
 
 </head>
+
 <body>
 
-<?php include '../components/admin_header.php' ?>
+   <?php include '../components/admin_header.php' ?>
 
-<!-- admin profile update section starts  -->
+   <!-- Seção de atualização de perfil do administrador inicia aqui -->
 
-<section class="form-container">
+   <section class="form-container">
 
-   <form action="" method="POST">
-      <h3>update profile</h3>
-      <input type="text" name="name" maxlength="20" class="box" oninput="this.value = this.value.replace(/\s/g, '')" placeholder="<?= $fetch_profile['name']; ?>">
-      <input type="password" name="old_pass" maxlength="20" placeholder="enter your old password" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
-      <input type="password" name="new_pass" maxlength="20" placeholder="enter your new password" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
-      <input type="password" name="confirm_pass" maxlength="20" placeholder="confirm your new password" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
-      <input type="submit" value="update now" name="submit" class="btn">
-   </form>
+      <form action="" method="POST">
+         <h3>Atualizar Perfil</h3>
+         <input type="text" name="name" maxlength="20" class="box" oninput="this.value = this.value.replace(/\s/g, '')"
+            placeholder="<?= $fetch_profile['name']; ?>">
+         <input type="password" name="old_pass" maxlength="20" placeholder="Digite sua senha antiga" class="box"
+            oninput="this.value = this.value.replace(/\s/g, '')">
+         <input type="password" name="new_pass" maxlength="20" placeholder="Digite sua nova senha" class="box"
+            oninput="this.value = this.value.replace(/\s/g, '')">
+         <input type="password" name="confirm_pass" maxlength="20" placeholder="Confirme sua nova senha" class="box"
+            oninput="this.value = this.value.replace(/\s/g, '')">
+         <input type="submit" value="Atualizar Agora" name="submit" class="btn">
+      </form>
 
-</section>
+   </section>
 
-<!-- admin profile update section ends -->
+   <!-- Seção de atualização de perfil do administrador termina aqui -->
 
-
-
-
-
-
-
-
-
-<!-- custom js file link  -->
-<script src="../js/admin_script.js"></script>
+   <!-- Link para o arquivo JavaScript personalizado do administrador -->
+   <script src="../js/admin_script.js"></script>
 
 </body>
+
 </html>

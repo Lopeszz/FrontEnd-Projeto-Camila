@@ -174,11 +174,6 @@
         passado da cidade.
     </p>
 
-    
-    
-
-
-
     <!-- End Blog Slider Section -->
     <?php
     require_once("footer.php");

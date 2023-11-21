@@ -6,11 +6,11 @@ session_start();
 
 $admin_id = $_SESSION['admin_id'];
 
-if(!isset($admin_id)){
+if (!isset($admin_id)) {
    header('location:admin_login.php');
 }
 
-if(isset($_POST['publish'])){
+if (isset($_POST['publish'])) {
 
    $name = $_POST['name'];
    $name = filter_var($name, FILTER_SANITIZE_STRING);
@@ -21,12 +21,12 @@ if(isset($_POST['publish'])){
    $category = $_POST['category'];
    $category = filter_var($category, FILTER_SANITIZE_STRING);
    $status = 'active';
-   
+
    $image = $_FILES['image']['name'];
    $image = filter_var($image, FILTER_SANITIZE_STRING);
    $image_size = $_FILES['image']['size'];
    $image_tmp_name = $_FILES['image']['tmp_name'];
-   $image_folder = '../uploaded_img/'.$image;
+   $image_folder = '../uploaded_img/' . $image;
 
    $file = $_FILES['file']['name'];
    $file = filter_var($file, FILTER_SANITIZE_STRING);
@@ -37,56 +37,44 @@ if(isset($_POST['publish'])){
    $select_image = $conn->prepare("SELECT * FROM `posts` WHERE image = ? AND admin_id = ?");
    $select_image->execute([$image, $admin_id]);
 
-
-
-   if(isset($image)){
-      if($select_image->rowCount() > 0 AND $image != ''){
-         $message[] = 'image name repeated!';
-      }elseif($image_size > 5000000){
-         $message[] = 'images size is too large!';
-      }else{
+   if (isset($image)) {
+      if ($select_image->rowCount() > 0 and $image != '') {
+         $message[] = 'nome da imagem repetido!';
+      } elseif ($image_size > 5000000) {
+         $message[] = 'tamanho da imagem é muito grande!';
+      } else {
          move_uploaded_file($image_tmp_name, $image_folder);
       }
-   }else{
+   } else {
       $image = '';
    }
 
-   if($select_image->rowCount() > 0 AND $image != ''){
-      $message[] = 'please rename your image!';
+   if ($select_image->rowCount() > 0 and $image != '') {
+      $message[] = 'por favor, renomeie sua imagem!';
    }
-   
 
+   $select_file = $conn->prepare("SELECT * FROM `posts` WHERE file = ? AND admin_id = ?");
+   $select_file->execute([$file, $admin_id]);
 
-
-
-
-$select_file = $conn->prepare("SELECT * FROM `posts` WHERE file = ? AND admin_id = ?");
-$select_file->execute([$file, $admin_id]);
-
-
-if(isset($file)){
-   if($select_file->rowCount() > 0 AND $file != ''){
-      $message[] = 'file name repeated!';
-   }elseif($file_size > 5000000){
-      $message[] = 'file size is too large!';
-   }else{
-      move_uploaded_file($file_tmp_name, $file_folder);
+   if (isset($file)) {
+      if ($select_file->rowCount() > 0 and $file != '') {
+         $message[] = 'nome do arquivo repetido!';
+      } elseif ($file_size > 5000000) {
+         $message[] = 'tamanho do arquivo é muito grande!';
+      } else {
+         move_uploaded_file($file_tmp_name, $file_folder);
+      }
+   } else {
+      $file = '';
    }
-}else{
-   $file = '';
-}
 
-if($select_file->rowCount() > 0 AND $file != ''){
-   $message[] = 'please rename your file!';
-}else{
-   $insert_post = $conn->prepare("INSERT INTO `posts`(admin_id, name, title, content, category, image, file, status) VALUES(?,?,?,?,?,?,?,?)");
-   $insert_post->execute([$admin_id, $name, $title, $content, $category, $image, $file, $status]);
-   $message[] = 'post published!';
-}
-
-
-
-
+   if ($select_file->rowCount() > 0 and $file != '') {
+      $message[] = 'por favor, renomeie seu arquivo!';
+   } else {
+      $insert_post = $conn->prepare("INSERT INTO `posts`(admin_id, name, title, content, category, image, file, status) VALUES(?,?,?,?,?,?,?,?)");
+      $insert_post->execute([$admin_id, $name, $title, $content, $category, $image, $file, $status]);
+      $message[] = 'postagem publicada!';
+   }
 }
 
 if (isset($_POST['publish'])) {
@@ -97,7 +85,7 @@ if (isset($_POST['publish'])) {
       $allowed_extensions = array('jpg', 'jpeg', 'png', 'webp');
       $file_extension = pathinfo($image, PATHINFO_EXTENSION);
       if (!in_array(strtolower($file_extension), $allowed_extensions)) {
-        
+
       } elseif ($image_size > 5000000) { // Verifique o tamanho máximo
          $message[] = 'O tamanho da imagem é muito grande (máximo de 2MB permitido).';
       } else {
@@ -111,16 +99,14 @@ if (isset($_POST['publish'])) {
    if (!empty($file)) {
       // Verifique o tamanho máximo do arquivo (ajuste conforme necessário)
       if ($file_size > 50000000) { // 50MB
-          $message[] = 'O tamanho do arquivo é muito grande (máximo de 50MB permitido).';
+         $message[] = 'O tamanho do arquivo é muito grande (máximo de 50MB permitido).';
       } else {
-          move_uploaded_file($file_tmp_name, $file_folder);
+         move_uploaded_file($file_tmp_name, $file_folder);
       }
-  }
-
-  
+   }
 }
 
-if(isset($_POST['draft'])){
+if (isset($_POST['draft'])) {
 
    $name = $_POST['name'];
    $name = filter_var($name, FILTER_SANITIZE_STRING);
@@ -131,119 +117,113 @@ if(isset($_POST['draft'])){
    $category = $_POST['category'];
    $category = filter_var($category, FILTER_SANITIZE_STRING);
    $status = 'deactive';
-   
+
    $image = $_FILES['image']['name'];
    $image = filter_var($image, FILTER_SANITIZE_STRING);
    $image_size = $_FILES['image']['size'];
    $image_tmp_name = $_FILES['image']['tmp_name'];
-   $image_folder = '../uploaded_img/'.$image;
+   $image_folder = '../uploaded_img/' . $image;
 
    $select_image = $conn->prepare("SELECT * FROM `posts` WHERE image = ? AND admin_id = ?");
-   $select_image->execute([$image, $admin_id]); 
+   $select_image->execute([$image, $admin_id]);
 
-   if(isset($image)){
-      if($select_image->rowCount() > 0 AND $image != ''){
-         $message[] = 'image name repeated!';
-      }elseif($image_size > 2000000){
-         $message[] = 'images size is too large!';
-      }else{
+   if (isset($image)) {
+      if ($select_image->rowCount() > 0 and $image != '') {
+         $message[] = 'nome da imagem repetido!';
+      } elseif ($image_size > 2000000) {
+         $message[] = 'tamanho da imagem é muito grande!';
+      } else {
          move_uploaded_file($image_tmp_name, $image_folder);
       }
-   }else{
+   } else {
       $image = '';
    }
 
-   if($select_image->rowCount() > 0 AND $image != ''){
-      $message[] = 'please rename your image!';
-   }else{
+   if ($select_image->rowCount() > 0 and $image != '') {
+      $message[] = 'por favor, renomeie sua imagem!';
+   } else {
       $insert_post = $conn->prepare("INSERT INTO `posts`(admin_id, name, title, content, category, image, status) VALUES(?,?,?,?,?,?,?)");
       $insert_post->execute([$admin_id, $name, $title, $content, $category, $image, $status]);
-      $message[] = 'draft saved!';
+      $message[] = 'rascunho salvo!';
    }
-
 }
 
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>posts</title>
+   <title>Posts</title>
 
-   <!-- font awesome cdn link  -->
+   <!-- Font Awesome CDN link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
-   <!-- custom css file link  -->
+   <!-- Custom CSS file link  -->
    <link rel="stylesheet" href="../css/admin_style.css">
 
 </head>
+
 <body>
 
+   <?php include '../components/admin_header.php' ?>
 
-<?php include '../components/admin_header.php' ?>
+   <section class="post-editor">
 
-<section class="post-editor">
+      <h1 class="heading">Adicionar nova postagem</h1>
 
-   <h1 class="heading">add new post</h1>
+      <form action="" method="post" enctype="multipart/form-data">
+         <input type="hidden" name="name" value="<?= $fetch_profile['name']; ?>">
+         <p>Título da postagem <span>*</span></p>
+         <input type="text" name="title" maxlength="100" required placeholder="Adicione o título da postagem"
+            class="box">
+         <p>Conteúdo da postagem <span>*</span></p>
+         <textarea name="content" class="box" required maxlength="10000" placeholder="Escreva seu conteúdo..." cols="30"
+            rows="10"></textarea>
+         <p>Categoria da postagem <span>*</span></p>
+         <select name="category" class="box" required>
+            <option value="" selected disabled>-- Selecione a categoria* </option>
+            <option value="natureza">Natureza</option>
+            <option value="educação">Educação</option>
+            <option value="animais e pets">Animais e Pets</option>
+            <option value="tecnologia">Tecnologia</option>
+            <option value="moda">Moda</option>
+            <option value="entretenimento">Entretenimento</option>
+            <option value="filmes e animações">Filmes</option>
+            <option value="games">Games</option>
+            <option value="música">Música</option>
+            <option value="esportes">Esportes</option>
+            <option value="notícias">Notícias</option>
+            <option value="viagens">Viagens</option>
+            <option value="comédia">Comédia</option>
+            <option value="design e desenvolvimento">Design e Desenvolvimento</option>
+            <option value="comida e bebida">Comida e Bebida</option>
+            <option value="estilo de vida">Estilo de Vida</option>
+            <option value="pessoal">Pessoal</option>
+            <option value="saúde e fitness">Saúde e Fitness</option>
+            <option value="negócios">Negócios</option>
+            <option value="compras">Compras</option>
+            <option value="animações">Animações</option>
+         </select>
+         <p>Imagem da postagem</p>
+         <input type="file" name="image" class="box" accept="image/jpg, image/jpeg, image/png, image/webp">
+         <p>Arquivo da postagem</p>
+         <input type="file" name="file" class="box">
 
-   <form action="" method="post" enctype="multipart/form-data">
-      <input type="hidden" name="name" value="<?= $fetch_profile['name']; ?>">
-      <p>post title <span>*</span></p>
-      <input type="text" name="title" maxlength="100" required placeholder="add post title" class="box">
-      <p>post content <span>*</span></p>
-      <textarea name="content" class="box" required maxlength="10000" placeholder="write your content..." cols="30" rows="10"></textarea>
-      <p>post category <span>*</span></p>
-      <select name="category" class="box" required>
-         <option value="" selected disabled>-- select category* </option>
-         <option value="nature">nature</option>
-         <option value="education">education</option>
-         <option value="pets and animals">pets and animals</option>
-         <option value="technology">technology</option>
-         <option value="fashion">fashion</option>
-         <option value="entertainment">entertainment</option>
-         <option value="movies and animations">movies</option>
-         <option value="gaming">gaming</option>
-         <option value="music">music</option>
-         <option value="sports">sports</option>
-         <option value="news">news</option>
-         <option value="travel">travel</option>
-         <option value="comedy">comedy</option>
-         <option value="design and development">design and development</option>
-         <option value="food and drinks">food and drinks</option>
-         <option value="lifestyle">lifestyle</option>
-         <option value="personal">personal</option>
-         <option value="health and fitness">health and fitness</option>
-         <option value="business">business</option>
-         <option value="shopping">shopping</option>
-         <option value="animations">animations</option>
-      </select>
-      <p>post image</p>
-      <input type="file" name="image" class="box" accept="image/jpg, image/jpeg, image/png, image/webp">
-      <p>post file</p>
-      <input type="file" name="file" class="box">
-      
-      <div class="flex-btn">
-         <input type="submit" value="publish post" name="publish" class="btn">
-         <input type="submit" value="save draft" name="draft" class="option-btn">
-      </div>
-   </form>
+         <div class="flex-btn">
+            <input type="submit" value="Publicar postagem" name="publish" class="btn">
+            <input type="submit" value="Salvar rascunho" name="draft" class="option-btn">
+         </div>
+      </form>
 
-</section>
+   </section>
 
-
-
-
-
-
-
-
-
-
-<!-- custom js file link  -->
-<script src="../js/admin_script.js"></script>
+   <!-- Custom JS file link  -->
+   <script src="../js/admin_script.js"></script>
 
 </body>
+
 </html>

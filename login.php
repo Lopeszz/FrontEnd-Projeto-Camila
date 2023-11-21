@@ -89,7 +89,6 @@ if (isset($_POST['submit'])) {
                             <nav aria-label="breadcrumb">
                                 <ul>
                                     <li><a href="index.html">Home</a></li>
-                                    <li><a href="shop-grid-sidebar-left.html">Shop</a></li>
                                     <li class="active" aria-current="page">Login</li>
                                 </ul>
                             </nav>
@@ -104,32 +103,35 @@ if (isset($_POST['submit'])) {
     <div class="customer-login">
         <div class="container">
             <div class="row">
-                <!--login area start-->
+                <!-- Início da área de login -->
                 <div class="col-lg-6 col-md-6">
                     <div class="account_form" data-aos="fade-up" data-aos-delay="0">
-                        <h3>login</h3>
+                        <h3>Login</h3>
                         <form action="" method="post">
                             <div class="default-form-box">
                                 <label>Email <span>*</span></label>
-                                <input type="email" name="email" required placeholder="enter your email" class="box" maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')">
+                                <input type="email" name="email" required placeholder="Digite seu email" class="box"
+                                    maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')">
                             </div>
 
                             <div class="default-form-box">
-                                <label>Passwords <span>*</span></label>
-                                <input type="password" name="pass" required placeholder="enter your password" class="box" maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')">
-
+                                <label>Senha <span>*</span></label>
+                                <input type="password" name="pass" required placeholder="Digite sua senha" class="box"
+                                    maxlength="50" oninput="this.value = this.value.replace(/\s/g, '')">
                             </div>
                             <div class="login_submit">
-                                <button class="btn btn-md btn-black-default-hover mb-4" type="submit" value="login now" name="submit">login</button>
-                                <p>don't have an account? <a href="register.php">register now</a></p>
+                                <button class="btn btn-md btn-black-default-hover mb-4" type="submit" value="login now"
+                                    name="submit">Login</button>
+                                <p>Não tem uma conta? <a href="register.php">Registre-se agora</a></p>
                             </div>
                         </form>
                     </div>
                 </div>
-                <!--login area start-->
+                <!-- Fim da área de login -->
             </div>
         </div>
-    </div> <!-- ...:::: End Customer Login Section :::... -->
+    </div>
+    <!-- ...:::: End Customer Login Section :::... -->
 
     <?php
     require_once("footer.php");
