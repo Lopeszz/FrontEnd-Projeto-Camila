@@ -1,5 +1,5 @@
 <!-- Start Footer Section -->
-<footer class="footer-section footer-bg " style="padding-top: 0px; margin-top: auto;">
+<footer class="footer-section footer-bg " style="padding-top: 0px; margin-top: 5%;">
 
 <!-- Start Footer Bottom -->
 <div class="footer-bottom">

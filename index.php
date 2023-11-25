@@ -89,108 +89,132 @@ if (isset($_SESSION['user_id'])) {
                     </div>
                 </div> <!-- End Hero Single Slider Item -->
                 <!-- Start Hero Single Slider Item -->
-                
+
             </div>
 
-         
-           
+
+
         </div>
     </div>
     <!-- End Hero Slider Section-->
-
-    <!-- Start Service Section -->
-    <div class="service-promo-section section-top-gap-100">
-        <div class="service-wrapper">
-            <div class="container">
-                <div class="row">
-                    <!-- Start Service Promo Single Item -->
-                    <div class="col-lg-3 col-sm-6 col-12">
-                        <div class="service-promo-single-item" data-aos="fade-up" data-aos-delay="0">
-                            <div class="image">
-                                <img src="assets/images/icons/service-promo-1.png" alt="">
-                            </div>
-                            <div class="content">
-                                <h6 class="title">HISTÓRIA</h6>
-                                <!-- <p>Get 10% cash back, free shipping, free returns, and more at 1000+ top retailers!</p> -->
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Service Promo Single Item -->
-                    <!-- Start Service Promo Single Item -->
-                    <div class="col-lg-3 col-sm-6 col-12">
-                        <div class="service-promo-single-item" data-aos="fade-up" data-aos-delay="200">
-                            <div class="image">
-                                <img src="assets/images/icons/service-promo-2.png" alt="">
-                            </div>
-                            <div class="content">
-                                <h6 class="title">CULTURA</h6>
-                                <!-- <p>100% satisfaction guaranteed, or get your money back within 30 days!</p> -->
+    <div>
+        <!-- Start Service Section -->
+        <div class="service-promo-section section-top-gap-100">
+            <div class="service-wrapper">
+                <div class="container">
+                    <div class="row">
+                        <!-- Start Service Promo Single Item -->
+                        <div class="col-lg-3 col-sm-6 col-12">
+                            <div class="service-promo-single-item" data-aos="fade-up" data-aos-delay="0">
+                                <div class="image">
+                                    <img src="assets/images/icons/service-promo-1.png" alt="">
+                                </div>
+                                <div class="content">
+                                    <h6 class="title">HISTÓRIA</h6>
+                                    <!-- <p>Get 10% cash back, free shipping, free returns, and more at 1000+ top retailers!</p> -->
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- End Service Promo Single Item -->
-                    <!-- Start Service Promo Single Item -->
-                    <div class="col-lg-3 col-sm-6 col-12">
-                        <div class="service-promo-single-item" data-aos="fade-up" data-aos-delay="400">
-                            <div class="image">
-                                <img src="assets/images/icons/service-promo-3.png" alt="">
-                            </div>
-                            <div class="content">
-                                <h6 class="title">COMUNIDADE</h6>
-                                <!-- <p>Pay with the world’s most popular and secure payment methods.</p> -->
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Service Promo Single Item -->
-                    <!-- Start Service Promo Single Item -->
-                    <div class="col-lg-3 col-sm-6 col-12">
-                        <div class="service-promo-single-item" data-aos="fade-up" data-aos-delay="600">
-                            <div class="image">
-                                <img src="assets/images/icons/service-promo-4.png" alt="">
-                            </div>
-                            <div class="content">
-                                <h6 class="title">TRADIÇÂO</h6>
-                                <!-- <p>Card for the other 30% of their purchases at a rate of 1% cash back.</p> -->
+                        <!-- End Service Promo Single Item -->
+                        <!-- Start Service Promo Single Item -->
+                        <div class="col-lg-3 col-sm-6 col-12">
+                            <div class="service-promo-single-item" data-aos="fade-up" data-aos-delay="200">
+                                <div class="image">
+                                    <img src="assets/images/icons/service-promo-2.png" alt="">
+                                </div>
+                                <div class="content">
+                                    <h6 class="title">CULTURA</h6>
+                                    <!-- <p>100% satisfaction guaranteed, or get your money back within 30 days!</p> -->
+                                </div>
                             </div>
                         </div>
+                        <!-- End Service Promo Single Item -->
+                        <!-- Start Service Promo Single Item -->
+                        <div class="col-lg-3 col-sm-6 col-12">
+                            <div class="service-promo-single-item" data-aos="fade-up" data-aos-delay="400">
+                                <div class="image">
+                                    <img src="assets/images/icons/service-promo-3.png" alt="">
+                                </div>
+                                <div class="content">
+                                    <h6 class="title">COMUNIDADE</h6>
+                                    <!-- <p>Pay with the world’s most popular and secure payment methods.</p> -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Service Promo Single Item -->
+                        <!-- Start Service Promo Single Item -->
+                        <div class="col-lg-3 col-sm-6 col-12">
+                            <div class="service-promo-single-item" data-aos="fade-up" data-aos-delay="600">
+                                <div class="image">
+                                    <img src="assets/images/icons/service-promo-4.png" alt="">
+                                </div>
+                                <div class="content">
+                                    <h6 class="title">TRADIÇÂO</h6>
+                                    <!-- <p>Card for the other 30% of their purchases at a rate of 1% cash back.</p> -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Service Promo Single Item -->
                     </div>
-                    <!-- End Service Promo Single Item -->
                 </div>
             </div>
+
+        </div>
+        <div class="carousel-container">
+            <i class="arrow fas fa-chevron-left arrow-left"></i>
+            <div class="carousel-content">
+                <div class="carousel-item">
+                    <div class="carousel-title">Chegada a São João Evangelista</div>
+                    <div class="carousel-paragraph">
+                        Quando cheguei à São João Evangelista em abril de 2022, tive a estranha sensação de que a
+                        história da cidade parecia restrita a algumas poucas famílias consideradas relevantes por grande
+                        parte da população. O ofício do historiador, contudo, desconfia dos silêncios e sabe que onde
+                        eles reinam é por que muito há para ser extraído.
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-title">Prospeção de Fontes e Descobertas</div>
+                    <div class="carousel-paragraph">
+                        Para tanto, eu me vali do projeto de extensão desenvolvido no decorrer da minha experiência como
+                        professora visitante do Instituto Federal de Minas Gerais. Iniciei a prospecção de fontes no
+                        Arquivo Público Mineiro, que revelou São João Evangelista como uma cidade devotada a registrar
+                        edificações e personalidades políticas, o que também se confirmou à medida que conversava com as
+                        pessoas no município.
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-title">Aspectos Peculiares da História Local</div>
+                    <div class="carousel-paragraph">
+                        Por meio, contudo, de um detalhe aqui, uma fala acolá, fui percebendo aspectos peculiares da
+                        história local: a influência indígena em tradições populares, a relação ambivalente com a antiga
+                        Escola Agrícola, hoje IFMG, a presença de uma vida cultural pulsante em outras décadas que se
+                        perdeu com o tempo. Observei ainda uma confusão entre o público e o privado, que converte fontes
+                        de interesse público e importantíssimas para a memória local em acervo nas mãos de poucos,
+                        dificultando tanto o acesso de pessoas comuns quanto de pesquisadores, inclusive para efeitos de
+                        divulgação, como é o caso do presente projeto de extensão.
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-title">Construção do Site e Resultados</div>
+                    <div class="carousel-paragraph">
+                        O site em questão, assim, é fruto de um ano e oito meses de trabalho junto ao campus São João
+                        Evangelista, período este em que foi coordenado por mim e contou com a dedicação de discentes do
+                        Ensino Médio Técnico e da graduação. Somando habilidades e esforços, nos empenhamos em
+                        entrevistar moradores e localizar toda a sorte de registros que pudessem nos orientar a respeito
+                        da história de São João Evangelista. Todo o material obtido foi disponibilizado neste site,
+                        convertido em uma espécie de centro de memória virtual, visando levar ao grande público e a
+                        possíveis interessados material de informação e de pesquisa sobre as diferentes conexões com o
+                        passado da cidade.
+                    </div>
+                </div>
+            </div>
+            <i class="arrow fas fa-chevron-right arrow-right"></i>
         </div>
     </div>
+
     <!-- End Service Section -->
 
-    <div class="carousel-container">
-        <i class="arrow fas fa-chevron-left arrow-left"></i>
-        <div class="carousel-content">
-            <div class="carousel-item">
-                <div class="carousel-title">Chegada a São João Evangelista</div>
-                <div class="carousel-paragraph">
-                    Quando cheguei à São João Evangelista em abril de 2022, tive a estranha sensação de que a história da cidade parecia restrita a algumas poucas famílias consideradas relevantes por grande parte da população. O ofício do historiador, contudo, desconfia dos silêncios e sabe que onde eles reinam é por que muito há para ser extraído.
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="carousel-title">Prospeção de Fontes e Descobertas</div>
-                <div class="carousel-paragraph">
-                    Para tanto, eu me vali do projeto de extensão desenvolvido no decorrer da minha experiência como professora visitante do Instituto Federal de Minas Gerais. Iniciei a prospecção de fontes no Arquivo Público Mineiro, que revelou São João Evangelista como uma cidade devotada a registrar edificações e personalidades políticas, o que também se confirmou à medida que conversava com as pessoas no município.
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="carousel-title">Aspectos Peculiares da História Local</div>
-                <div class="carousel-paragraph">
-                    Por meio, contudo, de um detalhe aqui, uma fala acolá, fui percebendo aspectos peculiares da história local: a influência indígena em tradições populares, a relação ambivalente com a antiga Escola Agrícola, hoje IFMG, a presença de uma vida cultural pulsante em outras décadas que se perdeu com o tempo. Observei ainda uma confusão entre o público e o privado, que converte fontes de interesse público e importantíssimas para a memória local em acervo nas mãos de poucos, dificultando tanto o acesso de pessoas comuns quanto de pesquisadores, inclusive para efeitos de divulgação, como é o caso do presente projeto de extensão.
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="carousel-title">Construção do Site e Resultados</div>
-                <div class="carousel-paragraph">
-                    O site em questão, assim, é fruto de um ano e oito meses de trabalho junto ao campus São João Evangelista, período este em que foi coordenado por mim e contou com a dedicação de discentes do Ensino Médio Técnico e da graduação. Somando habilidades e esforços, nos empenhamos em entrevistar moradores e localizar toda a sorte de registros que pudessem nos orientar a respeito da história de São João Evangelista. Todo o material obtido foi disponibilizado neste site, convertido em uma espécie de centro de memória virtual, visando levar ao grande público e a possíveis interessados material de informação e de pesquisa sobre as diferentes conexões com o passado da cidade.
-                </div>
-            </div>
-        </div>
-        <i class="arrow fas fa-chevron-right arrow-right"></i>
-    </div>
+
 
     <!-- End Blog Slider Section -->
     <?php
