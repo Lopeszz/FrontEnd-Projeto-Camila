@@ -31,3 +31,4 @@ window.onscroll = () =>{
 document.querySelectorAll('.content-150').forEach(content => {
    if(content.innerHTML.length > 150) content.innerHTML = content.innerHTML.slice(0, 150);
 });
+

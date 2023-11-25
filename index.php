@@ -47,6 +47,7 @@ if (isset($_SESSION['user_id'])) {
     <!-- <link rel="stylesheet" href="assets/sass/style.css"> -->
 
     <!-- Use the minified version files listed below for better performance and remove the files listed above -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="assets/css/vendor/vendor.min.css">
     <link rel="stylesheet" href="assets/css/plugins/plugins.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -160,34 +161,36 @@ if (isset($_SESSION['user_id'])) {
     </div>
     <!-- End Service Section -->
 
-    <p class="text-apresentacao">
-        Quando cheguei à São João Evangelista em abril de 2022, tive a estranha sensação de que a história da cidade
-        parecia restrita a algumas poucas famílias consideradas relevantes por grande parte da população. O ofício do
-        historiador, contudo, desconfia dos silêncios e sabe que onde eles reinam é por que muito há para ser extraído.
-        Para tanto, eu me vali do projeto de extensão desenvolvido no decorrer da minha experiência como professora
-        visitante do Instituto Federal de Minas Gerais.
-        Iniciei a prospecção de fontes no Arquivo Público Mineiro, que revelou São João Evangelista como uma cidade
-        devotada a registrar edificações e personalidades políticas, o que também se confirmou à medida que conversava
-        com as pessoas no município. Por meio, contudo, de um detalhe aqui, uma fala acolá, fui percebendo aspectos
-        peculiares da história local: a influência indígena em tradições populares, a relação ambivalente com a antiga
-        Escola Agrícola, hoje IFMG, a presença de uma vida cultural pulsante em outras décadas que se perdeu com o
-        tempo. Observei ainda uma confusão entre o público e o privado, que converte fontes de interesse público e
-        importantíssimas para a memória local em acervo nas mãos de poucos, dificultando tanto o acesso de pessoas
-        comuns quanto de pesquisadores, inclusive para efeitos de divulgação, como é o caso do presente projeto de
-        extensão. Há, também, por parte de uma minoria, a desconfiança em relação ao trabalho do historiador, o que não
-        só dificultou a preservação do patrimônio local como também limitou a atuação do projeto. De modo semelhante,
-        casarões e outros edifícios foram demolidos por incompreensão do que significa o tombamento bem como conflito
-        entre história, memória e obsolescência. Mesmo diante dos obstáculos apontados, pudemos desvelar parte de como a
-        população apreende o passado do município, mas, sobretudo, redescobrir rostos, pessoas, manifestações culturais
-        e práticas sociais.
-        O site em questão, assim, é fruto de um ano e oito meses de trabalho junto ao campus São João Evangelista,
-        período este em que foi coordenado por mim e contou com a dedicação de discentes do Ensino Médio Técnico e da
-        graduação. Somando habilidades e esforços, nos empenhamos em entrevistar moradores e localizar toda a sorte de
-        registros que pudessem nos orientar a respeito da história de São João Evangelista. Todo o material obtido foi
-        disponibilizado neste site, convertido em uma espécie de centro de memória virtual, visando levar ao grande
-        público e a possíveis interessados material de informação e de pesquisa sobre as diferentes conexões com o
-        passado da cidade.
-    </p>
+    <div class="carousel-container">
+        <i class="arrow fas fa-chevron-left arrow-left"></i>
+        <div class="carousel-content">
+            <div class="carousel-item">
+                <div class="carousel-title">Chegada a São João Evangelista</div>
+                <div class="carousel-paragraph">
+                    Quando cheguei à São João Evangelista em abril de 2022, tive a estranha sensação de que a história da cidade parecia restrita a algumas poucas famílias consideradas relevantes por grande parte da população. O ofício do historiador, contudo, desconfia dos silêncios e sabe que onde eles reinam é por que muito há para ser extraído.
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-title">Prospeção de Fontes e Descobertas</div>
+                <div class="carousel-paragraph">
+                    Para tanto, eu me vali do projeto de extensão desenvolvido no decorrer da minha experiência como professora visitante do Instituto Federal de Minas Gerais. Iniciei a prospecção de fontes no Arquivo Público Mineiro, que revelou São João Evangelista como uma cidade devotada a registrar edificações e personalidades políticas, o que também se confirmou à medida que conversava com as pessoas no município.
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-title">Aspectos Peculiares da História Local</div>
+                <div class="carousel-paragraph">
+                    Por meio, contudo, de um detalhe aqui, uma fala acolá, fui percebendo aspectos peculiares da história local: a influência indígena em tradições populares, a relação ambivalente com a antiga Escola Agrícola, hoje IFMG, a presença de uma vida cultural pulsante em outras décadas que se perdeu com o tempo. Observei ainda uma confusão entre o público e o privado, que converte fontes de interesse público e importantíssimas para a memória local em acervo nas mãos de poucos, dificultando tanto o acesso de pessoas comuns quanto de pesquisadores, inclusive para efeitos de divulgação, como é o caso do presente projeto de extensão.
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-title">Construção do Site e Resultados</div>
+                <div class="carousel-paragraph">
+                    O site em questão, assim, é fruto de um ano e oito meses de trabalho junto ao campus São João Evangelista, período este em que foi coordenado por mim e contou com a dedicação de discentes do Ensino Médio Técnico e da graduação. Somando habilidades e esforços, nos empenhamos em entrevistar moradores e localizar toda a sorte de registros que pudessem nos orientar a respeito da história de São João Evangelista. Todo o material obtido foi disponibilizado neste site, convertido em uma espécie de centro de memória virtual, visando levar ao grande público e a possíveis interessados material de informação e de pesquisa sobre as diferentes conexões com o passado da cidade.
+                </div>
+            </div>
+        </div>
+        <i class="arrow fas fa-chevron-right arrow-right"></i>
+    </div>
 
     <!-- End Blog Slider Section -->
     <?php
