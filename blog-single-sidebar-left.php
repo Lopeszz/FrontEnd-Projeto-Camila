@@ -1,8 +1,87 @@
+<?php
+
+include 'components/connect.php';
+
+session_start();
+
+if (isset($_SESSION['user_id'])) {
+    $user_id = $_SESSION['user_id'];
+} else {
+    $user_id = '';
+}
+;
+
+include 'components/like_post.php';
+
+$get_id = $_GET['post_id'];
+
+if (isset($_POST['add_comment'])) {
+
+    $admin_id = $_POST['admin_id'];
+    $admin_id = filter_var($admin_id, FILTER_SANITIZE_STRING);
+    $user_name = $_POST['user_name'];
+    $user_name = filter_var($user_name, FILTER_SANITIZE_STRING);
+    $comment = $_POST['comment'];
+    $comment = filter_var($comment, FILTER_SANITIZE_STRING);
+
+    $verify_comment = $conn->prepare("SELECT * FROM `comments` WHERE post_id = ? AND admin_id = ? AND user_id = ? AND user_name = ? AND comment = ?");
+    $verify_comment->execute([$get_id, $admin_id, $user_id, $user_name, $comment]);
+
+    if ($verify_comment->rowCount() > 0) {
+        $message[] = 'comment already added!';
+    } else {
+        $insert_comment = $conn->prepare("INSERT INTO `comments`(post_id, admin_id, user_id, user_name, comment) VALUES(?,?,?,?,?)");
+        $insert_comment->execute([$get_id, $admin_id, $user_id, $user_name, $comment]);
+        $message[] = 'new comment added!';
+    }
+
+}
+
+if (isset($_POST['edit_comment'])) {
+    $edit_comment_id = $_POST['edit_comment_id'];
+    $edit_comment_id = filter_var($edit_comment_id, FILTER_SANITIZE_STRING);
+    $comment_edit_box = $_POST['comment_edit_box'];
+    $comment_edit_box = filter_var($comment_edit_box, FILTER_SANITIZE_STRING);
+
+    $verify_comment = $conn->prepare("SELECT * FROM `comments` WHERE comment = ? AND id = ?");
+    $verify_comment->execute([$comment_edit_box, $edit_comment_id]);
+
+    if ($verify_comment->rowCount() > 0) {
+        $message[] = 'comment already added!';
+    } else {
+        $update_comment = $conn->prepare("UPDATE `comments` SET comment = ? WHERE id = ?");
+        $update_comment->execute([$comment_edit_box, $edit_comment_id]);
+        $message[] = 'your comment edited successfully!';
+    }
+}
+
+if (isset($_POST['delete_comment'])) {
+    $delete_comment_id = $_POST['comment_id'];
+    $delete_comment_id = filter_var($delete_comment_id, FILTER_SANITIZE_STRING);
+    $delete_comment = $conn->prepare("DELETE FROM `comments` WHERE id = ?");
+    $delete_comment->execute([$delete_comment_id]);
+    $message[] = 'comment deleted successfully!';
+}
+
+$select_posts = $conn->prepare("SELECT * FROM `posts` WHERE status = ? AND id = ?");
+$select_posts->execute(['active', $get_id]);
+
+if ($select_posts->rowCount() > 0) {
+    while ($fetch_posts = $select_posts->fetch(PDO::FETCH_ASSOC)) {
+        $post_id = $fetch_posts['id'];
+        $file_name = $fetch_posts['file']; // Supondo que o nome do arquivo seja armazenado no banco de dados
+    }
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="zxx">
 
 
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -34,584 +113,44 @@
     <link rel="stylesheet" href="assets/css/vendor/vendor.min.css">
     <link rel="stylesheet" href="assets/css/plugins/plugins.min.css">
     <link rel="stylesheet" href="assets/css/style.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
 
 </head>
 
 <body>
-    <!-- Start Header Area -->
-    <header class="header-section d-none d-xl-block">
-        <div class="header-wrapper">
-            <div class="header-bottom header-bottom-color--golden section-fluid sticky-header sticky-color--golden">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-12 d-flex align-items-center justify-content-between">
-                            <!-- Start Header Logo -->
-                            <div class="header-logo">
-                                <div class="logo">
-                                    <a href="index.html"><img src="assets/images/logo/logo_black.png" alt=""></a>
-                                </div>
-                            </div>
-                            <!-- End Header Logo -->
+    <!-- header section starts  -->
+    <?php include 'components/user_header-blog-not-view.php'; ?>
+    <!-- header section ends -->
+    <?php
+    require_once("menu.php");
+    ?>
 
-                            <!-- Start Header Main Menu -->
-                            <div class="main-menu menu-color--black menu-hover-color--golden">
-                                <nav>
-                                    <ul>
-                                        <li class="has-dropdown">
-                                            <a class="active main-menu-link" href="index.html">Home <i
-                                                    class="fa fa-angle-down"></i></a>
-                                            <!-- Sub Menu -->
-                                            <ul class="sub-menu">
-                                                <li><a href="index.html">Home 1</a></li>
-                                                <li><a href="index-2.html">Home 2</a></li>
-                                                <li><a href="index-3.html">Home 3</a></li>
-                                                <li><a href="index-4.html">Home 4</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="has-dropdown has-megaitem">
-                                            <a href="product-details-default.html">Shop <i
-                                                    class="fa fa-angle-down"></i></a>
-                                            <!-- Mega Menu -->
-                                            <div class="mega-menu">
-                                                <ul class="mega-menu-inner">
-                                                    <!-- Mega Menu Sub Link -->
-                                                    <li class="mega-menu-item">
-                                                        <a href="#" class="mega-menu-item-title">Shop Layouts</a>
-                                                        <ul class="mega-menu-sub">
-                                                            <li><a href="shop-grid-sidebar-left.html">Grid Left
-                                                                    Sidebar</a></li>
-                                                            <li><a href="shop-grid-sidebar-right.html">Grid Right
-                                                                    Sidebar</a></li>
-                                                            <li><a href="shop-full-width.html">Full Width</a></li>
-                                                            <li><a href="shop-list-sidebar-left.html">List Left
-                                                                    Sidebar</a></li>
-                                                            <li><a href="shop-list-sidebar-right.html">List Right
-                                                                    Sidebar</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <!-- Mega Menu Sub Link -->
-                                                    <li class="mega-menu-item">
-                                                        <a href="#" class="mega-menu-item-title">Other Pages</a>
-                                                        <ul class="mega-menu-sub">
-                                                            <li><a href="cart.html">Cart</a></li>
-                                                            <li><a href="empty-cart.html">Empty Cart</a></li>
-                                                            <li><a href="wishlist.html">Wishlist</a></li>
-                                                            <li><a href="compare.html">Compare</a></li>
-                                                            <li><a href="checkout.html">Checkout</a></li>
-                                                            <li><a href="login.html">Login</a></li>
-                                                            <li><a href="my-account.html">My Account</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <!-- Mega Menu Sub Link -->
-                                                    <li class="mega-menu-item">
-                                                        <a href="#" class="mega-menu-item-title">Product Types</a>
-                                                        <ul class="mega-menu-sub">
-                                                            <li><a href="product-details-default.html">Product
-                                                                    Default</a></li>
-                                                            <li><a href="product-details-variable.html">Product
-                                                                    Variable</a></li>
-                                                            <li><a href="product-details-affiliate.html">Product
-                                                                    Referral</a></li>
-                                                            <li><a href="product-details-group.html">Product Group</a>
-                                                            </li>
-                                                            <li><a href="product-details-single-slide.html">Product
-                                                                    Slider</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <!-- Mega Menu Sub Link -->
-                                                    <li class="mega-menu-item">
-                                                        <a href="#" class="mega-menu-item-title">Product Types</a>
-                                                        <ul class="mega-menu-sub">
-                                                            <li><a href="product-details-tab-left.html">Product Tab
-                                                                    Left</a></li>
-                                                            <li><a href="product-details-tab-right.html">Product Tab
-                                                                    Right</a></li>
-                                                            <li><a href="product-details-gallery-left.html">Product
-                                                                    Gallery Left</a></li>
-                                                            <li><a href="product-details-gallery-right.html">Product
-                                                                    Gallery Right</a></li>
-                                                            <li><a href="product-details-sticky-left.html">Product
-                                                                    Sticky Left</a></li>
-                                                            <li><a href="product-details-sticky-right.html">Product
-                                                                    Sticky right</a></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                                <div class="menu-banner">
-                                                    <a href="#" class="menu-banner-link">
-                                                        <img class="menu-banner-img"
-                                                            src="assets/images/banner/menu-banner.jpg" alt="">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="has-dropdown">
-                                            <a href="blog-single-sidebar-left.html">Blog <i
-                                                    class="fa fa-angle-down"></i></a>
-                                            <!-- Sub Menu -->
-                                            <ul class="sub-menu">
-                                                <li><a href="blog-grid-sidebar-left.html">Blog Grid Sidebar left</a>
-                                                </li>
-                                                <li><a href="blog-grid-sidebar-right.html">Blog Grid Sidebar Right</a>
-                                                </li>
-                                                <li><a href="blog-full-width.html">Blog Full Width</a></li>
-                                                <li><a href="blog-list-sidebar-left.html">Blog List Sidebar Left</a>
-                                                </li>
-                                                <li><a href="blog-list-sidebar-right.html">Blog List Sidebar Right</a>
-                                                </li>
-                                                <li><a href="blog-single-sidebar-left.html">Blog Single Sidebar left</a>
-                                                </li>
-                                                <li><a href="blog-single-sidebar-right.html">Blog Single Sidebar
-                                                        Right</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="has-dropdown">
-                                            <a href="#">Pages <i class="fa fa-angle-down"></i></a>
-                                            <!-- Sub Menu -->
-                                            <ul class="sub-menu">
-                                                <li><a href="faq.html">Frequently Questions</a></li>
-                                                <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                                                <li><a href="404.html">404 Page</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="about-us.html">About Us</a>
-                                        </li>
-                                        <li>
-                                            <a href="contact-us.html">Contact Us</a>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </div>
-                            <!-- End Header Main Menu Start -->
-
-                            <!-- Start Header Action Link -->
-                            <ul class="header-action-link action-color--black action-hover-color--golden">
-                                <li>
-                                    <a href="#offcanvas-wishlish" class="offcanvas-toggle">
-                                        <i class="icon-heart"></i>
-                                        <span class="item-count">3</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#offcanvas-add-cart" class="offcanvas-toggle">
-                                        <i class="icon-bag"></i>
-                                        <span class="item-count">3</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#search">
-                                        <i class="icon-magnifier"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#offcanvas-about" class="offacnvas offside-about offcanvas-toggle">
-                                        <i class="icon-menu"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                            <!-- End Header Action Link -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- Start Header Area -->
-
-    <!-- Start Mobile Header -->
-    <div class="mobile-header mobile-header-bg-color--golden section-fluid d-lg-block d-xl-none">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 d-flex align-items-center justify-content-between">
-                    <!-- Start Mobile Left Side -->
-                    <div class="mobile-header-left">
-                        <ul class="mobile-menu-logo">
-                            <li>
-                                <a href="index.html">
-                                    <div class="logo">
-                                        <img src="assets/images/logo/logo_black.png" alt="">
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- End Mobile Left Side -->
-
-                    <!-- Start Mobile Right Side -->
-                    <div class="mobile-right-side">
-                        <ul class="header-action-link action-color--black action-hover-color--golden">
-                            <li>
-                                <a href="#search">
-                                    <i class="icon-magnifier"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#offcanvas-wishlish" class="offcanvas-toggle">
-                                    <i class="icon-heart"></i>
-                                    <span class="item-count">3</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#offcanvas-add-cart" class="offcanvas-toggle">
-                                    <i class="icon-bag"></i>
-                                    <span class="item-count">3</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#mobile-menu-offcanvas" class="offcanvas-toggle offside-menu">
-                                    <i class="icon-menu"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- End Mobile Right Side -->
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Mobile Header -->
-
-    <!--  Start Offcanvas Mobile Menu Section -->
-    <div id="mobile-menu-offcanvas" class="offcanvas offcanvas-rightside offcanvas-mobile-menu-section">
-        <!-- Start Offcanvas Header -->
-        <div class="offcanvas-header text-right">
-            <button class="offcanvas-close"><i class="ion-android-close"></i></button>
-        </div> <!-- End Offcanvas Header -->
-        <!-- Start Offcanvas Mobile Menu Wrapper -->
-        <div class="offcanvas-mobile-menu-wrapper">
-            <!-- Start Mobile Menu  -->
-            <div class="mobile-menu-bottom">
-                <!-- Start Mobile Menu Nav -->
-                <div class="offcanvas-menu">
-                    <ul>
-                        <li>
-                            <a href="#"><span>Home</span></a>
-                            <ul class="mobile-sub-menu">
-                                <li><a href="index.html">Home 1</a></li>
-                                <li><a href="index-2.html">Home 2</a></li>
-                                <li><a href="index-3.html">Home 3</a></li>
-                                <li><a href="index-4.html">Home 4</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#"><span>Shop</span></a>
-                            <ul class="mobile-sub-menu">
-                                <li>
-                                    <a href="#">Shop Layout</a>
-                                    <ul class="mobile-sub-menu">
-                                        <li><a href="shop-grid-sidebar-left.html">Grid Left Sidebar</a></li>
-                                        <li><a href="shop-grid-sidebar-right.html">Grid Right Sidebar</a></li>
-                                        <li><a href="shop-full-width.html">Full Width</a></li>
-                                        <li><a href="shop-list-sidebar-left.html">List Left Sidebar</a></li>
-                                        <li><a href="shop-list-sidebar-right.html">List Right Sidebar</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                            <ul class="mobile-sub-menu">
-                                <li>
-                                    <a href="#">Shop Pages</a>
-                                    <ul class="mobile-sub-menu">
-                                        <li><a href="cart.html">Cart</a></li>
-                                        <li><a href="empty-cart.html">Empty Cart</a></li>
-                                        <li><a href="wishlist.html">Wishlist</a></li>
-                                        <li><a href="compare.html">Compare</a></li>
-                                        <li><a href="checkout.html">Checkout</a></li>
-                                        <li><a href="login.html">Login</a></li>
-                                        <li><a href="my-account.html">My Account</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                            <ul class="mobile-sub-menu">
-                                <li>
-                                    <a href="#">Product Single</a>
-                                    <ul class="mobile-sub-menu">
-                                        <li><a href="product-details-default.html">Product Default</a></li>
-                                        <li><a href="product-details-variable.html">Product Variable</a></li>
-                                        <li><a href="product-details-affiliate.html">Product Referral</a></li>
-                                        <li><a href="product-details-group.html">Product Group</a></li>
-                                        <li><a href="product-details-single-slide.html">Product Slider</a></li>
-                                        <li><a href="product-details-tab-left.html">Product Tab Left</a></li>
-                                        <li><a href="product-details-tab-right.html">Product Tab Right</a></li>
-                                        <li><a href="product-details-gallery-left.html">Product Gallery Left</a></li>
-                                        <li><a href="product-details-gallery-right.html">Product Gallery Right</a></li>
-                                        <li><a href="product-details-sticky-left.html">Product Sticky Left</a></li>
-                                        <li><a href="product-details-sticky-right.html">Product Sticky right</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#"><span>Blogs</span></a>
-                            <ul class="mobile-sub-menu">
-                                <li>
-                                    <a href="#">Blog Grid</a>
-                                    <ul class="mobile-sub-menu">
-                                        <li><a href="blog-grid-sidebar-left.html">Blog Grid Sidebar left</a></li>
-                                        <li><a href="blog-grid-sidebar-right.html">Blog Grid Sidebar Right</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="blog-full-width.html">Blog Full Width</a>
-                                </li>
-                                <li>
-                                    <a href="#">Blog List</a>
-                                    <ul class="mobile-sub-menu">
-                                        <li><a href="blog-list-sidebar-left.html">Blog List Sidebar left</a></li>
-                                        <li><a href="blog-list-sidebar-right.html">Blog List Sidebar Right</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">Blog Single</a>
-                                    <ul class="mobile-sub-menu">
-                                        <li><a href="blog-single-sidebar-left.html">Blog Single Sidebar left</a></li>
-                                        <li><a href="blog-single-sidebar-right.html">Blog Single Sidebar Right</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#"><span>Pages</span></a>
-                            <ul class="mobile-sub-menu">
-                                <li><a href="faq.html">Frequently Questions</a></li>
-                                <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                                <li><a href="404.html">404 Page</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="about-us.html">About Us</a></li>
-                        <li><a href="contact-us.html">Contact Us</a></li>
-                    </ul>
-                </div> <!-- End Mobile Menu Nav -->
-            </div> <!-- End Mobile Menu -->
-
-            <!-- Start Mobile contact Info -->
-            <div class="mobile-contact-info">
-                <div class="logo">
-                    <a href="index.html"><img src="assets/images/logo/logo_white.png" alt=""></a>
-                </div>
-
-                <address class="address">
-                    <span>Address: Your address goes here.</span>
-                    <span>Call Us: 0123456789, 0123456789</span>
-                    <span>Email: demo@example.com</span>
-                </address>
-
-                <ul class="social-link">
-                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                </ul>
-
-                <ul class="user-link">
-                    <li><a href="wishlist.html">Wishlist</a></li>
-                    <li><a href="cart.html">Cart</a></li>
-                    <li><a href="checkout.html">Checkout</a></li>
-                </ul>
-            </div>
-            <!-- End Mobile contact Info -->
-
-        </div> <!-- End Offcanvas Mobile Menu Wrapper -->
-    </div> <!-- ...:::: End Offcanvas Mobile Menu Section:::... -->
-
-    <!-- Start Offcanvas Mobile Menu Section -->
-    <div id="offcanvas-about" class="offcanvas offcanvas-rightside offcanvas-mobile-about-section">
-        <!-- Start Offcanvas Header -->
-        <div class="offcanvas-header text-right">
-            <button class="offcanvas-close"><i class="ion-android-close"></i></button>
-        </div> <!-- End Offcanvas Header -->
-        <!-- Start Offcanvas Mobile Menu Wrapper -->
-        <!-- Start Mobile contact Info -->
-        <div class="mobile-contact-info">
-            <div class="logo">
-                <a href="index.html"><img src="assets/images/logo/logo_white.png" alt=""></a>
-            </div>
-
-            <address class="address">
-                <span>Address: Your address goes here.</span>
-                <span>Call Us: 0123456789, 0123456789</span>
-                <span>Email: demo@example.com</span>
-            </address>
-
-            <ul class="social-link">
-                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-            </ul>
-
-            <ul class="user-link">
-                <li><a href="wishlist.html">Wishlist</a></li>
-                <li><a href="cart.html">Cart</a></li>
-                <li><a href="checkout.html">Checkout</a></li>
-            </ul>
-        </div>
-        <!-- End Mobile contact Info -->
-    </div> <!-- ...:::: End Offcanvas Mobile Menu Section:::... -->
-
-    <!-- Start Offcanvas Addcart Section -->
-    <div id="offcanvas-add-cart" class="offcanvas offcanvas-rightside offcanvas-add-cart-section">
-        <!-- Start Offcanvas Header -->
-        <div class="offcanvas-header text-right">
-            <button class="offcanvas-close"><i class="ion-android-close"></i></button>
-        </div> <!-- End Offcanvas Header -->
-
-        <!-- Start  Offcanvas Addcart Wrapper -->
-        <div class="offcanvas-add-cart-wrapper">
-            <h4 class="offcanvas-title">Shopping Cart</h4>
-            <ul class="offcanvas-cart">
-                <li class="offcanvas-cart-item-single">
-                    <div class="offcanvas-cart-item-block">
-                        <a href="#" class="offcanvas-cart-item-image-link">
-                            <img src="assets/images/product/default/home-1/default-1.jpg" alt=""
-                                class="offcanvas-cart-image">
-                        </a>
-                        <div class="offcanvas-cart-item-content">
-                            <a href="#" class="offcanvas-cart-item-link">Car Wheel</a>
-                            <div class="offcanvas-cart-item-details">
-                                <span class="offcanvas-cart-item-details-quantity">1 x </span>
-                                <span class="offcanvas-cart-item-details-price">$49.00</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="offcanvas-cart-item-delete text-right">
-                        <a href="#" class="offcanvas-cart-item-delete"><i class="fa fa-trash-o"></i></a>
-                    </div>
-                </li>
-                <li class="offcanvas-cart-item-single">
-                    <div class="offcanvas-cart-item-block">
-                        <a href="#" class="offcanvas-cart-item-image-link">
-                            <img src="assets/images/product/default/home-2/default-1.jpg" alt=""
-                                class="offcanvas-cart-image">
-                        </a>
-                        <div class="offcanvas-cart-item-content">
-                            <a href="#" class="offcanvas-cart-item-link">Car Vails</a>
-                            <div class="offcanvas-cart-item-details">
-                                <span class="offcanvas-cart-item-details-quantity">3 x </span>
-                                <span class="offcanvas-cart-item-details-price">$500.00</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="offcanvas-cart-item-delete text-right">
-                        <a href="#" class="offcanvas-cart-item-delete"><i class="fa fa-trash-o"></i></a>
-                    </div>
-                </li>
-                <li class="offcanvas-cart-item-single">
-                    <div class="offcanvas-cart-item-block">
-                        <a href="#" class="offcanvas-cart-item-image-link">
-                            <img src="assets/images/product/default/home-3/default-1.jpg" alt=""
-                                class="offcanvas-cart-image">
-                        </a>
-                        <div class="offcanvas-cart-item-content">
-                            <a href="#" class="offcanvas-cart-item-link">Shock Absorber</a>
-                            <div class="offcanvas-cart-item-details">
-                                <span class="offcanvas-cart-item-details-quantity">1 x </span>
-                                <span class="offcanvas-cart-item-details-price">$350.00</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="offcanvas-cart-item-delete text-right">
-                        <a href="#" class="offcanvas-cart-item-delete"><i class="fa fa-trash-o"></i></a>
-                    </div>
-                </li>
-            </ul>
-            <div class="offcanvas-cart-total-price">
-                <span class="offcanvas-cart-total-price-text">Subtotal:</span>
-                <span class="offcanvas-cart-total-price-value">$170.00</span>
-            </div>
-            <ul class="offcanvas-cart-action-button">
-                <li><a href="cart.html" class="btn btn-block btn-golden">View Cart</a></li>
-                <li><a href="compare.html" class=" btn btn-block btn-golden mt-5">Checkout</a></li>
-            </ul>
-        </div> <!-- End  Offcanvas Addcart Wrapper -->
-
-    </div> <!-- End  Offcanvas Addcart Section -->
-
-    <!-- Start Offcanvas Mobile Menu Section -->
-    <div id="offcanvas-wishlish" class="offcanvas offcanvas-rightside offcanvas-add-cart-section">
-        <!-- Start Offcanvas Header -->
-        <div class="offcanvas-header text-right">
-            <button class="offcanvas-close"><i class="ion-android-close"></i></button>
-        </div> <!-- ENd Offcanvas Header -->
-
-        <!-- Start Offcanvas Mobile Menu Wrapper -->
-        <div class="offcanvas-wishlist-wrapper">
-            <h4 class="offcanvas-title">Wishlist</h4>
-            <ul class="offcanvas-wishlist">
-                <li class="offcanvas-wishlist-item-single">
-                    <div class="offcanvas-wishlist-item-block">
-                        <a href="#" class="offcanvas-wishlist-item-image-link">
-                            <img src="assets/images/product/default/home-1/default-1.jpg" alt=""
-                                class="offcanvas-wishlist-image">
-                        </a>
-                        <div class="offcanvas-wishlist-item-content">
-                            <a href="#" class="offcanvas-wishlist-item-link">Car Wheel</a>
-                            <div class="offcanvas-wishlist-item-details">
-                                <span class="offcanvas-wishlist-item-details-quantity">1 x </span>
-                                <span class="offcanvas-wishlist-item-details-price">$49.00</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="offcanvas-wishlist-item-delete text-right">
-                        <a href="#" class="offcanvas-wishlist-item-delete"><i class="fa fa-trash-o"></i></a>
-                    </div>
-                </li>
-                <li class="offcanvas-wishlist-item-single">
-                    <div class="offcanvas-wishlist-item-block">
-                        <a href="#" class="offcanvas-wishlist-item-image-link">
-                            <img src="assets/images/product/default/home-2/default-1.jpg" alt=""
-                                class="offcanvas-wishlist-image">
-                        </a>
-                        <div class="offcanvas-wishlist-item-content">
-                            <a href="#" class="offcanvas-wishlist-item-link">Car Vails</a>
-                            <div class="offcanvas-wishlist-item-details">
-                                <span class="offcanvas-wishlist-item-details-quantity">3 x </span>
-                                <span class="offcanvas-wishlist-item-details-price">$500.00</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="offcanvas-wishlist-item-delete text-right">
-                        <a href="#" class="offcanvas-wishlist-item-delete"><i class="fa fa-trash-o"></i></a>
-                    </div>
-                </li>
-                <li class="offcanvas-wishlist-item-single">
-                    <div class="offcanvas-wishlist-item-block">
-                        <a href="#" class="offcanvas-wishlist-item-image-link">
-                            <img src="assets/images/product/default/home-3/default-1.jpg" alt=""
-                                class="offcanvas-wishlist-image">
-                        </a>
-                        <div class="offcanvas-wishlist-item-content">
-                            <a href="#" class="offcanvas-wishlist-item-link">Shock Absorber</a>
-                            <div class="offcanvas-wishlist-item-details">
-                                <span class="offcanvas-wishlist-item-details-quantity">1 x </span>
-                                <span class="offcanvas-wishlist-item-details-price">$350.00</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="offcanvas-wishlist-item-delete text-right">
-                        <a href="#" class="offcanvas-wishlist-item-delete"><i class="fa fa-trash-o"></i></a>
-                    </div>
-                </li>
-            </ul>
-            <ul class="offcanvas-wishlist-action-button">
-                <li><a href="#" class="btn btn-block btn-golden">View wishlist</a></li>
-            </ul>
-        </div> <!-- End Offcanvas Mobile Menu Wrapper -->
-
-    </div> <!-- End Offcanvas Mobile Menu Section -->
-
-    <!-- Start Offcanvas Search Bar Section -->
-    <div id="search" class="search-modal">
-        <button type="button" class="close">×</button>
-        <form>
-            <input type="search" placeholder="type keyword(s) here" />
-            <button type="submit" class="btn btn-lg btn-golden">Search</button>
-        </form>
-    </div>
-    <!-- End Offcanvas Search Bar Section -->
-
-    <!-- Offcanvas Overlay -->
-    <div class="offcanvas-overlay"></div>
+    <?php
+    if (isset($_POST['open_edit_box'])) {
+        $comment_id = $_POST['comment_id'];
+        $comment_id = filter_var($comment_id, FILTER_SANITIZE_STRING);
+        ?>
+        <section class="comment-edit-form">
+            <p>edit your comment</p>
+            <?php
+            $select_edit_comment = $conn->prepare("SELECT * FROM `comments` WHERE id = ?");
+            $select_edit_comment->execute([$comment_id]);
+            $fetch_edit_comment = $select_edit_comment->fetch(PDO::FETCH_ASSOC);
+            ?>
+            <form action="" method="POST">
+                <input type="hidden" name="edit_comment_id" value="<?= $comment_id; ?>">
+                <textarea name="comment_edit_box" required cols="30" rows="10"
+                    placeholder="please enter your comment"><?= $fetch_edit_comment['comment']; ?></textarea>
+                <button type="submit" class="inline-btn" name="edit_comment">edit comment</button>
+                <div class="inline-option-btn" onclick="window.location.href = 'view_post.php?post_id=<?= $get_id; ?>';">
+                    cancel
+                    edit</div>
+            </form>
+        </section>
+        <?php
+    }
+    ?>
 
     <!-- ...:::: Start Breadcrumb Section:::... -->
     <div class="breadcrumb-section breadcrumb-bg-color--golden">
@@ -739,550 +278,239 @@
 
                     </div> <!-- End Sidebar Area -->
                 </div>
+
                 <div class="col-lg-9">
                     <!-- Start Blog Single Content Area -->
                     <div class="blog-single-wrapper">
-                        <div class="blog-single-img" data-aos="fade-up" data-aos-delay="0">
-                            <img class="img-fluid" src="assets/images/blog/blog-grid-home-1-img-1.jpg" alt="">
+                        <?php
+                        $select_posts = $conn->prepare("SELECT * FROM `posts` WHERE status = ? AND id = ?");
+                        $select_posts->execute(['active', $get_id]);
+                        if ($select_posts->rowCount() > 0) {
+                            while ($fetch_posts = $select_posts->fetch(PDO::FETCH_ASSOC)) {
+
+                                $post_id = $fetch_posts['id'];
+
+                                $count_post_comments = $conn->prepare("SELECT * FROM `comments` WHERE post_id = ?");
+                                $count_post_comments->execute([$post_id]);
+                                $total_post_comments = $count_post_comments->rowCount();
+
+                                $count_post_likes = $conn->prepare("SELECT * FROM `likes` WHERE post_id = ?");
+                                $count_post_likes->execute([$post_id]);
+                                $total_post_likes = $count_post_likes->rowCount();
+
+                                $confirm_likes = $conn->prepare("SELECT * FROM `likes` WHERE user_id = ? AND post_id = ?");
+                                $confirm_likes->execute([$user_id, $post_id]);
+                                ?>
+
+                                <form class="box" method="post">
+                                    <?php
+                                    if ($fetch_posts['image'] != '') {
+                                        ?>
+                                        <div class="blog-single-img" data-aos="fade-up" data-aos-delay="0">
+                                            <img class="img-fluid" src="uploaded_img/<?= $fetch_posts['image']; ?>" alt="">
+                                        </div>
+                                        <?php
+                                    }
+                                    ?>
+                                    <input type="hidden" name="post_id" value="<?= $post_id; ?>">
+                                    <input type="hidden" name="admin_id" value="<?= $fetch_posts['admin_id']; ?>">
+
+                                    <ul class="post-meta" data-aos="fade-up" data-aos-delay="200">
+                                        <li>POSTED BY :
+                                            <a href="author_posts.php?author=<?= $fetch_posts['name']; ?>" class="author">
+                                                <?= $fetch_posts['name']; ?>
+                                            </a>
+                                        </li>
+                                        <li>ON :
+                                            <a href="#" class="date">
+                                                <?= $fetch_posts['date']; ?>
+                                            </a>
+                                        </li>
+                                    </ul>
+
+                                    <h4 class="post-title" data-aos="fade-up" data-aos-delay="400">
+                                        <?= $fetch_posts['title']; ?>
+                                    </h4>
+                                    <div class="para-content" data-aos="fade-up" data-aos-delay="600">
+                                        <?= $fetch_posts['content']; ?>
+                                    </div>
+
+                                    <?php if (!empty($file_name)) { ?>
+                                        <div class="para-content" data-aos="fade-up" data-aos-delay="800">
+                                            <a href="uploaded_file/<?= $file_name; ?>" download>
+                                                Download File
+                                            </a>
+
+                                        </div>
+
+                                    <?php } ?>
+                                    <!-- <div class="icons">
+                                        <div><i class="fas fa-comment"></i><span>(
+                                                <?= $total_post_comments; ?>)
+                                            </span></div>
+                                        <button type="submit" name="like_post"><i class="fas fa-heart" style="<?php if ($confirm_likes->rowCount() > 0) {
+                                            echo 'color:var(--red);';
+                                        } ?>  "></i><span>(
+                                                <?= $total_post_likes; ?>)
+                                            </span></button>
+                                    </div> -->
+                                </form>
+
+
+                                <?php
+                            }
+                        } else {
+                            echo '<p class="empty">no posts found!</p>';
+                        }
+                        ?>
+                        <div class="comment-area">
+
+                            <div class="comment-box" data-aos="fade-up" data-aos-delay="0">
+                                <?php
+                                $select_comments = $conn->prepare("SELECT * FROM `comments` WHERE post_id = ?");
+                                $select_comments->execute([$get_id]);
+                                if ($select_comments->rowCount() > 0) {
+                                    ?>
+                                    <h4 class="title mb-4">3 Comments</h4>
+                                    <!-- Start - Review Comment -->
+                                    <ul class="comment">
+                                        <?php
+                                        while ($fetch_comments = $select_comments->fetch(PDO::FETCH_ASSOC)) {
+                                            ?>
+                                            <li class="comment-list">
+                                                <div class="comment-wrapper">
+                                                    <div class="comment-img">
+                                                        <img src="assets/images/user/image-1.png" alt="">
+                                                    </div>
+
+                                                    <div class="comment-content">
+                                                        <div class="comment-content-top">
+                                                            <div class="comment-content-left">
+                                                                <h6 class="comment-name">
+                                                                    <?= $fetch_comments['user_name']; ?>
+                                                                </h6>
+                                                                <h6 class="">
+                                                                    <?= $fetch_comments['date']; ?>
+                                                                </h6>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="para-content">
+                                                            <p>
+                                                                <?= $fetch_comments['comment']; ?>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <?php
+                                                if ($fetch_comments['user_id'] == $user_id) {
+                                                    ?>
+                                                    <form action="" method="POST">
+                                                        <input type="hidden" name="comment_id"
+                                                            value="<?= $fetch_comments['id']; ?>">
+                                                        <button type="submit" class="inline-option-btn" name="open_edit_box">edit
+                                                            comment</button>
+                                                        <button type="submit" class="inline-delete-btn" name="delete_comment"
+                                                            onclick="return confirm('delete this comment?');">delete
+                                                            comment</button>
+                                                    </form>
+                                                    <?php
+                                                }
+                                                ?>
+                                            </li> <!-- End - Review Comment list-->
+                                            <?php
+                                        }
+                                        ?>
+                                    </ul>
+                                    <?php
+                                } else {
+                                    echo '<p class="empty">no comments added yet!</p>';
+                                }
+                                ?>
+                            </div>
+                            <!-- Start comment Form -->
+                            <div class="comment-form" data-aos="fade-up" data-aos-delay="0">
+                                <div class="coment-form-text-top mt-30">
+                                    <h4 class="title mb-3 mt-3">Escreva um comentário</h4>
+                                    <?php
+                                    if ($user_id != '') {
+                                        $select_admin_id = $conn->prepare("SELECT * FROM `posts` WHERE id = ?");
+                                        $select_admin_id->execute([$get_id]);
+                                        $fetch_admin_id = $select_admin_id->fetch(PDO::FETCH_ASSOC);
+                                        ?>
+                                        <form action="" method="post" class="add-comment">
+
+                                            <input type="hidden" name="admin_id"
+                                                value="<?= $fetch_admin_id['admin_id']; ?>">
+                                            <input type="hidden" name="user_name" value="<?= $fetch_profile['name']; ?>">
+                                            <p class="user">
+                                                <i class="fas fa-user"></i>
+                                                <a href="update.php">
+                                                    <?= $fetch_profile['name']; ?>
+                                                </a>
+                                            </p>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="default-form-box mb-20">
+                                                        <label for="comment-review-text">Your review <span>*</span></label>
+                                                        <textarea id="comment-review-text" placeholder="Write a review"
+                                                            name="comment" maxlength="1000" placeholder="write your comment"
+                                                            required></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <button class="btn btn-md btn-golden" type="submit" value="add comment"
+                                                        name="add_comment">Post
+                                                        Comment
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <?php
+                                    } else {
+                                        ?>
+                                        <div class="add-comment">
+                                            <p>please login to add or edit your comment</p>
+                                            <a href="login.php" class="inline-btn">login now</a>
+                                        </div>
+                                        <?php
+                                    }
+                                    ?>
+                                </div>
+
+                                <form action="#" method="post">
+
+                                </form>
+                                <!-- End comment Form -->
+                            </div>
                         </div>
-                        <ul class="post-meta" data-aos="fade-up" data-aos-delay="200">
-                            <li>POSTED BY : <a href="#" class="author">Admin</a></li>
-                            <li>ON : <a href="#" class="date">APRIL 24, 2018</a></li>
-                        </ul>
-                        <h4 class="post-title" data-aos="fade-up" data-aos-delay="400">Blog image post</h4>
-                        <div class="para-content" data-aos="fade-up" data-aos-delay="600">
-                            <p>Aenean et tempor eros, vitae sollicitudin velit. Etiam varius enim nec quam tempor, sed
-                                efficitur ex ultrices. Phasellus pretium est vel dui vestibulum condimentum. Aenean nec
-                                suscipit nibh. Phasellus nec lacus id arcu facilisis elementum. Curabitur lobortis, elit
-                                ut elementum congue, erat ex bibendum odio, nec iaculis lacus sem non lorem. Duis
-                                suscipit metus ante, sed convallis quam posuere quis. Ut tincidunt eleifend odio, ac
-                                fringilla mi vehicula nec. Nunc vitae lacus eget lectus imperdiet tempus sed in dui. Nam
-                                molestie magna at risus consectetur, placerat suscipit justo dignissim. Sed vitae
-                                fringilla enim, nec ullamcorper arcu.</p>
-                            <blockquote class="blockquote-content">
-                                Quisque semper nunc vitae erat pellentesque, ac placerat arcu consectetur. In venenatis
-                                elit ac ultrices convallis. Duis est nisi, tincidunt ac urna sed, cursus blandit lectus.
-                                In ullamcorper sit amet ligula ut eleifend. Proin dictum tempor ligula, ac feugiat
-                                metus. Sed finibus tortor eu scelerisque scelerisque.
-                            </blockquote>
-                            <p>Aenean et tempor eros, vitae sollicitudin velit. Etiam varius enim nec quam tempor, sed
-                                efficitur ex ultrices. Phasellus pretium est vel dui vestibulum condimentum. Aenean nec
-                                suscipit nibh. Phasellus nec lacus id arcu facilisis elementum. Curabitur lobortis, elit
-                                ut elementum congue, erat ex bibendum odio, nec iaculis lacus sem non lorem. Duis
-                                suscipit metus ante, sed convallis quam posuere quis. Ut tincidunt eleifend odio, ac
-                                fringilla mi vehicula nec. Nunc vitae lacus eget lectus imperdiet tempus sed in dui. Nam
-                                molestie magna at risus consectetur, placerat suscipit justo dignissim. Sed vitae
-                                fringilla enim, nec ullamcorper arcu.</p>
-                            <p>Suspendisse turpis ipsum, tempus in nulla eu, posuere pharetra nibh. In dignissim vitae
-                                lorem non mollis. Praesent pretium tellus in tortor viverra condimentum. Nullam
-                                dignissim facilisis nisl, accumsan placerat justo ultricies vel. Vivamus finibus mi a
-                                neque pretium, ut convallis dui lacinia. Morbi a rutrum velit. Curabitur sagittis quam
-                                quis consectetur mattis. Aenean sit amet quam vel turpis interdum sagittis et eget
-                                neque. Nunc ante quam, luctus et neque a, interdum iaculis metus. Aliquam vel ante
-                                mattis, placerat orci id, vehicula quam. Suspendisse quis eros cursus, viverra urna sed,
-                                commodo mauris. Cras diam arcu, fringilla a sem condimentum, viverra facilisis nunc.
-                                Curabitur vitae orci id nulla maximus maximus. Nunc pulvinar sollicitudin molestie.</p>
-                        </div>
-                        <div class="para-tags" data-aos="fade-up" data-aos-delay="0">
+
+
+                    </div>
+
+
+                </div>
+                <!-- <div class="para-tags" data-aos="fade-up" data-aos-delay="0">
                             <span>Tags: </span>
                             <ul>
                                 <li><a href="#">fashion</a></li>
                                 <li><a href="#">t-shirt</a></li>
                                 <li><a href="#">white</a></li>
                             </ul>
-                        </div>
-                    </div> <!-- End Blog Single Content Area -->
-                    <div class="comment-area">
-                        <div class="comment-box" data-aos="fade-up" data-aos-delay="0">
-                            <h4 class="title mb-4">3 Comments</h4>
-                            <!-- Start - Review Comment -->
-                            <ul class="comment">
-                                <!-- Start - Review Comment list-->
-                                <li class="comment-list">
-                                    <div class="comment-wrapper">
-                                        <div class="comment-img">
-                                            <img src="assets/images/user/image-1.png" alt="">
-                                        </div>
-                                        <div class="comment-content">
-                                            <div class="comment-content-top">
-                                                <div class="comment-content-left">
-                                                    <h6 class="comment-name">Kaedyn Fraser</h6>
-                                                </div>
-                                                <div class="comment-content-right">
-                                                    <a href="#"><i class="fa fa-reply"></i>Reply</a>
-                                                </div>
-                                            </div>
-
-                                            <div class="para-content">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora
-                                                    inventore dolorem a unde modi iste odio amet, fugit fuga aliquam,
-                                                    voluptatem maiores animi dolor nulla magnam ea! Dignissimos
-                                                    aspernatur cumque nam quod sint provident modi alias culpa,
-                                                    inventore deserunt accusantium amet earum soluta consequatur quasi
-                                                    eum eius laboriosam, maiores praesentium explicabo enim dolores
-                                                    quaerat! Voluptas ad ullam quia odio sint sunt. Ipsam officia, saepe
-                                                    repellat. </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Start - Review Comment Reply-->
-                                    <ul class="comment-reply">
-                                        <li class="comment-reply-list">
-                                            <div class="comment-wrapper">
-                                                <div class="comment-img">
-                                                    <img src="assets/images/user/image-2.png" alt="">
-                                                </div>
-                                                <div class="comment-content">
-                                                    <div class="comment-content-top">
-                                                        <div class="comment-content-left">
-                                                            <h6 class="comment-name">Oaklee Odom</h6>
-                                                        </div>
-                                                        <div class="comment-content-right">
-                                                            <a href="#"><i class="fa fa-reply"></i>Reply</a>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="para-content">
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                                            Tempora inventore dolorem a unde modi iste odio amet, fugit
-                                                            fuga aliquam, voluptatem maiores animi dolor nulla magnam
-                                                            ea! Dignissimos aspernatur cumque nam quod sint provident
-                                                            modi alias culpa, inventore deserunt accusantium amet earum
-                                                            soluta consequatur quasi eum eius laboriosam, maiores
-                                                            praesentium explicabo enim dolores quaerat! Voluptas ad
-                                                            ullam quia odio sint sunt. Ipsam officia, saepe repellat.
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul> <!-- End - Review Comment Reply-->
-                                </li> <!-- End - Review Comment list-->
-                                <!-- Start - Review Comment list-->
-                                <li class="comment-list">
-                                    <div class="comment-wrapper">
-                                        <div class="comment-img">
-                                            <img src="assets/images/user/image-3.png" alt="">
-                                        </div>
-                                        <div class="comment-content">
-                                            <div class="comment-content-top">
-                                                <div class="comment-content-left">
-                                                    <h6 class="comment-name">Jaydin Jones</h6>
-                                                </div>
-                                                <div class="comment-content-right">
-                                                    <a href="#"><i class="fa fa-reply"></i>Reply</a>
-                                                </div>
-                                            </div>
-
-                                            <div class="para-content">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora
-                                                    inventore dolorem a unde modi iste odio amet, fugit fuga aliquam,
-                                                    voluptatem maiores animi dolor nulla magnam ea! Dignissimos
-                                                    aspernatur cumque nam quod sint provident modi alias culpa,
-                                                    inventore deserunt accusantium amet earum soluta consequatur quasi
-                                                    eum eius laboriosam, maiores praesentium explicabo enim dolores
-                                                    quaerat! Voluptas ad ullam quia odio sint sunt. Ipsam officia, saepe
-                                                    repellat. </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li> <!-- End - Review Comment list-->
-                            </ul> <!-- End - Review Comment -->
-                        </div>
-
-                        <!-- Start comment Form -->
-                        <div class="comment-form" data-aos="fade-up" data-aos-delay="0">
-                            <div class="coment-form-text-top mt-30">
-                                <h4 class="title mb-3 mt-3">Leave a Reply</h4>
-                                <p>Your email address will not be published. Required fields are marked *</p>
-                            </div>
-
-                            <form action="#" method="post">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="default-form-box mb-20">
-                                            <label for="comment-name">Your name <span>*</span></label>
-                                            <input id="comment-name" type="text" placeholder="Enter your name" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="default-form-box mb-20">
-                                            <label for="comment-email">Your Email <span>*</span></label>
-                                            <input id="comment-email" type="email" placeholder="Enter your email"
-                                                required>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="default-form-box mb-20">
-                                            <label for="comment-review-text">Your review <span>*</span></label>
-                                            <textarea id="comment-review-text" placeholder="Write a review"
-                                                required></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <button class="btn btn-md btn-golden" type="submit">Post Comment</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div> <!-- End comment Form -->
-                    </div>
-                </div>
+                        </div> -->
+                <!-- End Blog Single Content Area -->
             </div>
         </div>
-    </div> <!-- ...:::: End Blog Single Section:::... -->
+    </div>
 
-    <!-- Start Footer Section -->
-    <footer class="footer-section footer-bg section-top-gap-100">
-        <div class="footer-wrapper">
-            <!-- Start Footer Top -->
-            <div class="footer-top">
-                <div class="container">
-                    <div class="row mb-n6">
-                        <div class="col-lg-3 col-sm-6 mb-6">
-                            <!-- Start Footer Single Item -->
-                            <div class="footer-widget-single-item footer-widget-color--golden" data-aos="fade-up"
-                                data-aos-delay="0">
-                                <h5 class="title">INFORMATION</h5>
-                                <ul class="footer-nav">
-                                    <li><a href="#">Delivery Information</a></li>
-                                    <li><a href="#">Terms & Conditions</a></li>
-                                    <li><a href="contact-us.html">Contact</a></li>
-                                    <li><a href="#">Returns</a></li>
-                                </ul>
-                            </div>
-                            <!-- End Footer Single Item -->
-                        </div>
-                        <div class="col-lg-3 col-sm-6 mb-6">
-                            <!-- Start Footer Single Item -->
-                            <div class="footer-widget-single-item footer-widget-color--golden" data-aos="fade-up"
-                                data-aos-delay="200">
-                                <h5 class="title">MY ACCOUNT</h5>
-                                <ul class="footer-nav">
-                                    <li><a href="my-account.html">My account</a></li>
-                                    <li><a href="wishlist.html">Wishlist</a></li>
-                                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                                    <li><a href="faq.html">Frequently Questions</a></li>
-                                    <li><a href="#">Order History</a></li>
-                                </ul>
-                            </div>
-                            <!-- End Footer Single Item -->
-                        </div>
-                        <div class="col-lg-3 col-sm-6 mb-6">
-                            <!-- Start Footer Single Item -->
-                            <div class="footer-widget-single-item footer-widget-color--golden" data-aos="fade-up"
-                                data-aos-delay="400">
-                                <h5 class="title">CATEGORIES</h5>
-                                <ul class="footer-nav">
-                                    <li><a href="#">Decorative</a></li>
-                                    <li><a href="#">Kitchen utensils</a></li>
-                                    <li><a href="#">Chair & Bar stools</a></li>
-                                    <li><a href="#">Sofas and Armchairs</a></li>
-                                    <li><a href="#">Interior lighting</a></li>
-                                </ul>
-                            </div>
-                            <!-- End Footer Single Item -->
-                        </div>
-                        <div class="col-lg-3 col-sm-6 mb-6">
-                            <!-- Start Footer Single Item -->
-                            <div class="footer-widget-single-item footer-widget-color--golden" data-aos="fade-up"
-                                data-aos-delay="600">
-                                <h5 class="title">ABOUT US</h5>
-                                <div class="footer-about">
-                                    <p>We are a team of designers and developers that create high quality Magento,
-                                        Prestashop, Opencart.</p>
-
-                                    <address class="address">
-                                        <span>Address: Your address goes here.</span>
-                                        <span>Email: demo@example.com</span>
-                                    </address>
-                                </div>
-                            </div>
-                            <!-- End Footer Single Item -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Footer Top -->
-
-            <!-- Start Footer Center -->
-            <div class="footer-center">
-                <div class="container">
-                    <div class="row mb-n6">
-                        <div class="col-xl-3 col-lg-4 col-md-6 mb-6">
-                            <div class="footer-social" data-aos="fade-up" data-aos-delay="0">
-                                <h4 class="title">FOLLOW US</h4>
-                                <ul class="footer-social-link">
-                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-xl-7 col-lg-6 col-md-6 mb-6">
-                            <div class="footer-newsletter" data-aos="fade-up" data-aos-delay="200">
-                                <h4 class="title">DON'T MISS OUT ON THE LATEST</h4>
-                                <div class="form-newsletter">
-                                    <form action="#" method="post">
-                                        <div class="form-fild-newsletter-single-item input-color--golden">
-                                            <input type="email" placeholder="Your email address..." required>
-                                            <button type="submit">SUBSCRIBE!</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Start Footer Center -->
-
-            <!-- Start Footer Bottom -->
-            <div class="footer-bottom">
-                <div class="container">
-                    <div
-                        class="row justify-content-between align-items-center align-items-center flex-column flex-md-row mb-n6">
-                        <div class="col-auto mb-6">
-                            <div class="footer-copyright">
-                                <p class="copyright-text">&copy; 2021 <a href="index.html">therankme</a>. Made with <i
-                                        class="fa fa-heart text-danger"></i> by <a href="https://therankme.com/"
-                                        target="_blank">therankme</a> </p>
-
-                            </div>
-                        </div>
-                        <div class="col-auto mb-6">
-                            <div class="footer-payment">
-                                <div class="image">
-                                    <img src="assets/images/company-logo/payment.png" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Start Footer Bottom -->
-        </div>
-    </footer>
-    <!-- End Footer Section -->
 
     <!-- material-scrolltop button -->
     <button class="material-scrolltop" type="button"></button>
 
-    <!-- Start Modal Add cart -->
-    <div class="modal fade" id="modalAddcart" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog  modal-dialog-centered modal-xl" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col text-right">
-                                <button type="button" class="close modal-close" data-bs-dismiss="modal"
-                                    aria-label="Close">
-                                    <span aria-hidden="true"> <i class="fa fa-times"></i></span>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-7">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="modal-add-cart-product-img">
-                                            <img class="img-fluid"
-                                                src="assets/images/product/default/home-1/default-1.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="modal-add-cart-info"><i class="fa fa-check-square"></i>Added to cart
-                                            successfully!</div>
-                                        <div class="modal-add-cart-product-cart-buttons">
-                                            <a href="cart.html">View Cart</a>
-                                            <a href="checkout.html">Checkout</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-5 modal-border">
-                                <ul class="modal-add-cart-product-shipping-info">
-                                    <li> <strong><i class="icon-shopping-cart"></i> There Are 5 Items In Your
-                                            Cart.</strong></li>
-                                    <li> <strong>TOTAL PRICE: </strong> <span>$187.00</span></li>
-                                    <li class="modal-continue-button"><a href="#" data-bs-dismiss="modal">CONTINUE
-                                            SHOPPING</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> <!-- End Modal Add cart -->
-
-    <!-- Start Modal Quickview cart -->
-    <div class="modal fade" id="modalQuickview" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog  modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col text-right">
-                                <button type="button" class="close modal-close" data-bs-dismiss="modal"
-                                    aria-label="Close">
-                                    <span aria-hidden="true"> <i class="fa fa-times"></i></span>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="product-details-gallery-area mb-7">
-                                    <!-- Start Large Image -->
-                                    <div class="product-large-image modal-product-image-large swiper-container">
-                                        <div class="swiper-wrapper">
-                                            <div class="product-image-large-image swiper-slide img-responsive">
-                                                <img src="assets/images/product/default/home-1/default-1.jpg" alt="">
-                                            </div>
-                                            <div class="product-image-large-image swiper-slide img-responsive">
-                                                <img src="assets/images/product/default/home-1/default-2.jpg" alt="">
-                                            </div>
-                                            <div class="product-image-large-image swiper-slide img-responsive">
-                                                <img src="assets/images/product/default/home-1/default-3.jpg" alt="">
-                                            </div>
-                                            <div class="product-image-large-image swiper-slide img-responsive">
-                                                <img src="assets/images/product/default/home-1/default-4.jpg" alt="">
-                                            </div>
-                                            <div class="product-image-large-image swiper-slide img-responsive">
-                                                <img src="assets/images/product/default/home-1/default-5.jpg" alt="">
-                                            </div>
-                                            <div class="product-image-large-image swiper-slide img-responsive">
-                                                <img src="assets/images/product/default/home-1/default-6.jpg" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- End Large Image -->
-                                    <!-- Start Thumbnail Image -->
-                                    <div
-                                        class="product-image-thumb modal-product-image-thumb swiper-container pos-relative mt-5">
-                                        <div class="swiper-wrapper">
-                                            <div class="product-image-thumb-single swiper-slide">
-                                                <img class="img-fluid"
-                                                    src="assets/images/product/default/home-1/default-1.jpg" alt="">
-                                            </div>
-                                            <div class="product-image-thumb-single swiper-slide">
-                                                <img class="img-fluid"
-                                                    src="assets/images/product/default/home-1/default-2.jpg" alt="">
-                                            </div>
-                                            <div class="product-image-thumb-single swiper-slide">
-                                                <img class="img-fluid"
-                                                    src="assets/images/product/default/home-1/default-3.jpg" alt="">
-                                            </div>
-                                            <div class="product-image-thumb-single swiper-slide">
-                                                <img class="img-fluid"
-                                                    src="assets/images/product/default/home-1/default-4.jpg" alt="">
-                                            </div>
-                                            <div class="product-image-thumb-single swiper-slide">
-                                                <img class="img-fluid"
-                                                    src="assets/images/product/default/home-1/default-5.jpg" alt="">
-                                            </div>
-                                            <div class="product-image-thumb-single swiper-slide">
-                                                <img class="img-fluid"
-                                                    src="assets/images/product/default/home-1/default-6.jpg" alt="">
-                                            </div>
-                                        </div>
-                                        <!-- Add Arrows -->
-                                        <div class="gallery-thumb-arrow swiper-button-next"></div>
-                                        <div class="gallery-thumb-arrow swiper-button-prev"></div>
-                                    </div>
-                                    <!-- End Thumbnail Image -->
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="modal-product-details-content-area">
-                                    <!-- Start  Product Details Text Area-->
-                                    <div class="product-details-text">
-                                        <h4 class="title">Nonstick Dishwasher PFOA</h4>
-                                        <div class="price"><del>$70.00</del>$80.00</div>
-                                    </div> <!-- End  Product Details Text Area-->
-                                    <!-- Start Product Variable Area -->
-                                    <div class="product-details-variable">
-                                        <!-- Product Variable Single Item -->
-                                        <div class="variable-single-item">
-                                            <span>Color</span>
-                                            <div class="product-variable-color">
-                                                <label for="modal-product-color-red">
-                                                    <input name="modal-product-color" id="modal-product-color-red"
-                                                        class="color-select" type="radio" checked>
-                                                    <span class="product-color-red"></span>
-                                                </label>
-                                                <label for="modal-product-color-tomato">
-                                                    <input name="modal-product-color" id="modal-product-color-tomato"
-                                                        class="color-select" type="radio">
-                                                    <span class="product-color-tomato"></span>
-                                                </label>
-                                                <label for="modal-product-color-green">
-                                                    <input name="modal-product-color" id="modal-product-color-green"
-                                                        class="color-select" type="radio">
-                                                    <span class="product-color-green"></span>
-                                                </label>
-                                                <label for="modal-product-color-light-green">
-                                                    <input name="modal-product-color"
-                                                        id="modal-product-color-light-green" class="color-select"
-                                                        type="radio">
-                                                    <span class="product-color-light-green"></span>
-                                                </label>
-                                                <label for="modal-product-color-blue">
-                                                    <input name="modal-product-color" id="modal-product-color-blue"
-                                                        class="color-select" type="radio">
-                                                    <span class="product-color-blue"></span>
-                                                </label>
-                                                <label for="modal-product-color-light-blue">
-                                                    <input name="modal-product-color"
-                                                        id="modal-product-color-light-blue" class="color-select"
-                                                        type="radio">
-                                                    <span class="product-color-light-blue"></span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <!-- Product Variable Single Item -->
-                                        <div class="d-flex align-items-center flex-wrap">
-                                            <div class="variable-single-item ">
-                                                <span>Quantity</span>
-                                                <div class="product-variable-quantity">
-                                                    <input min="1" max="100" value="1" type="number">
-                                                </div>
-                                            </div>
-
-                                            <div class="product-add-to-cart-btn">
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#modalAddcart">Add To
-                                                    Cart</a>
-                                            </div>
-                                        </div>
-                                    </div> <!-- End Product Variable Area -->
-                                    <div class="modal-product-about-text">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia iste
-                                            laborum ad impedit pariatur esse optio tempora sint ullam autem deleniti nam
-                                            in quos qui nemo ipsum numquam, reiciendis maiores quidem aperiam, rerum vel
-                                            recusandae</p>
-                                    </div>
-                                    <!-- Start  Product Details Social Area-->
-                                    <div class="modal-product-details-social">
-                                        <span class="title">SHARE THIS PRODUCT</span>
-                                        <ul>
-                                            <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
-                                            <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
-                                            <li><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a></li>
-                                            <li><a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
-                                            </li>
-                                            <li><a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
-                                        </ul>
-
-                                    </div> <!-- End  Product Details Social Area-->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> <!-- End Modal Quickview cart -->
+    <!-- End Blog Slider Section -->
+    <?php
+    require_once("footer.php");
+    ?>
 
     <!-- ::::::::::::::All JS Files here :::::::::::::: -->
     <!-- Global Vendor, plugins JS -->
