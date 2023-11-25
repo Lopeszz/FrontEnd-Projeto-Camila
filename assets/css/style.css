@@ -20869,9 +20869,11 @@ footer{
 }
 
 .arrow-left {
+    font-size: 15px;
     left: 10px;
 }
 
 .arrow-right {
+    font-size: 15px;
     right: 10px;
 }
