@@ -112,7 +112,7 @@ if ($select_posts->rowCount() > 0) {
     <!-- Use the minified version files listed below for better performance and remove the files listed above -->
     <link rel="stylesheet" href="assets/css/vendor/vendor.min.css">
     <link rel="stylesheet" href="assets/css/plugins/plugins.min.css">
-    <link rel="stylesheet" href="assets/css/style.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
 
@@ -120,7 +120,7 @@ if ($select_posts->rowCount() > 0) {
 
 <body>
     <!-- header section starts  -->
-    <?php include 'components/user_header-blog-not-view.php'; ?>
+
     <!-- header section ends -->
     <?php
     require_once("menu.php");
@@ -158,14 +158,14 @@ if ($select_posts->rowCount() > 0) {
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h3 class="breadcrumb-title">Blog Single - Left Sidebar</h3>
+                     
                         <div class="breadcrumb-nav breadcrumb-nav-color--black breadcrumb-nav-hover-color--golden">
                             <nav aria-label="breadcrumb">
-                                <ul>
+                                <!-- <ul>
                                     <li><a href="index.html">Home</a></li>
                                     <li><a href="blog-grid-sidebar-left.html">Blog</a></li>
                                     <li class="active" aria-current="page">Blog Single Left Sidebar</li>
-                                </ul>
+                                </ul> -->
                             </nav>
                         </div>
                     </div>
