@@ -48,6 +48,9 @@ html{
 body{
    background-color: var(--light-bg);
    padding-bottom: 7rem;
+   display: flex;       
+    flex-direction: column;
+    min-height: 100vh; 
 }
 
 section{
@@ -800,7 +803,18 @@ section{
    padding-bottom: 10rem;
 } */
 
+.blog-section{
+   flex: 1;
+   display: flex;          /* Ativa Flexbox */
+   flex-direction: column; /* Organiza os filhos em uma coluna */
+   min-height: 100vh;  
+}
 
+.breadcrumb-section breadcrumb-bg-color--golden{
+   display: flex;          /* Ativa Flexbox */
+   flex-direction: column; /* Organiza os filhos em uma coluna */
+   min-height: 100vh;  
+}
 
 @media (max-width:991px){
 
