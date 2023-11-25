@@ -19343,3 +19343,70 @@ Pages - Contact
 .blog-section{
     margin-top: -5%;
 }
+
+/* Carrossel */
+.carousel-container {
+    
+    position: relative;
+    max-width: 500px; /* Ajustado para comportar melhor o conteúdo */
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 5%;
+    margin-bottom: 5%;
+ }
+ 
+ .carousel-content {
+   
+    display: flex;
+    width: 400%; /* Ajuste para cobrir todos os itens */
+    transition: transform 0.5s ease-in-out;
+ }
+ 
+ .carousel-item {
+    flex: 0 0 25%; /* Divida igualmente em 4 partes */
+    margin-right: 0px;
+    box-sizing: border-box;
+    background-color: #fff;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ }
+ 
+ .carousel-title {
+    font-size: 22px; /* Aumentado o tamanho do título */
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5%;
+ }
+ 
+ .carousel-paragraph {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.4;
+    text-align: justify; /* Justifica o texto */
+ }
+ 
+ .arrow {
+    position: absolute;
+    top: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+    background: #fff;
+    padding: 5px;
+    border-radius: 50%;
+    z-index: 1;
+ }
+ 
+ .arrow-left {
+    font-size: 15px;
+    left: 10px;
+ }
+ 
+ .arrow-right {
+    font-size: 15px;
+    right: 10px;
+ }
