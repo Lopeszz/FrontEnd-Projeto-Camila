@@ -120,7 +120,7 @@
                     <div class="col-xl-3 mb-5">
                         <div class="team-single" data-aos="fade-up" data-aos-delay="200">
                             <div class="team-img">
-                                <img class="img-fluid" src="assets/images/team/leader2.png" alt="">
+                                <img class="img-fluid" src="uploaded_img/shay.jpg" alt="">
                             </div>
                             <div class="team-content">
                                 <h6 class="team-name font--bold mt-5">Shay</h6>
@@ -158,7 +158,7 @@
                     <div class="col-xl-3 mb-5">
                         <div class="team-single" data-aos="fade-up" data-aos-delay="400">
                             <div class="team-img">
-                                <img class="img-fluid" src="assets/images/team/leader3.png" alt="">
+                                <img class="img-fluid" src="uploaded_img/gico.jpg" alt="">
                             </div>
                             <div class="team-content">
                                 <h6 class="team-name font--bold mt-5">Giovani Lopes</h6>
@@ -176,7 +176,7 @@
                     <div class="col-xl-3 mb-5">
                         <div class="team-single" data-aos="fade-up" data-aos-delay="600">
                             <div class="team-img">
-                                <img class="img-fluid" src="assets/images/team/leader4.png" alt="">
+                                <img class="img-fluid" src="uploaded_img/renata.jpg" alt="">
                             </div>
                             <div class="team-content">
                                 <h6 class="team-name font--bold mt-5">Renatas Lemes</h6>
@@ -212,10 +212,64 @@
                     <div class="col-xl-3 mb-5">
                         <div class="team-single" data-aos="fade-up" data-aos-delay="600">
                             <div class="team-img">
-                                <img class="img-fluid" src="assets/images/team/leader4.png" alt="">
+                                <img class="img-fluid" src="uploaded_img/natan.jpg" alt="">
                             </div>
                             <div class="team-content">
-                                <h6 class="team-name font--bold mt-5">Julia Carvalho</h6>
+                                <h6 class="team-name font--bold mt-5">Natan Lemos</h6>
+                                <span class="team-title">Web Designer</span>
+                                <ul class="team-social pos-absolute">
+                                    <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                                    <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                                    <li><a href="#"><i class="ion-social-instagram"></i></a></li>
+                                    <li><a href="#"><i class="ion-social-linkedin"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 mb-5">
+                        <div class="team-single" data-aos="fade-up" data-aos-delay="600">
+                            <div class="team-img">
+                                <img class="img-fluid" src="uploaded_img/julis.jpg" alt="">
+                            </div>
+                            <div class="team-content">
+                                <h6 class="team-name font--bold mt-5">Júlia Carvalho</h6>
+                                <span class="team-title">Prospecção e organização de fontes</span>
+                                <ul class="team-social pos-absolute">
+                                    <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                                    <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                                    <li><a href="#"><i class="ion-social-instagram"></i></a></li>
+                                    <li><a href="#"><i class="ion-social-linkedin"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 mb-5">
+                        <div class="team-single" data-aos="fade-up" data-aos-delay="600">
+                            <div class="team-img">
+                                <img class="img-fluid" src="uploaded_img/maria clarai3b.jpg" alt="">
+                            </div>
+                            <div class="team-content">
+                                <h6 class="team-name font--bold mt-5">Maria Clara Lopes</h6>
+                                <span class="team-title">Prospecção e organização de fontes</span>
+                                <ul class="team-social pos-absolute">
+                                    <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                                    <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                                    <li><a href="#"><i class="ion-social-instagram"></i></a></li>
+                                    <li><a href="#"><i class="ion-social-linkedin"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 mb-5">
+                        <div class="team-single" data-aos="fade-up" data-aos-delay="600">
+                            <div class="team-img">
+                                <img class="img-fluid" src="uploaded_img/maria clarai3b.jpg" alt="">
+                            </div>
+                            <div class="team-content">
+                                <h6 class="team-name font--bold mt-5">Maria Clara Maia</h6>
                                 <span class="team-title">Prospecção e organização de fontes</span>
                                 <ul class="team-social pos-absolute">
                                     <li><a href="#"><i class="ion-social-facebook"></i></a></li>
@@ -244,64 +298,10 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="col-xl-3 mb-5">
                         <div class="team-single" data-aos="fade-up" data-aos-delay="600">
                             <div class="team-img">
-                                <img class="img-fluid" src="assets/images/team/leader4.png" alt="">
-                            </div>
-                            <div class="team-content">
-                                <h6 class="team-name font--bold mt-5">Maria Clara Lopes</h6>
-                                <span class="team-title">Prospecção e organização de fontes</span>
-                                <ul class="team-social pos-absolute">
-                                    <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                                    <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-                                    <li><a href="#"><i class="ion-social-instagram"></i></a></li>
-                                    <li><a href="#"><i class="ion-social-linkedin"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-3 mb-5">
-                        <div class="team-single" data-aos="fade-up" data-aos-delay="600">
-                            <div class="team-img">
-                                <img class="img-fluid" src="assets/images/team/leader4.png" alt="">
-                            </div>
-                            <div class="team-content">
-                                <h6 class="team-name font--bold mt-5">Maria Clara Maia</h6>
-                                <span class="team-title">Prospecção e organização de fontes</span>
-                                <ul class="team-social pos-absolute">
-                                    <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                                    <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-                                    <li><a href="#"><i class="ion-social-instagram"></i></a></li>
-                                    <li><a href="#"><i class="ion-social-linkedin"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-3 mb-5">
-                        <div class="team-single" data-aos="fade-up" data-aos-delay="600">
-                            <div class="team-img">
-                                <img class="img-fluid" src="assets/images/team/leader4.png" alt="">
-                            </div>
-                            <div class="team-content">
-                                <h6 class="team-name font--bold mt-5">Natan Lemos</h6>
-                                <span class="team-title">Prospecção e organização de fontes</span>
-                                <ul class="team-social pos-absolute">
-                                    <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                                    <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-                                    <li><a href="#"><i class="ion-social-instagram"></i></a></li>
-                                    <li><a href="#"><i class="ion-social-linkedin"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 mb-5">
-                        <div class="team-single" data-aos="fade-up" data-aos-delay="600">
-                            <div class="team-img">
-                                <img class="img-fluid" src="assets/images/team/leader4.png" alt="">
+                                <img class="img-fluid" src="" alt="">
                             </div>
                             <div class="team-content">
                                 <h6 class="team-name font--bold mt-5">Tauane Fernades</h6>
