@@ -430,6 +430,12 @@ section{
    margin-bottom: 2rem;
 }
 
+.error-section{
+   display: flex;          
+    flex-direction: column; 
+    min-height: 110vh;   
+}
+
 .posts-container .box-container .box .post-admin i{
    text-align: center;
    height: 4.5rem;
