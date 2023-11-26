@@ -166,7 +166,6 @@
         </div>
     </div>
     <!-- ...::::ENd Contact Section:::... -->
-
     <?php
     require_once("footer.php");
     ?>
