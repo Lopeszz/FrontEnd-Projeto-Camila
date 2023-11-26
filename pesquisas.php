@@ -25,12 +25,6 @@ include 'components/like_post.php';
     <title>HONO - Multi Purpose HTML Template</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
-    <link rel="stylesheet" href="css/style.css">
-
-
-    <!-- ::::::::::::::Favicon icon::::::::::::::-->
-    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/png">
-
     <!-- ::::::::::::::All CSS Files here :::::::::::::: -->
     <!-- Vendor CSS -->
     <!-- <link rel="stylesheet" href="assets/css/vendor/font-awesome.min.css">
@@ -84,7 +78,6 @@ include 'components/like_post.php';
                                     $confirm_likes = $conn->prepare("SELECT * FROM `likes` WHERE user_id = ? AND post_id = ?");
                                     $confirm_likes->execute([$user_id, $post_id]);
                                     ?>
-
 
                                     <!-- Start Product Default Single Item -->
                                     <div class="col-xl-4 col-md-6 col-12 mb-6">
