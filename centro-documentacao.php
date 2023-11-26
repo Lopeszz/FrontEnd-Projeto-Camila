@@ -93,7 +93,7 @@
             <div class="text-section content-block">
                 <h3 class="content-title">DEFINIÇÃO</h3>
                 <p>Um Centro de Documentação é uma instituição dedicada à coleta, conservação de documentos antigos considerados importantes para a história, cultura e conhecimento.Um Centro de Documentação é uma instituição dedicada à coleta, conservação de documentos antigos considerados importantes para a história, cultura e conhecimento.Um Centro de Documentação é uma instituição dedicada à coleta, conservação de documentos antigos considerados importantes para a história, cultura e conhecimento.</p>
-                <button type="button" class="btn btn-warning"  style = "justify-content: center;">Saiba Mais</button>
+              <a href="https://acervonet.com.br/blog/centro-de-documentacao-o-que-e/"> <button type="button" class="btn btn-warning"  style = "justify-content: center;">Saiba Mais</button></a> 
             </div>
             <div class="image-section">
                 <img src="assets/images/hero-slider/home-1/hero-slider-1.jpg" alt="Café Especial">
