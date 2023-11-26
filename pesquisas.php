@@ -94,7 +94,8 @@ include 'components/like_post.php';
                                                 <input type="hidden" name="post_id" value="<?= $post_id; ?>">
                                                 <input type="hidden" name="admin_id" value="<?= $fetch_posts['admin_id']; ?>">
                                                 <div class="image-box">
-                                                    <a href="blog-single-sidebar-left.php?post_id=<?= $post_id; ?>" class="image-link">
+                                                    <a href="blog-single-sidebar-left.php?post_id=<?= $post_id; ?>"
+                                                        class="image-link">
                                                         <?php
                                                         if ($fetch_posts['image'] != '') {
                                                             ?>
@@ -118,7 +119,8 @@ include 'components/like_post.php';
                                                             </a>
                                                         </li>
                                                     </ul>
-                                                    <h6 class="title"><a href="blog-single-sidebar-left.php?post_id=<?= $post_id; ?>">
+                                                    <h6 class="title"><a
+                                                            href="blog-single-sidebar-left.php?post_id=<?= $post_id; ?>">
                                                             <?= $fetch_posts['title']; ?>
                                                         </a>
                                                     </h6>
@@ -155,7 +157,7 @@ include 'components/like_post.php';
         </div>
     </div>
 
-    
+
 
     <!-- material-scrolltop button -->
     <button class="material-scrolltop" type="button"></button>
