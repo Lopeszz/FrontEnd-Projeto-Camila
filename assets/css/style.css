@@ -20808,7 +20808,7 @@ footer{
 /* Carrossel */
 .carousel-container {
     position: relative;
-    max-width: 700px;
+    max-width: 1200px;
     /* Ajustado para comportar melhor o conteúdo */
     margin: 0 auto;
     overflow: hidden;
