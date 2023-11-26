@@ -128,7 +128,6 @@ if (isset($_POST['submit'])) {
                             <div class="login_submit">
                                 <button class="btn btn-md btn-black-default-hover mb-4" type="submit" value="login now"
                                     name="submit">Login</button>
-                                <p>Não tem uma conta? <a href="register.php">Registre-se agora</a></p>
                             </div>
                         </form>
                     </div>

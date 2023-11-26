@@ -32,7 +32,7 @@ if (isset($message)) {
       <a href="add_posts.php"><i class="fas fa-pen"></i> <span>adicionar posts</span></a>
       <a href="view_posts.php"><i class="fas fa-eye"></i> <span>ver posts</span></a>
       <a href="admin_accounts.php"><i class="fas fa-user"></i> <span>contas</span></a>
-      <a href="../components/admin_logout.php" style="color:var(--red);" onclick="return confirm('Sair do site?');"><i
+      <a href="../index.php" style="color:var(--red);" onclick="return confirm('Sair do site?');"><i
             class="fas fa-right-from-bracket"></i><span>sair</span></a>
    </nav>
 
