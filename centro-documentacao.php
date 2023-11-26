@@ -29,7 +29,8 @@
         min-height: 100vh;
         padding: 50px;
         box-sizing: border-box;
-        background-color: white; /* Cor de fundo */
+        background-color: white;
+        /* Cor de fundo */
     }
 
     .content-container {
@@ -41,14 +42,17 @@
         background-color: #f5f5f5;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        overflow: hidden; /* Previne que a imagem saia do container */
+        overflow: hidden;
+        /* Previne que a imagem saia do container */
     }
 
     .text-section {
         flex: 1;
         padding: 20px;
-        margin-right: 20px; /* Espaçamento entre o texto e a imagem */
-        color: #333; /* Cor do texto */
+        margin-right: 20px;
+        /* Espaçamento entre o texto e a imagem */
+        color: #333;
+        /* Cor do texto */
     }
 
     .image-section {
@@ -62,7 +66,8 @@
     .image-section img {
         width: 100%;
         max-height: 300px;
-        object-fit: cover; /* Garante que a imagem cubra o espaço disponível */
+        object-fit: cover;
+        /* Garante que a imagem cubra o espaço disponível */
     }
 
     .content-title {
@@ -83,6 +88,7 @@
     }
 </style>
 </head>
+
 <body>
     <?php require_once("menu.php"); ?>
 
@@ -92,15 +98,19 @@
         <div class="content-container">
             <div class="text-section content-block">
                 <h3 class="content-title">DEFINIÇÃO</h3>
-                <p>Um Centro de Documentação é uma instituição dedicada à coleta, conservação de documentos antigos considerados importantes para a história, cultura e conhecimento.Um Centro de Documentação é uma instituição dedicada à coleta, conservação de documentos antigos considerados importantes para a história, cultura e conhecimento.Um Centro de Documentação é uma instituição dedicada à coleta, conservação de documentos antigos considerados importantes para a história, cultura e conhecimento.</p>
-              <a href="https://acervonet.com.br/blog/centro-de-documentacao-o-que-e/"> <button type="button" class="btn btn-warning"  style = "justify-content: center;">Saiba Mais</button></a> 
+                <p>Um Centro de Documentação é uma instituição dedicada à coleta, conservação de documentos antigos
+                    considerados importantes para a história, cultura e conhecimento.Um Centro de Documentação é uma
+                    instituição dedicada à coleta, conservação de documentos antigos considerados importantes para a
+                    história, cultura e conhecimento.Um Centro de Documentação é uma instituição dedicada à coleta,
+                    conservação de documentos antigos considerados importantes para a história, cultura e conhecimento.
+                </p>    
             </div>
             <div class="image-section">
                 <img src="assets/images/hero-slider/home-1/hero-slider-1.jpg" alt="Café Especial">
             </div>
         </div>
     </div>
- <!-- ...:::: End Error Section :::... -->
+    <!-- ...:::: End Error Section :::... -->
 
     <?php
     require_once("footer.php");
