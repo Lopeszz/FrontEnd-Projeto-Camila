@@ -1,9 +1,9 @@
 <?php
-if(isset($message)){
-   foreach($message as $message){
+if (isset($message)) {
+   foreach ($message as $message) {
       echo '
       <div class="message">
-         <span>'.$message.'</span>
+         <span>' . $message . '</span>
          <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
       </div>
       ';
@@ -39,25 +39,28 @@ if(isset($message)){
 
       <div class="profile">
          <?php
-            $select_profile = $conn->prepare("SELECT * FROM `users` WHERE id = ?");
-            $select_profile->execute([$user_id]);
-            if($select_profile->rowCount() > 0){
-               $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
-         ?>
-         <p class="name"><?= $fetch_profile['name']; ?></p>
-         <a href="update.php" class="btn">update profile</a>
-         <div class="flex-btn">
-            <a href="login.php" class="option-btn">login</a>
-            <a href="register.php" class="option-btn">register</a>
-         </div> 
-         <a href="components/user_logout.php" onclick="return confirm('logout from this website?');" class="delete-btn">logout</a>
-         <?php
-            }else{
-         ?>
+         $select_profile = $conn->prepare("SELECT * FROM `users` WHERE id = ?");
+         $select_profile->execute([$user_id]);
+         if ($select_profile->rowCount() > 0) {
+            $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
+            ?>
+            <p class="name">
+               <?= $fetch_profile['name']; ?>
+            </p>
+            <a href="update.php" class="btn">update profile</a>
+            <div class="flex-btn">
+               <a href="login.php" class="option-btn">login</a>
+               <a href="register.php" class="option-btn">register</a>
+            </div>
+            <a href="components/user_logout.php" onclick="return confirm('logout from this website?');"
+               class="delete-btn">logout</a>
+            <?php
+         } else {
+            ?>
             <p class="name">please login first!</p>
             <a href="login.php" class="option-btn">login</a>
-         <?php
-            }
+            <?php
+         }
          ?>
       </div>
 
