@@ -120,7 +120,7 @@ $category = isset($_GET['category']) ? $_GET['category'] : '';
                            <?php
                         }
                      } else {
-                        echo '<p class="empty">no posts found for this category!</p>';
+                        echo '<p class="empty">Nenhuma postagem encontrada para esta categoria!</p>';
                      }
                      ?>
                   </div>

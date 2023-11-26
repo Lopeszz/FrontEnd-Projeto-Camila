@@ -140,7 +140,7 @@ include 'components/like_post.php';
                                     <?php
                                 }
                             } else {
-                                echo '<p class="empty">nenhuma postagem adicionada ainda!</p>';
+                                echo '<p class="empty">Nenhuma postagem adicionada ainda!</p>';
                             }
                             ?>
                         </div>

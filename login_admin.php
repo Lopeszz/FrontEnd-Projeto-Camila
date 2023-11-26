@@ -89,12 +89,12 @@ if (isset($_POST['submit'])) {
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h3 class="breadcrumb-title">Login</h3>
+                        <h3 class="breadcrumb-title">ADMIN</h3>
                         <div class="breadcrumb-nav breadcrumb-nav-color--black breadcrumb-nav-hover-color--golden">
                             <nav aria-label="breadcrumb">
                                 <ul>
                                     <li><a href="index.html">Home</a></li>
-                                    <li class="active" aria-current="page">Login</li>
+                                    <li class="active" aria-current="page">Admin</li>
                                 </ul>
                             </nav>
                         </div>
@@ -111,7 +111,7 @@ if (isset($_POST['submit'])) {
                 <!-- Início da área de login -->
                 <div class="col-lg-6 col-md-6">
                     <div class="account_form" data-aos="fade-up" data-aos-delay="0">
-                        <h3>Login</h3>
+                        <h3>Admin</h3>
                         <form action="" method="post">
                             <div class="default-form-box">
                                 <label>Email <span>*</span></label>
@@ -128,7 +128,6 @@ if (isset($_POST['submit'])) {
                             <div class="login_submit">
                                 <button class="btn btn-md btn-black-default-hover mb-4" type="submit" value="login now"
                                     name="submit">Login</button>
-                                <p>Não tem uma conta? <a href="register.php">Registre-se agora</a></p>
                             </div>
                         </form>
                     </div>
