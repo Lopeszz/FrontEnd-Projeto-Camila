@@ -345,16 +345,28 @@ if ($select_posts->rowCount() > 0) {
 
                                     <?php } ?>
                                     <!-- <div class="icons">
-                                        <div><i class="fas fa-comment"></i><span>(
-                                                <?= $total_post_comments; ?>)
-                                            </span></div>
-                                        <button type="submit" name="like_post"><i class="fas fa-heart" style="<?php if ($confirm_likes->rowCount() > 0) {
-                                            echo 'color:var(--red);';
-                                        } ?>  "></i><span>(
+                                        <button type="submit" name="like_post">
+                                            <i class="fas fa-heart" style="<?php if ($confirm_likes->rowCount() > 0) {
+                                                echo 'color:var(--red);';
+                                            } ?>">
+                                            </i>
+                                            <span>(
                                                 <?= $total_post_likes; ?>)
-                                            </span></button>
+                                            </span>
+                                        </button>
                                     </div> -->
                                 </form>
+                                <div class="para-tags" data-aos="fade-up" data-aos-delay="0">
+                                    <span>Tags: </span>
+                                    <ul>
+                                        <li><a href="category.php?category=<?= $fetch_posts['category']; ?>">
+                                                <span>
+                                                    <?= $fetch_posts['category']; ?>
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
 
 
                                 <?php
@@ -363,6 +375,7 @@ if ($select_posts->rowCount() > 0) {
                             echo '<p class="empty">no posts found!</p>';
                         }
                         ?>
+
                         <div class="comment-area">
 
                             <div class="comment-box" data-aos="fade-up" data-aos-delay="0">
@@ -432,6 +445,7 @@ if ($select_posts->rowCount() > 0) {
                                 }
                                 ?>
                             </div>
+
                             <!-- Start comment Form -->
                             <div class="comment-form" data-aos="fade-up" data-aos-delay="0">
                                 <div class="coment-form-text-top mt-30">
@@ -456,10 +470,11 @@ if ($select_posts->rowCount() > 0) {
                                             <div class="row">
                                                 <div class="col-12">
                                                     <div class="default-form-box mb-20">
-                                                        <label for="comment-review-text">Seu comentário <span>*</span></label>
-                                                        <textarea id="comment-review-text" placeholder="Escreva seu comentário"
-                                                            name="comment" maxlength="1000" 
-                                                            required></textarea>
+                                                        <label for="comment-review-text">Seu comentário
+                                                            <span>*</span></label>
+                                                        <textarea id="comment-review-text"
+                                                            placeholder="Escreva seu comentário" name="comment"
+                                                            maxlength="1000" required></textarea>
                                                     </div>
                                                 </div>
                                                 <div class="col-12">
@@ -474,34 +489,18 @@ if ($select_posts->rowCount() > 0) {
                                     } else {
                                         ?>
                                         <div class="add-comment">
-                                            <p>please login to add or edit your comment</p>
-                                            <a href="login.php" class="inline-btn">login now</a>
+                                            <p><a href="login.php">Faça login</a> para adicionar ou editar seu comentário
+                                            </p>
+
                                         </div>
                                         <?php
                                     }
                                     ?>
                                 </div>
-
-                                <form action="#" method="post">
-
-                                </form>
-                                <!-- End comment Form -->
                             </div>
                         </div>
-
-
                     </div>
-
-
                 </div>
-                <!-- <div class="para-tags" data-aos="fade-up" data-aos-delay="0">
-                            <span>Tags: </span>
-                            <ul>
-                                <li><a href="#">fashion</a></li>
-                                <li><a href="#">t-shirt</a></li>
-                                <li><a href="#">white</a></li>
-                            </ul>
-                        </div> -->
                 <!-- End Blog Single Content Area -->
             </div>
         </div>
