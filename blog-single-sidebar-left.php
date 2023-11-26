@@ -316,12 +316,12 @@ if ($select_posts->rowCount() > 0) {
                                     <input type="hidden" name="admin_id" value="<?= $fetch_posts['admin_id']; ?>">
 
                                     <ul class="post-meta" data-aos="fade-up" data-aos-delay="200">
-                                        <li>POSTED BY :
+                                        <li>Publicado por :
                                             <a href="author_posts.php?author=<?= $fetch_posts['name']; ?>" class="author">
                                                 <?= $fetch_posts['name']; ?>
                                             </a>
                                         </li>
-                                        <li>ON :
+                                        <li>Data :
                                             <a href="#" class="date">
                                                 <?= $fetch_posts['date']; ?>
                                             </a>
@@ -338,7 +338,7 @@ if ($select_posts->rowCount() > 0) {
                                     <?php if (!empty($file_name)) { ?>
                                         <div class="para-content" data-aos="fade-up" data-aos-delay="800">
                                             <a href="uploaded_file/<?= $file_name; ?>" download>
-                                                Download File
+                                                Fazer download do arquivo
                                             </a>
 
                                         </div>
@@ -425,11 +425,11 @@ if ($select_posts->rowCount() > 0) {
                                                     <form action="" method="POST">
                                                         <input type="hidden" name="comment_id"
                                                             value="<?= $fetch_comments['id']; ?>">
-                                                        <button type="submit" class="inline-option-btn" name="open_edit_box">edit
-                                                            comment</button>
+                                                        <button type="submit" class="inline-option-btn" name="open_edit_box">Editar
+                                                            comentário</button>
                                                         <button type="submit" class="inline-delete-btn" name="delete_comment"
-                                                            onclick="return confirm('delete this comment?');">delete
-                                                            comment</button>
+                                                            onclick="return confirm('delete this comment?');">Apagar
+                                                            comentário</button>
                                                     </form>
                                                     <?php
                                                 }
@@ -441,7 +441,7 @@ if ($select_posts->rowCount() > 0) {
                                     </ul>
                                     <?php
                                 } else {
-                                    echo '<p class="empty">no comments added yet!</p>';
+                                    echo '<p class="empty">Nenhum comentário adicionado ainda!</p>';
                                 }
                                 ?>
                             </div>
