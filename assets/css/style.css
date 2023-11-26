@@ -19019,6 +19019,7 @@ Pages - Contact
 }
 
 .contact-form {
+    margin-bottom: 5%;
     background: #F8F9FA;
     padding: 40px 30px;
 }
@@ -20818,6 +20819,7 @@ footer{
     margin-top: 5%;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 5%;
 }
 
 .carousel-content {
