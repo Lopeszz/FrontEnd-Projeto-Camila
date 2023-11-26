@@ -137,7 +137,7 @@ include 'components/like_post.php';
                                                         class="post-cat">
                                                         <i class="fas fa-tag"></i>
                                                         <span>
-                                                            <?= $fetch_posts['category']; ?>
+                                                                
                                                         </span>
                                                     </a>
                                                 </div>
