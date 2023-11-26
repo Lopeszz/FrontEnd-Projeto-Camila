@@ -20812,7 +20812,7 @@ footer{
 /* Carrossel */
 .carousel-container {
     position: relative;
-    max-width: 500px;
+    max-width: 700px;
     /* Ajustado para comportar melhor o conteúdo */
     margin: 0 auto;
     overflow: hidden;
@@ -20843,7 +20843,7 @@ footer{
 }
 
 .carousel-title {
-    font-size: 22px;
+    font-size: 30px;
     /* Aumentado o tamanho do título */
     font-weight: bold;
     color: #333;
@@ -20851,7 +20851,7 @@ footer{
 }
 
 .carousel-paragraph {
-    font-size: 14px;
+    font-size: 20px;
     color: #666;
     line-height: 1.4;
     text-align: justify;

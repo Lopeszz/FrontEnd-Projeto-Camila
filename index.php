@@ -79,9 +79,7 @@ if (isset($_SESSION['user_id'])) {
                                 <div class="col-auto">
                                     <div class="hero-slider-content">
                                         <h4 class="subtitle">New collection</h4>
-                                        <h2 class="title">Best Of NeoCon <br> Gold Award </h2>
-                                        <a href="product-details-default.php" class="btn btn-lg btn-outline-golden">shop
-                                            now </a>
+                                        <h2 class="title">Centro de documentação São João Evangelista</h2>
                                     </div>
                                 </div>
                             </div>
