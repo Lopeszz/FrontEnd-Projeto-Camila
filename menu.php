@@ -31,6 +31,9 @@
                                     <li>
                                         <a href="contact-us.php">Colabore</a>
                                     </li>
+                                    <li>
+                                        <a href="about-us.php">Sobre Nós</a>
+                                    </li>
                                     <!-- <li class="has-dropdown">
                                         <a href="blog-single-sidebar-left.php">Blog <i class="fa fa-angle-down"></i></a>
                                         

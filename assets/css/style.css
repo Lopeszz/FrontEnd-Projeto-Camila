@@ -15461,13 +15461,9 @@ input {
     position: relative;
 }
 
-.hero-single-slider-item.swiper-slide-active .hero-slider-content .subtitle {
-    animation: fadeInUp 1s ease 0.3s 1 backwards;
-}
 
-.hero-single-slider-item.swiper-slide-active .hero-slider-content .title {
-    animation: fadeInUp 1s ease 1s 1 backwards;
-}
+
+
 
 .hero-single-slider-item.swiper-slide-active .hero-slider-content a {
     animation: fadeInUp 1s ease 1.5s 1 backwards;
