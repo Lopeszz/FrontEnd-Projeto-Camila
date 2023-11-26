@@ -7915,8 +7915,7 @@ fieldset:disabled .btn {
 }
 
 .mb-6 {
-    margin-bottom: 30px !important;
-
+    margin: 0px 20px 30px 20px
 }
 
 .mb-7 {
