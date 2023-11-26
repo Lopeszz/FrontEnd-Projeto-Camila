@@ -21,51 +21,85 @@
     <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
+<style>
+    .main-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 50px;
+        box-sizing: border-box;
+        background-color: white; /* Cor de fundo */
+    }
 
+    .content-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        max-width: 1200px;
+        background-color: #f5f5f5;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden; /* Previne que a imagem saia do container */
+    }
+
+    .text-section {
+        flex: 1;
+        padding: 20px;
+        margin-right: 20px; /* Espaçamento entre o texto e a imagem */
+        color: #333; /* Cor do texto */
+    }
+
+    .image-section {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .image-section img {
+        width: 100%;
+        max-height: 300px;
+        object-fit: cover; /* Garante que a imagem cubra o espaço disponível */
+    }
+
+    .content-title {
+        margin-bottom: 15px;
+        color: #a3803e;
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .content-block p {
+        font-size: 18px;
+        line-height: 1.6;
+        text-align: justify;
+    }
+
+    .slider-spacer {
+        height: 50px;
+    }
+</style>
+</head>
 <body>
-    <?php
-    require_once("menu.php");
-    ?>
+    <?php require_once("menu.php"); ?>
 
-    <!-- ...:::: Start Breadcrumb Section:::... -->
-    <div class="breadcrumb-section breadcrumb-bg-color--golden">
+    <div class="slider-spacer"></div>
 
-    </div> <!-- ...:::: End Breadcrumb Section:::... -->
-
-    <!-- ...:::: Start Error Section :::... -->
-    <div class="error-section">
-        <div class="container">
-            <div class="row">
-                <div class="error-form">
-                    <h3 class="big-title" data-aos="fade-up" data-aos-delay="0" style="font-size: 300%;
-                    margin-top: 100px;">O que é um centro de documentação?</h3>
-
-                    <p class="text-centro-documentacao">
-                        Os centros de documentações possuem objetivo central de salvaguardar fontes, para que dessa
-                        forma seja preservada a memória da cidade e desenvolvido o conhecimento histórico. O surgimento
-                        desta perspectiva data da década de 1980, quando houve aproximação do processo de construção do
-                        saber histórico e as pessoas. Diante deste cenário, houve uma ruptura com a história
-                        tradicional, comumente dedicada aos grandes nomes, e passou-se a valorizar cada vez mais a
-                        história viabilizada por pessoas comuns. É possível, desta maneira, que diferentes segmentos
-                        sociais compreendam as relações que as permeiam, incluindo as relações com os distintos tipos de
-                        poder. Permite promover, desta forma, o desenvolvimento e o estudo da história local por meio do
-                        diálogo com realidades diversas através do acesso à documentação sobre o passado da localidade,
-                        que pode, por sua vez, abranger fotos, cartas, vídeos, certidões, atas de reuniões, livros,
-                        entre outras possibilidades.
-                    </p>
-                    <div class="row">
-                        <div class="col-10 offset-1 col-md-4 offset-md-4">
-                            <div class="default-search-style d-flex" data-aos="fade-up" data-aos-delay="600">
-
-                                <button class="default-search-style-input-btn" type="submit"></button>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
+    <div class="main-container">
+        <div class="content-container">
+            <div class="text-section content-block">
+                <h3 class="content-title">DEFINIÇÃO</h3>
+                <p>Um Centro de Documentação é uma instituição dedicada à coleta, conservação de documentos antigos considerados importantes para a história, cultura e conhecimento.</p>
+            </div>
+            <div class="image-section">
+                <img src="assets/images/hero-slider/home-1/hero-slider-1.jpg" alt="Café Especial">
             </div>
         </div>
-    </div> <!-- ...:::: End Error Section :::... -->
+    </div>
+ <!-- ...:::: End Error Section :::... -->
 
     <?php
     require_once("footer.php");
