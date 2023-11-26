@@ -126,31 +126,7 @@ if ($select_posts->rowCount() > 0) {
     require_once("menu.php");
     ?>
 
-    <?php
-    if (isset($_POST['open_edit_box'])) {
-        $comment_id = $_POST['comment_id'];
-        $comment_id = filter_var($comment_id, FILTER_SANITIZE_STRING);
-        ?>
-        <section class="comment-edit-form">
-            <p>edit your comment</p>
-            <?php
-            $select_edit_comment = $conn->prepare("SELECT * FROM `comments` WHERE id = ?");
-            $select_edit_comment->execute([$comment_id]);
-            $fetch_edit_comment = $select_edit_comment->fetch(PDO::FETCH_ASSOC);
-            ?>
-            <form action="" method="POST">
-                <input type="hidden" name="edit_comment_id" value="<?= $comment_id; ?>">
-                <textarea name="comment_edit_box" required cols="30" rows="10"
-                    placeholder="please enter your comment"><?= $fetch_edit_comment['comment']; ?></textarea>
-                <button type="submit" class="inline-btn" name="edit_comment">edit comment</button>
-                <div class="inline-option-btn" onclick="window.location.href = 'view_post.php?post_id=<?= $get_id; ?>';">
-                    cancel
-                    edit</div>
-            </form>
-        </section>
-        <?php
-    }
-    ?>
+
 
     <!-- ...:::: Start Breadcrumb Section:::... -->
     <div class="breadcrumb-section breadcrumb-bg-color--golden">
@@ -316,15 +292,13 @@ if ($select_posts->rowCount() > 0) {
                                     <input type="hidden" name="admin_id" value="<?= $fetch_posts['admin_id']; ?>">
 
                                     <ul class="post-meta" data-aos="fade-up" data-aos-delay="200">
-                                        <li>POSTED BY :
+                                        <li>Publicado por :
                                             <a href="author_posts.php?author=<?= $fetch_posts['name']; ?>" class="author">
                                                 <?= $fetch_posts['name']; ?>
                                             </a>
                                         </li>
-                                        <li>ON :
-                                            <a href="#" class="date">
-                                                <?= $fetch_posts['date']; ?>
-                                            </a>
+                                        <li>Data :
+                                            <?= $fetch_posts['date']; ?>
                                         </li>
                                     </ul>
 
@@ -338,23 +312,35 @@ if ($select_posts->rowCount() > 0) {
                                     <?php if (!empty($file_name)) { ?>
                                         <div class="para-content" data-aos="fade-up" data-aos-delay="800">
                                             <a href="uploaded_file/<?= $file_name; ?>" download>
-                                                Download File
+                                                Fazer download do arquivo
                                             </a>
 
                                         </div>
 
                                     <?php } ?>
                                     <!-- <div class="icons">
-                                        <div><i class="fas fa-comment"></i><span>(
-                                                <?= $total_post_comments; ?>)
-                                            </span></div>
-                                        <button type="submit" name="like_post"><i class="fas fa-heart" style="<?php if ($confirm_likes->rowCount() > 0) {
-                                            echo 'color:var(--red);';
-                                        } ?>  "></i><span>(
+                                        <button type="submit" name="like_post">
+                                            <i class="fas fa-heart" style="<?php if ($confirm_likes->rowCount() > 0) {
+                                                echo 'color:var(--red);';
+                                            } ?>">
+                                            </i>
+                                            <span>(
                                                 <?= $total_post_likes; ?>)
-                                            </span></button>
+                                            </span>
+                                        </button>
                                     </div> -->
                                 </form>
+                                <div class="para-tags" data-aos="fade-up" data-aos-delay="0">
+                                    <span>Tags: </span>
+                                    <ul>
+                                        <li><a href="category.php?category=<?= $fetch_posts['category']; ?>">
+                                                <span>
+                                                    <?= $fetch_posts['category']; ?>
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
 
 
                                 <?php
@@ -363,6 +349,7 @@ if ($select_posts->rowCount() > 0) {
                             echo '<p class="empty">no posts found!</p>';
                         }
                         ?>
+
                         <div class="comment-area">
 
                             <div class="comment-box" data-aos="fade-up" data-aos-delay="0">
@@ -374,7 +361,13 @@ if ($select_posts->rowCount() > 0) {
                                 if ($select_comments->rowCount() > 0) {
                                     ?>
                                     <h4 class="title mb-4">
-                                        <?= $num_comments ?> Comentários
+                                        <?php
+                                        if ($num_comments == 1) {
+                                            echo $num_comments . " Comentário";
+                                        } else {
+                                            echo $num_comments . " Comentários";
+                                        }
+                                        ?>
                                     </h4>
                                     <!-- Start - Review Comment -->
                                     <ul class="comment">
@@ -412,23 +405,57 @@ if ($select_posts->rowCount() > 0) {
                                                     <form action="" method="POST">
                                                         <input type="hidden" name="comment_id"
                                                             value="<?= $fetch_comments['id']; ?>">
-                                                        <button type="submit" class="inline-option-btn" name="open_edit_box">edit
-                                                            comment</button>
+                                                        <button type="submit" class="inline-option-btn" name="open_edit_box">Editar
+                                                            comentário</button>
                                                         <button type="submit" class="inline-delete-btn" name="delete_comment"
-                                                            onclick="return confirm('delete this comment?');">delete
-                                                            comment</button>
+                                                            onclick="return confirm('excluir este comentário?');">Apagar
+                                                            comentário</button>
                                                     </form>
                                                     <?php
                                                 }
                                                 ?>
                                             </li> <!-- End - Review Comment list-->
+
+                                            <?php
+                                        }
+                                        ?>
+                                        <?php
+                                        if (isset($_POST['open_edit_box'])) {
+                                            $comment_id = $_POST['comment_id'];
+                                            $comment_id = filter_var($comment_id, FILTER_SANITIZE_STRING);
+                                            ?>
+                                            <section class="comment-edit-form">
+                                                <p>Edite seu comentário</p>
+                                                <?php
+                                                $select_edit_comment = $conn->prepare("SELECT * FROM `comments` WHERE id = ?");
+                                                $select_edit_comment->execute([$comment_id]);
+                                                $fetch_edit_comment = $select_edit_comment->fetch(PDO::FETCH_ASSOC);
+                                                ?>
+                                                <form action="" method="POST">
+                                                    <input type="hidden" name="edit_comment_id" value="<?= $comment_id; ?>">
+                                                    <div class="default-form-box mb-20">
+                                                        <textarea name="comment_edit_box"
+                                                            placeholder="Por favor insira seu comentário"
+                                                            id="comment-review-text"
+                                                            maxlength="1000"><?= $fetch_edit_comment['comment']; ?></textarea>
+                                                    </div>
+                                                    <button class="btn btn-md btn-golden" type="submit" value="add comment"
+                                                        name="edit_comment">Editar comentário
+                                                    </button>
+                                                    <button type="submit" class="btn btn-md btn-golden"
+                                                        onclick="window.location.href = 'blog-single-sidebar-left.php?post_id=<?= $get_id; ?>';">Cancelar
+                                                        edição</button>
+                                                </form>
+                                            </section>
+
                                             <?php
                                         }
                                         ?>
                                     </ul>
+
                                     <?php
                                 } else {
-                                    echo '<p class="empty">no comments added yet!</p>';
+                                    echo '<p class="empty">Nenhum comentário adicionado ainda!</p>';
                                 }
                                 ?>
                             </div>
@@ -456,16 +483,16 @@ if ($select_posts->rowCount() > 0) {
                                             <div class="row">
                                                 <div class="col-12">
                                                     <div class="default-form-box mb-20">
-                                                        <label for="comment-review-text">Seu comentário <span>*</span></label>
-                                                        <textarea id="comment-review-text" placeholder="Escreva seu comentário"
-                                                            name="comment" maxlength="1000" 
-                                                            required></textarea>
+                                                        <label for="comment-review-text">Seu comentário
+                                                            <span>*</span></label>
+                                                        <textarea id="comment-review-text"
+                                                            placeholder="Escreva seu comentário" name="comment"
+                                                            maxlength="1000" required></textarea>
                                                     </div>
                                                 </div>
                                                 <div class="col-12">
                                                     <button class="btn btn-md btn-golden" type="submit" value="add comment"
-                                                        name="add_comment">Post
-                                                        Comment
+                                                        name="add_comment">Publicar comentário
                                                     </button>
                                                 </div>
                                             </div>
@@ -474,34 +501,18 @@ if ($select_posts->rowCount() > 0) {
                                     } else {
                                         ?>
                                         <div class="add-comment">
-                                            <p>please login to add or edit your comment</p>
-                                            <a href="login.php" class="inline-btn">login now</a>
+                                            <p><a href="login.php
+                                            ">Faça login</a> para adicionar ou editar seu comentário
+                                            </p>
                                         </div>
                                         <?php
                                     }
                                     ?>
                                 </div>
-
-                                <form action="#" method="post">
-
-                                </form>
-                                <!-- End comment Form -->
                             </div>
                         </div>
-
-
                     </div>
-
-
                 </div>
-                <!-- <div class="para-tags" data-aos="fade-up" data-aos-delay="0">
-                            <span>Tags: </span>
-                            <ul>
-                                <li><a href="#">fashion</a></li>
-                                <li><a href="#">t-shirt</a></li>
-                                <li><a href="#">white</a></li>
-                            </ul>
-                        </div> -->
                 <!-- End Blog Single Content Area -->
             </div>
         </div>

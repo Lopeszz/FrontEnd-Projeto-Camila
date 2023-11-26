@@ -1,0 +1,10 @@
+.about-top{
+    margin-top: 5%;
+}
+.team-single{
+    border-radius: 1rem;
+}
+.header-logo .logo img {
+    width: 150%;
+    height: auto;
+}

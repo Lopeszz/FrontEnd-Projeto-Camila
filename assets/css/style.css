@@ -7915,7 +7915,7 @@ fieldset:disabled .btn {
 }
 
 .mb-6 {
-    margin-bottom: 30px !important;
+    margin: 0px 20px 30px 20px
 }
 
 .mb-7 {
@@ -15461,13 +15461,9 @@ input {
     position: relative;
 }
 
-.hero-single-slider-item.swiper-slide-active .hero-slider-content .subtitle {
-    animation: fadeInUp 1s ease 0.3s 1 backwards;
-}
 
-.hero-single-slider-item.swiper-slide-active .hero-slider-content .title {
-    animation: fadeInUp 1s ease 1s 1 backwards;
-}
+
+
 
 .hero-single-slider-item.swiper-slide-active .hero-slider-content a {
     animation: fadeInUp 1s ease 1.5s 1 backwards;
@@ -19019,6 +19015,7 @@ Pages - Contact
 }
 
 .contact-form {
+    margin-bottom: 5%;
     background: #F8F9FA;
     padding: 40px 30px;
 }
@@ -20811,13 +20808,14 @@ footer{
 /* Carrossel */
 .carousel-container {
     position: relative;
-    max-width: 500px;
+    max-width: 700px;
     /* Ajustado para comportar melhor o conteúdo */
     margin: 0 auto;
     overflow: hidden;
     margin-top: 5%;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 5%;
 }
 
 .carousel-content {
@@ -20841,7 +20839,7 @@ footer{
 }
 
 .carousel-title {
-    font-size: 22px;
+    font-size: 30px;
     /* Aumentado o tamanho do título */
     font-weight: bold;
     color: #333;
@@ -20849,7 +20847,7 @@ footer{
 }
 
 .carousel-paragraph {
-    font-size: 14px;
+    font-size: 20px;
     color: #666;
     line-height: 1.4;
     text-align: justify;
