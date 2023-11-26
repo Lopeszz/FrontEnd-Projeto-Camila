@@ -138,7 +138,7 @@
                     <li>
                         <a href="#"><span>Apresentação</span></a>
                     </li>
-                   
+
                     <li>
                         <a href="centro-documentacao.php">Centro de Documentação</a>
                     </li>
@@ -240,7 +240,7 @@
             <li><a href="register.php">Register</a></li>
         </ul>
         <ul class="user-link">
-            <li><a href="login_admin.php">Login como Admin</a></li>
+            <li><a href="login_admin.php">Admin</a></li>
         </ul>
     </div>
     <!-- End Mobile contact Info -->
