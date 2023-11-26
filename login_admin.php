@@ -121,7 +121,6 @@ if (isset($_POST['submit'])) {
                                     name="submit">Login</button>
                             </div>
                         </form>
-
                         <?php
                         if (isset($message)) {
                             foreach ($message as $message) {
@@ -136,10 +135,8 @@ if (isset($_POST['submit'])) {
                         ?>
                     </div>
                 </div>
-                <!-- Fim da área de login -->
             </div>
         </div>
-
     </div>
     <!-- Fim da Seção de Login do Cliente -->
 
