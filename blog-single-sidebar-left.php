@@ -126,31 +126,7 @@ if ($select_posts->rowCount() > 0) {
     require_once("menu.php");
     ?>
 
-    <?php
-    if (isset($_POST['open_edit_box'])) {
-        $comment_id = $_POST['comment_id'];
-        $comment_id = filter_var($comment_id, FILTER_SANITIZE_STRING);
-        ?>
-        <section class="comment-edit-form">
-            <p>edit your comment</p>
-            <?php
-            $select_edit_comment = $conn->prepare("SELECT * FROM `comments` WHERE id = ?");
-            $select_edit_comment->execute([$comment_id]);
-            $fetch_edit_comment = $select_edit_comment->fetch(PDO::FETCH_ASSOC);
-            ?>
-            <form action="" method="POST">
-                <input type="hidden" name="edit_comment_id" value="<?= $comment_id; ?>">
-                <textarea name="comment_edit_box" required cols="30" rows="10"
-                    placeholder="please enter your comment"><?= $fetch_edit_comment['comment']; ?></textarea>
-                <button type="submit" class="inline-btn" name="edit_comment">edit comment</button>
-                <div class="inline-option-btn" onclick="window.location.href = 'view_post.php?post_id=<?= $get_id; ?>';">
-                    cancel
-                    edit</div>
-            </form>
-        </section>
-        <?php
-    }
-    ?>
+
 
     <!-- ...:::: Start Breadcrumb Section:::... -->
     <div class="breadcrumb-section breadcrumb-bg-color--golden">
@@ -322,9 +298,7 @@ if ($select_posts->rowCount() > 0) {
                                             </a>
                                         </li>
                                         <li>Data :
-                                            <a href="#" class="date">
-                                                <?= $fetch_posts['date']; ?>
-                                            </a>
+                                            <?= $fetch_posts['date']; ?>
                                         </li>
                                     </ul>
 
@@ -387,7 +361,13 @@ if ($select_posts->rowCount() > 0) {
                                 if ($select_comments->rowCount() > 0) {
                                     ?>
                                     <h4 class="title mb-4">
-                                        <?= $num_comments ?> Comentários
+                                        <?php
+                                        if ($num_comments == 1) {
+                                            echo $num_comments . " Comentário";
+                                        } else {
+                                            echo $num_comments . " Comentários";
+                                        }
+                                        ?>
                                     </h4>
                                     <!-- Start - Review Comment -->
                                     <ul class="comment">
@@ -428,24 +408,57 @@ if ($select_posts->rowCount() > 0) {
                                                         <button type="submit" class="inline-option-btn" name="open_edit_box">Editar
                                                             comentário</button>
                                                         <button type="submit" class="inline-delete-btn" name="delete_comment"
-                                                            onclick="return confirm('delete this comment?');">Apagar
+                                                            onclick="return confirm('excluir este comentário?');">Apagar
                                                             comentário</button>
                                                     </form>
                                                     <?php
                                                 }
                                                 ?>
                                             </li> <!-- End - Review Comment list-->
+
+                                            <?php
+                                        }
+                                        ?>
+                                        <?php
+                                        if (isset($_POST['open_edit_box'])) {
+                                            $comment_id = $_POST['comment_id'];
+                                            $comment_id = filter_var($comment_id, FILTER_SANITIZE_STRING);
+                                            ?>
+                                            <section class="comment-edit-form">
+                                                <p>Edite seu comentário</p>
+                                                <?php
+                                                $select_edit_comment = $conn->prepare("SELECT * FROM `comments` WHERE id = ?");
+                                                $select_edit_comment->execute([$comment_id]);
+                                                $fetch_edit_comment = $select_edit_comment->fetch(PDO::FETCH_ASSOC);
+                                                ?>
+                                                <form action="" method="POST">
+                                                    <input type="hidden" name="edit_comment_id" value="<?= $comment_id; ?>">
+                                                    <div class="default-form-box mb-20">
+                                                        <textarea name="comment_edit_box"
+                                                            placeholder="Por favor insira seu comentário"
+                                                            id="comment-review-text"
+                                                            maxlength="1000"><?= $fetch_edit_comment['comment']; ?></textarea>
+                                                    </div>
+                                                    <button class="btn btn-md btn-golden" type="submit" value="add comment"
+                                                        name="edit_comment">Editar comentário
+                                                    </button>
+                                                    <button type="submit" class="btn btn-md btn-golden"
+                                                        onclick="window.location.href = 'blog-single-sidebar-left.php?post_id=<?= $get_id; ?>';">Cancelar
+                                                        edição</button>
+                                                </form>
+                                            </section>
+
                                             <?php
                                         }
                                         ?>
                                     </ul>
+
                                     <?php
                                 } else {
                                     echo '<p class="empty">Nenhum comentário adicionado ainda!</p>';
                                 }
                                 ?>
                             </div>
-
                             <!-- Start comment Form -->
                             <div class="comment-form" data-aos="fade-up" data-aos-delay="0">
                                 <div class="coment-form-text-top mt-30">
@@ -479,8 +492,7 @@ if ($select_posts->rowCount() > 0) {
                                                 </div>
                                                 <div class="col-12">
                                                     <button class="btn btn-md btn-golden" type="submit" value="add comment"
-                                                        name="add_comment">Post
-                                                        Comment
+                                                        name="add_comment">Publicar comentário
                                                     </button>
                                                 </div>
                                             </div>
@@ -489,9 +501,9 @@ if ($select_posts->rowCount() > 0) {
                                     } else {
                                         ?>
                                         <div class="add-comment">
-                                            <p><a href="login.php">Faça login</a> para adicionar ou editar seu comentário
+                                            <p><a href="login.php
+                                            ">Faça login</a> para adicionar ou editar seu comentário
                                             </p>
-
                                         </div>
                                         <?php
                                     }
