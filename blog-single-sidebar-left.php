@@ -120,7 +120,7 @@ if ($select_posts->rowCount() > 0) {
 
 <body>
     <!-- header section starts  -->
-
+    <?php include 'components/user_header-blog-not-view.php'; ?>
     <!-- header section ends -->
     <?php
     require_once("menu.php");
@@ -158,7 +158,7 @@ if ($select_posts->rowCount() > 0) {
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                     
+
                         <div class="breadcrumb-nav breadcrumb-nav-color--black breadcrumb-nav-hover-color--golden">
                             <nav aria-label="breadcrumb">
                                 <!-- <ul>
@@ -369,9 +369,13 @@ if ($select_posts->rowCount() > 0) {
                                 <?php
                                 $select_comments = $conn->prepare("SELECT * FROM `comments` WHERE post_id = ?");
                                 $select_comments->execute([$get_id]);
+                                $num_comments = $select_comments->rowCount();
+
                                 if ($select_comments->rowCount() > 0) {
                                     ?>
-                                    <h4 class="title mb-4">3 Comments</h4>
+                                    <h4 class="title mb-4">
+                                        <?= $num_comments ?> Comentários
+                                    </h4>
                                     <!-- Start - Review Comment -->
                                     <ul class="comment">
                                         <?php
@@ -452,9 +456,9 @@ if ($select_posts->rowCount() > 0) {
                                             <div class="row">
                                                 <div class="col-12">
                                                     <div class="default-form-box mb-20">
-                                                        <label for="comment-review-text">Your review <span>*</span></label>
-                                                        <textarea id="comment-review-text" placeholder="Write a review"
-                                                            name="comment" maxlength="1000" placeholder="write your comment"
+                                                        <label for="comment-review-text">Seu comentário <span>*</span></label>
+                                                        <textarea id="comment-review-text" placeholder="Escreva seu comentário"
+                                                            name="comment" maxlength="1000" 
                                                             required></textarea>
                                                     </div>
                                                 </div>
