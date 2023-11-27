@@ -8,3 +8,13 @@
     width: 150%;
     height: auto;
 }
+.team-img img {
+    margin: 0 auto;
+    border-radius: 20rem;
+}
+.team-single{
+    height: 100%;
+}
+.text-about-us{
+    text-align: justify;
+}

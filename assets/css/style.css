@@ -611,7 +611,7 @@ progress {
 .img-fluid {
     width: 400px;
     height: 250px;
-    border-radius: 0.5rem;
+    border-radius: 1rem;
 
 }
 
@@ -18937,6 +18937,7 @@ table {
 
 .team-img img {
     margin: 0 auto;
+    
 }
 
 .team-social {
@@ -20965,3 +20966,4 @@ footer{
         height: 50px;
     }
 
+/**/
