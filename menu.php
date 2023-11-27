@@ -1,19 +1,19 @@
-<!-- Start Header Area -->
+<!-- Início da Área do Cabeçalho -->
 <header class="header-section d-none d-xl-block">
     <div class="header-wrapper">
         <div class="header-bottom header-bottom-color--golden section-fluid sticky-header sticky-color--golden">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12 d-flex align-items-center justify-content-between">
-                        <!-- Start Header Logo -->
+                        <!-- Início do Logo do Cabeçalho -->
                         <div class="header-logo">
                             <div class="logo">
                                 <a href="index.php"><img src="assets/images/logo/logo_history.png" alt=""></a>
                             </div>
                         </div>
-                        <!-- End Header Logo -->
+                        <!-- Fim do Logo do Cabeçalho -->
 
-                        <!-- Start Header Main Menu -->
+                        <!-- Início do Menu Principal do Cabeçalho -->
                         <div class="main-menu menu-color--black menu-hover-color--golden">
                             <nav>
                                 <ul>
@@ -34,31 +34,12 @@
                                     <li>
                                         <a href="about-us.php">Sobre Nós</a>
                                     </li>
-                                    <!-- <li class="has-dropdown">
-                                        <a href="blog-single-sidebar-left.php">Blog <i class="fa fa-angle-down"></i></a>
-                                        
-                                        <ul class="sub-menu">
-                                            <li><a href="blog-grid-sidebar-left.php">Blog Grid Sidebar left</a>
-                                            </li>
-                                            <li><a href="blog-grid-sidebar-right.php">Blog Grid Sidebar Right</a>
-                                            </li>
-                                            <li><a href="blog-full-width.php">Blog Full Width</a></li>
-                                            <li><a href="blog-list-sidebar-left.php">Blog List Sidebar Left</a>
-                                            </li>
-                                            <li><a href="blog-list-sidebar-right.php">Blog List Sidebar Right</a>
-                                            </li>
-                                            <li><a href="blog-single-sidebar-left.php">Blog Single Sidebar left</a>
-                                            </li>
-                                            <li><a href="blog-single-sidebar-right.php">Blog Single Sidebar
-                                                    Right</a></li>
-                                        </ul>
-                                    </li> -->
                                 </ul>
                             </nav>
                         </div>
-                        <!-- End Header Main Menu Start -->
+                        <!-- Fim do Menu Principal do Cabeçalho -->
 
-                        <!-- Start Header Action Link -->
+                        <!-- Início dos Links de Ação do Cabeçalho -->
                         <ul class="header-action-link action-color--black action-hover-color--golden">
                             <li>
                                 <a href="#search">
@@ -71,21 +52,21 @@
                                 </a>
                             </li>
                         </ul>
-                        <!-- End Header Action Link -->
+                        <!-- Fim dos Links de Ação do Cabeçalho -->
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </header>
-<!-- Start Header Area -->
+<!-- Fim da Área do Cabeçalho -->
 
-<!-- Start Mobile Header -->
+<!-- Início do Cabeçalho para Dispositivos Móveis -->
 <div class="mobile-header mobile-header-bg-color--golden section-fluid d-lg-block d-xl-none">
     <div class="container">
         <div class="row">
             <div class="col-12 d-flex align-items-center justify-content-between">
-                <!-- Start Mobile Left Side -->
+                <!-- Início do Lado Esquerdo do Cabeçalho Móvel -->
                 <div class="mobile-header-left">
                     <ul class="mobile-menu-logo">
                         <li>
@@ -97,9 +78,9 @@
                         </li>
                     </ul>
                 </div>
-                <!-- End Mobile Left Side -->
+                <!-- Fim do Lado Esquerdo do Cabeçalho Móvel -->
 
-                <!-- Start Mobile Right Side -->
+                <!-- Início do Lado Direito do Cabeçalho Móvel -->
                 <div class="mobile-right-side">
                     <ul class="header-action-link action-color--black action-hover-color--golden">
                         <li>
@@ -115,24 +96,26 @@
                         </li>
                     </ul>
                 </div>
-                <!-- End Mobile Right Side -->
+                <!-- Fim do Lado Direito do Cabeçalho Móvel -->
             </div>
         </div>
     </div>
 </div>
-<!-- End Mobile Header -->
+<!-- Fim do Cabeçalho para Dispositivos Móveis -->
 
-<!--  Start Offcanvas Mobile Menu Section -->
+<!-- Início da Seção do Menu Móvel Offcanvas -->
 <div id="mobile-menu-offcanvas" class="offcanvas offcanvas-rightside offcanvas-mobile-menu-section">
-    <!-- Start Offcanvas Header -->
+    <!-- Início do Cabeçalho do Menu Offcanvas -->
     <div class="offcanvas-header text-right">
         <button class="offcanvas-close"><i class="ion-android-close"></i></button>
-    </div> <!-- End Offcanvas Header -->
-    <!-- Start Offcanvas Mobile Menu Wrapper -->
+    </div>
+    <!-- Fim do Cabeçalho do Menu Offcanvas -->
+
+    <!-- Início do Invólucro do Menu Móvel Offcanvas -->
     <div class="offcanvas-mobile-menu-wrapper">
-        <!-- Start Mobile Menu  -->
+        <!-- Início do Menu Móvel -->
         <div class="mobile-menu-bottom">
-            <!-- Start Mobile Menu Nav -->
+            <!-- Início da Navegação do Menu Móvel -->
             <div class="offcanvas-menu">
                 <ul>
                     <li>
@@ -149,40 +132,13 @@
                     <li>
                         <a href="contact-us.php">Colabore</a>
                     </li>
-                    <!-- <li>
-                        <a href="#"><span>Blogs</span></a>
-                        <ul class="mobile-sub-menu">
-                            <li>
-                                <a href="#">Blog Grid</a>
-                                <ul class="mobile-sub-menu">
-                                    <li><a href="blog-grid-sidebar-left.php">Blog Grid Sidebar left</a></li>
-                                    <li><a href="blog-grid-sidebar-right.php">Blog Grid Sidebar Right</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="blog-full-width.php">Blog Full Width</a>
-                            </li>
-                            <li>
-                                <a href="#">Blog List</a>
-                                <ul class="mobile-sub-menu">
-                                    <li><a href="blog-list-sidebar-left.php">Blog List Sidebar left</a></li>
-                                    <li><a href="blog-list-sidebar-right.php">Blog List Sidebar Right</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">Blog Single</a>
-                                <ul class="mobile-sub-menu">
-                                    <li><a href="blog-single-sidebar-left.php">Blog Single Sidebar left</a></li>
-                                    <li><a href="blog-single-sidebar-right.php">Blog Single Sidebar Right</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li> -->
                 </ul>
-            </div> <!-- End Mobile Menu Nav -->
-        </div> <!-- End Mobile Menu -->
+            </div>
+            <!-- Fim da Navegação do Menu Móvel -->
+        </div>
+        <!-- Fim do Menu Móvel -->
 
-        <!-- Start Mobile contact Info -->
+        <!-- Início das Informações de Contato Móveis -->
         <div class="mobile-contact-info">
             <div class="logo">
                 <a href="index.php"><img src="assets/images/logo/logo_history.png" alt=""></a>
@@ -201,60 +157,35 @@
             </ul>
 
             <ul class="user-link">
-                <li><a href="wishlist.php">login</a></li>
-                <li><a href="cart.php">registro</a></li>
+                <li><a href="login.php">Login</a></li>
+                <li><a href="register.php">Register</a></li>
+            </ul>
+            <ul class="user-link">
+                <li><a href="login_admin.php">Admin</a></li>
             </ul>
         </div>
-        <!-- End Mobile contact Info -->
-
-    </div> <!-- End Offcanvas Mobile Menu Wrapper -->
-</div> <!-- ...:::: End Offcanvas Mobile Menu Section:::... -->
-
-<!-- Start Offcanvas Mobile Menu Section -->
-<div id="offcanvas-about" class="offcanvas offcanvas-rightside offcanvas-mobile-about-section">
-    <!-- Start Offcanvas Header -->
-    <div class="offcanvas-header text-right">
-        <button class="offcanvas-close"><i class="ion-android-close"></i></button>
-    </div> <!-- End Offcanvas Header -->
-    <!-- Start Offcanvas Mobile Menu Wrapper -->
-    <!-- Start Mobile contact Info -->
-    <div class="mobile-contact-info">
-        <div class="logo">
-            <a href="index.php"><img src="assets/images/logo/logo_history.png" alt=""></a>
-        </div>
-
-        <address class="address">
-            <span>Endereço: ----------</span>
-            <span>Telefone: +55 31 9940-8134</span>
-            <span>Email: simelliana@gmail.com </span>
-        </address>
-
-        <ul class="social-link">
-            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-        </ul>
-
-        <ul class="user-link">
-            <li><a href="login.php">Login</a></li>
-            <li><a href="register.php">Register</a></li>
-        </ul>
-        <ul class="user-link">
-            <li><a href="login_admin.php">Admin</a></li>
-        </ul>
+        <!-- Fim das Informações de Contato Móveis -->
     </div>
-    <!-- End Mobile contact Info -->
-</div> <!-- ...:::: End Offcanvas Mobile Menu Section:::... -->
+    <!-- Fim do Invólucro do Menu Móvel Offcanvas -->
+</div>
+<!-- ...:::: Fim da Seção do Menu Móvel Offcanvas ::::... -->
 
-<!-- Start Offcanvas Search Bar Section -->
+<!-- Início da Seção da Barra de Pesquisa do Offcanvas -->
 <div id="search" class="search-modal">
     <button type="button" class="close">×</button>
-    <form>
-        <input type="search" placeholder="type keyword(s) here" />
-        <button type="submit" class="btn btn-lg btn-golden">Search</button>
+    <form action="search.php" method="POST" class="search-form">
+        <input type="search" name="search_box" maxlength="100" placeholder="Pesquisar postagens" required />
+        <button type="submit" class="btn btn-lg btn-golden" name="search_btn">Pesquisar</button>
     </form>
 </div>
-<!-- End Offcanvas Search Bar Section -->
 
-<!-- Offcanvas Overlay -->
+<!-- 
+<form action="search.php" method="POST" class="search-form">
+    <input type="text" name="search_box" class="box" maxlength="100" placeholder="search for blogs" required>
+    <button type="submit" class="fas fa-search" name="search_btn"></button>
+</form> -->
+
+<!-- Fim da Seção da Barra de Pesquisa do Offcanvas -->
+
+<!-- Sobreposição do Offcanvas -->
 <div class="offcanvas-overlay"></div>
