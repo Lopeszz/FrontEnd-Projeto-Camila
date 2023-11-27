@@ -112,7 +112,8 @@ include 'components/like_post.php';
                                                             </a>
                                                         </li>
                                                     </ul>
-                                                    <h6 class="title"><a
+                                                    <h6 class="title">
+                                                        <a
                                                             href="blog-single-sidebar-left.php?post_id=<?= $post_id; ?>">
                                                             <?= $fetch_posts['title']; ?>
                                                         </a>
