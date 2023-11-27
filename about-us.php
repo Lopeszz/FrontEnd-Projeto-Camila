@@ -39,7 +39,15 @@
     <link rel="stylesheet" href="assets/css/about-us.css">
 
 </head>
+<style>
+    .img-fluid {
+    border-radius: 50%;
+    width: 200px; /* ou o tamanho que você desejar */
+    height: 200px; /* deve ser igual à largura para um círculo perfeito */
+    object-fit: cover; /* isso garante que a imagem cubra todo o espaço sem ser distorcida */
+}
 
+</style>
 <body>
     <!-- Start Header Area -->
     <?php
@@ -132,7 +140,7 @@
                     <div class="col-xl-3 mb-5">
                         <div class="team-single" data-aos="fade-up" data-aos-delay="200">
                             <div class="team-img">
-                                <img class="img-fluid" src="assets/images/team/leader2.png" alt="">
+                                <img class="img-fluid" src="uploaded_img/ale1.jpg" alt="">
                             </div>
                             <div class="team-content">
                                 <h6 class="team-name font--bold mt-5">Alejandro Martins</h6>
@@ -187,7 +195,7 @@
                     <div class="col-xl-3 mb-5">
                         <div class="team-single" data-aos="fade-up" data-aos-delay="600">
                             <div class="team-img">
-                                <img class="img-fluid" src="assets/images/team/leader4.png" alt="">
+                                <img class="img-fluid" src="uploaded_img/vitor.jpg" alt="">
                             </div>
                             <div class="team-content">
                                 <h6 class="team-name font--bold mt-5">Vitor Dumont</h6>
@@ -259,7 +267,7 @@
                     <div class="col-xl-3 mb-5">
                         <div class="team-single" data-aos="fade-up" data-aos-delay="600">
                             <div class="team-img">
-                                <img class="img-fluid" src="uploaded_img/maria clarai3b.jpg" alt="">
+                                <img class="img-fluid" src="uploaded_img/mariaclaramaia1.jpg" alt="">
                             </div>
                             <div class="team-content">
                                 <h6 class="team-name font--bold mt-5">Maria Clara Maia</h6>
@@ -277,7 +285,7 @@
                     <div class="col-xl-3 mb-5">
                         <div class="team-single" data-aos="fade-up" data-aos-delay="600">
                             <div class="team-img">
-                                <img class="img-fluid" src="assets/images/team/leader4.png" alt="">
+                                <img class="img-fluid" src="uploaded_img/lauany1.jpg" alt="">
                             </div>
                             <div class="team-content">
                                 <h6 class="team-name font--bold mt-5">Lauany Aparecida</h6>
@@ -294,7 +302,7 @@
                     <div class="col-xl-3 mb-5">
                         <div class="team-single" data-aos="fade-up" data-aos-delay="600">
                             <div class="team-img">
-                                <img class="img-fluid" src="" alt="">
+                                <img class="img-fluid" src="uploaded_img/tauane1.jpg" alt="">
                             </div>
                             <div class="team-content">
                                 <h6 class="team-name font--bold mt-5">Tauane Fernades</h6>
