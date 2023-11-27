@@ -26,7 +26,7 @@ if (isset($_POST['submit'])) {
         $_SESSION['user_id'] = $row['id'];
         header('location:index.php');
     } else {
-        $message[] = 'incorrect username or password!';
+        $message[] = 'Usuário ou senha incorretos!';
     }
 
 }
@@ -47,6 +47,8 @@ if (isset($_POST['submit'])) {
 
     <!-- ::::::::::::::Favicon icon::::::::::::::-->
     <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 
     <!-- ::::::::::::::All CSS Files here :::::::::::::: -->
     <!-- Vendor CSS -->
@@ -125,6 +127,18 @@ if (isset($_POST['submit'])) {
                                 <p>Não tem uma conta? <a href="register.php">Registre-se agora</a></p>
                             </div>
                         </form>
+                        <?php
+                        if (isset($message)) {
+                            foreach ($message as $message) {
+                                echo '
+                                    <div class="para-tags aos-init aos-animate">
+                                        ' . $message . '
+                                        <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
+                                    </div>
+                                    ';
+                            }
+                        }
+                        ?>
                     </div>
                 </div>
                 <!-- Fim da área de login -->
@@ -137,8 +151,6 @@ if (isset($_POST['submit'])) {
     require_once("footer.php");
     ?>
 
-    <!-- material-scrolltop button -->
-    <button class="material-scrolltop" type="button"></button>
 
     <!-- ::::::::::::::All JS Files here :::::::::::::: -->
     <!-- Global Vendor, plugins JS -->

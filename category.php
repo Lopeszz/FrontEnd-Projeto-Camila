@@ -38,7 +38,21 @@ $category = isset($_GET['category']) ? $_GET['category'] : '';
    <?php
    require_once("menu.php");
    ?>
+   <!-- ...:::: Start Breadcrumb Section:::... -->
+   <div class="breadcrumb-section breadcrumb-bg-color--golden" style="margin-top: -5%;">
+      <div class="breadcrumb-wrapper">
+         <div class="container">
+            <div class="row">
+               <div class="col-12">
+                  <h4 class="title-category-user"><?= $category; ?></h3>
+                  <div class="breadcrumb-nav breadcrumb-nav-color--black breadcrumb-nav-hover-color--golden">
 
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div> <!-- ...:::: End Breadcrumb Section:::... -->
    <div class="blog-section">
       <div class="container">
          <div class="row">
@@ -72,7 +86,7 @@ $category = isset($_GET['category']) ? $_GET['category'] : '';
                                     <input type="hidden" name="post_id" value="<?= $post_id; ?>">
                                     <input type="hidden" name="admin_id" value="<?= $fetch_posts['admin_id']; ?>">
                                     <div class="image-box">
-                                       <a href="blog-single-sidebar-left.html" class="image-link">
+                                       <a href="blog-single-sidebar-left.php?post_id=<?= $post_id; ?>" class="image-link">
                                           <?php
                                           if ($fetch_posts['image'] != '') {
                                              ?>
@@ -94,14 +108,15 @@ $category = isset($_GET['category']) ? $_GET['category'] : '';
                                              </a>
                                           </li>
                                        </ul>
-                                       <h6 class="title"><a href="blog-single-sidebar-left.html">
+                                       <h6 class="title">
+                                          <a href="blog-single-sidebar-left.php?post_id=<?= $post_id; ?>">
                                              <?= $fetch_posts['title']; ?>
                                           </a>
                                        </h6>
                                        <p>
                                           <?= $fetch_posts['content']; ?>
                                        </p>
-                                       <a href="view_post.php?post_id=<?= $post_id; ?>"
+                                       <a href="blog-single-sidebar-left.php?post_id=<?= $post_id; ?>"
                                           class="read-more-btn icon-space-left">Leia mais
                                           <span class="icon">
                                              <i class="ion-ios-arrow-thin-right"></i>
@@ -120,7 +135,7 @@ $category = isset($_GET['category']) ? $_GET['category'] : '';
                            <?php
                         }
                      } else {
-                        echo '<p class="empty">no posts found for this category!</p>';
+                        echo '<p class="empty">Nenhuma postagem encontrada para esta categoria!</p>';
                      }
                      ?>
                   </div>

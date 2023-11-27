@@ -138,7 +138,7 @@
                     <li>
                         <a href="#"><span>Apresentação</span></a>
                     </li>
-                   
+
                     <li>
                         <a href="centro-documentacao.php">Centro de Documentação</a>
                     </li>
@@ -240,7 +240,7 @@
             <li><a href="register.php">Register</a></li>
         </ul>
         <ul class="user-link">
-            <li><a href="login_admin.php">Login como Admin</a></li>
+            <li><a href="login_admin.php">Admin</a></li>
         </ul>
     </div>
     <!-- End Mobile contact Info -->
@@ -249,11 +249,18 @@
 <!-- Start Offcanvas Search Bar Section -->
 <div id="search" class="search-modal">
     <button type="button" class="close">×</button>
-    <form>
-        <input type="search" placeholder="type keyword(s) here" />
-        <button type="submit" class="btn btn-lg btn-golden">Search</button>
+    <form action="search.php" method="POST" class="search-form">
+        <input type="search" name="search_box" maxlength="100" placeholder="Pesquise por publicações" required />
+        <button type="submit" class="btn btn-lg btn-golden" name="search_btn">Buscar</button>
     </form>
 </div>
+
+<!-- 
+<form action="search.php" method="POST" class="search-form">
+    <input type="text" name="search_box" class="box" maxlength="100" placeholder="search for blogs" required>
+    <button type="submit" class="fas fa-search" name="search_btn"></button>
+</form> -->
+
 <!-- End Offcanvas Search Bar Section -->
 
 <!-- Offcanvas Overlay -->

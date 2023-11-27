@@ -10,7 +10,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>HONO - Multi Purpose HTML Template</title>
+    <title>Centro de Documentação</title>
 
     <!-- ::::::::::::::Favicon icon::::::::::::::-->
     <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/png">
@@ -21,72 +21,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
-<style>
-    .main-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        padding: 50px;
-        box-sizing: border-box;
-        background-color: white;
-        /* Cor de fundo */
-    }
 
-    .content-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 80%;
-        max-width: 1200px;
-        background-color: #f5f5f5;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
-        /* Previne que a imagem saia do container */
-    }
-
-    .text-section {
-        flex: 1;
-        padding: 20px;
-        margin-right: 20px;
-        /* Espaçamento entre o texto e a imagem */
-        color: #333;
-        /* Cor do texto */
-    }
-
-    .image-section {
-        flex: 1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 20px;
-    }
-
-    .image-section img {
-        width: 100%;
-        max-height: 300px;
-        object-fit: cover;
-        /* Garante que a imagem cubra o espaço disponível */
-    }
-
-    .content-title {
-        margin-bottom: 15px;
-        color: #a3803e;
-        font-size: 24px;
-        text-align: center;
-    }
-
-    .content-block p {
-        font-size: 18px;
-        line-height: 1.6;
-        text-align: justify;
-    }
-
-    .slider-spacer {
-        height: 50px;
-    }
-</style>
 </head>
 
 <body>
@@ -94,7 +29,7 @@
 
     <div class="slider-spacer"></div>
 
-    <div class="main-container">
+    <div class="main-container" data-aos="fade-up" data-aos-delay="200">
         <div class="content-container">
             <div class="text-section content-block">
                 <h3 class="content-title">DEFINIÇÃO</h3>

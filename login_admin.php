@@ -19,7 +19,7 @@ if (isset($_POST['submit'])) {
         $_SESSION['admin_id'] = $fetch_admin_id['id'];
         header('location:admin/dashboard.php');
     } else {
-        $message[] = 'incorrect username or password!';
+        $message[] = 'Usuário ou senha incorretos!';
     }
 
 }
@@ -60,6 +60,8 @@ if (isset($_POST['submit'])) {
     <!-- <link rel="stylesheet" href="assets/sass/style.css"> -->
 
     <!-- Use the minified version files listed below for better performance and remove the files listed above -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <link rel="stylesheet" href="assets/css/vendor/vendor.min.css">
     <link rel="stylesheet" href="assets/css/plugins/plugins.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -69,18 +71,7 @@ if (isset($_POST['submit'])) {
 <body>
     <?php
     require_once("menu.php");
-    ?>
-    <?php
-    if (isset($message)) {
-        foreach ($message as $message) {
-            echo '
-      <div class="message">
-         <span>' . $message . '</span>
-         <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
-      </div>
-      ';
-        }
-    }
+
     ?>
 
     <!-- ...:::: Start Breadcrumb Section:::... -->
@@ -89,12 +80,12 @@ if (isset($_POST['submit'])) {
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h3 class="breadcrumb-title">Login</h3>
+                        <h3 class="breadcrumb-title">ADMIN</h3>
                         <div class="breadcrumb-nav breadcrumb-nav-color--black breadcrumb-nav-hover-color--golden">
                             <nav aria-label="breadcrumb">
                                 <ul>
                                     <li><a href="index.html">Home</a></li>
-                                    <li class="active" aria-current="page">Login</li>
+                                    <li class="active" aria-current="page">Admin</li>
                                 </ul>
                             </nav>
                         </div>
@@ -111,7 +102,7 @@ if (isset($_POST['submit'])) {
                 <!-- Início da área de login -->
                 <div class="col-lg-6 col-md-6">
                     <div class="account_form" data-aos="fade-up" data-aos-delay="0">
-                        <h3>Login</h3>
+                        <h3>Admin</h3>
                         <form action="" method="post">
                             <div class="default-form-box">
                                 <label>Email <span>*</span></label>
@@ -128,23 +119,31 @@ if (isset($_POST['submit'])) {
                             <div class="login_submit">
                                 <button class="btn btn-md btn-black-default-hover mb-4" type="submit" value="login now"
                                     name="submit">Login</button>
-                                <p>Não tem uma conta? <a href="register.php">Registre-se agora</a></p>
                             </div>
                         </form>
+                        <?php
+                        if (isset($message)) {
+                            foreach ($message as $message) {
+                                echo '
+                                    <div class="para-tags aos-init aos-animate">
+                                        ' . $message . '
+                                        <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
+                                    </div>
+                                    ';
+                            }
+                        }
+                        ?>
                     </div>
                 </div>
-                <!-- Fim da área de login -->
             </div>
         </div>
     </div>
     <!-- Fim da Seção de Login do Cliente -->
 
+
     <?php
     require_once("footer.php");
     ?>
-
-    <!-- material-scrolltop button -->
-    <button class="material-scrolltop" type="button"></button>
 
     <!-- ::::::::::::::All JS Files here :::::::::::::: -->
     <!-- Global Vendor, plugins JS -->

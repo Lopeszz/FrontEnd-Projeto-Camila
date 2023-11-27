@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>HONO - Multi Purpose HTML Template</title>
+    <title>Sobre Nós</title>
 
     <!-- ::::::::::::::Favicon icon::::::::::::::-->
     <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/png">
@@ -54,8 +54,8 @@
     require_once("menu.php");
     ?>
     <!-- Start Header Area -->
-    
-   
+
+
 
     <!-- Start About Top -->
     <div class="about-top">
@@ -74,6 +74,8 @@
                         <p>O projeto de extensão realizado no Instituto Federal de Minas Gerais (IFMG), sob a coordenação da professora de história Camila Similhana, representa uma iniciativa significativa no campo da pesquisa histórica e da educação patrimonial. Com a participação ativa de seus alunos, o projeto teve como objetivo principal resgatar e preservar documentos históricos relacionados à cidade de São João Evangelista, em Minas Gerais.</p>
                     </div>
                 </div>
+
+
             </div>
         </div>
     </div>
@@ -102,11 +104,14 @@
                     <div class="col-xl-3 mb-5">
                         <div class="team-single" data-aos="fade-up" data-aos-delay="0">
                             <div class="team-img">
-                                <img class="img-fluid" src="assets/images/team/leader1.png" alt="">
+                                <img class="img-fluid" src="uploaded_img/Camila.jpg" alt="">
                             </div>
                             <div class="team-content">
                                 <h6 class="team-name font--bold mt-5">Camila Similhana</h6>
-                                <span class="team-title">Coordenação</span>
+                                <span class="team-title">Coordenação
+
+
+                                </span>
                                 <ul class="team-social pos-absolute">
                                     <li><a href="#"><i class="ion-social-facebook"></i></a></li>
                                     <li><a href="#"><i class="ion-social-twitter"></i></a></li>

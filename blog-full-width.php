@@ -94,7 +94,9 @@ include 'components/like_post.php';
                                                 <input type="hidden" name="post_id" value="<?= $post_id; ?>">
                                                 <input type="hidden" name="admin_id" value="<?= $fetch_posts['admin_id']; ?>">
                                                 <div class="image-box">
-                                                    <a href="blog-single-sidebar-left.html" class="image-link">
+                                                    <a href="blog-single-sidebar-left.php?post_id=<?= $post_id; ?>"
+                                                        class="image-link">
+
                                                         <?php
                                                         if ($fetch_posts['image'] != '') {
                                                             ?>
@@ -118,14 +120,16 @@ include 'components/like_post.php';
                                                             </a>
                                                         </li>
                                                     </ul>
-                                                    <h6 class="title"><a href="blog-single-sidebar-left.html">
+                                                    <h6 class="title">
+                                                        <a href="blog-single-sidebar-left.php?post_id=<?= $post_id; ?>"
+                                                            class="image-link">
                                                             <?= $fetch_posts['title']; ?>
                                                         </a>
                                                     </h6>
                                                     <p>
                                                         <?= $fetch_posts['content']; ?>
                                                     </p>
-                                                    <a href="view_post.php?post_id=<?= $post_id; ?>"
+                                                    <a href="blog-single-sidebar-left.php?post_id=<?= $post_id; ?>"
                                                         class="read-more-btn icon-space-left">Leia mais
                                                         <span class="icon">
                                                             <i class="ion-ios-arrow-thin-right"></i>
@@ -155,7 +159,7 @@ include 'components/like_post.php';
         </div>
     </div>
 
-    
+
 
     <!-- material-scrolltop button -->
     <button class="material-scrolltop" type="button"></button>
