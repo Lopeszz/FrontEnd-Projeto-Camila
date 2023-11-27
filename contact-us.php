@@ -63,54 +63,8 @@
     <!-- ...::::Start Contact Section:::... -->
     <div class="contact-section">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-4">
-                    <!-- Start Contact Details -->
-                    <div class="contact-details-wrapper section-top-gap-100" data-aos="fade-up" data-aos-delay="0">
-                        <div class="contact-details">
-                            <!-- Start Contact Details Single Item -->
-                            <div class="contact-details-single-item">
-                                <div class="contact-details-icon">
-                                    <i class="fa fa-phone"></i>
-                                </div>
-                                <div class="contact-details-content contact-phone">
-                                    <a href="tel:+0123456789">0123456789</a>
-                                    <a href="tel:+0123456789">0123456789</a>
-                                </div>
-                            </div> <!-- End Contact Details Single Item -->
-                            <!-- Start Contact Details Single Item -->
-                            <div class="contact-details-single-item">
-                                <div class="contact-details-icon">
-                                    <i class="fa fa-globe"></i>
-                                </div>
-                                <div class="contact-details-content contact-phone">
-                                    <a href="mailto:demo@example.com">demo@example.com</a>
-                                    <a href="http://www.example.com/">www.example.com</a>
-                                </div>
-                            </div> <!-- End Contact Details Single Item -->
-                            <!-- Start Contact Details Single Item -->
-                            <div class="contact-details-single-item">
-                                <div class="contact-details-icon">
-                                    <i class="fa fa-map-marker"></i>
-                                </div>
-                                <div class="contact-details-content contact-phone">
-                                    <span>Your address goes here.</span>
-                                </div>
-                            </div> <!-- End Contact Details Single Item -->
-                        </div>
-                        <!-- Start Contact Social Link -->
-                        <div class="contact-social">
-                            <h4>Follow Us</h4>
-                            <ul>
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                            </ul>
-                        </div> <!-- End Contact Social Link -->
-                    </div> <!-- End Contact Details -->
-                </div>
+            <div class="row-contact-us">
+               
                 <div class="col-lg-8">
                     <div class="contact-form section-top-gap-100" data-aos="fade-up" data-aos-delay="200">
                         <h3>Nos mande um email</h3>

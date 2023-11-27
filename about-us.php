@@ -101,11 +101,14 @@
                     <div class="col-xl-3 mb-5">
                         <div class="team-single" data-aos="fade-up" data-aos-delay="0">
                             <div class="team-img">
-                                <img class="img-fluid" src="assets/images/team/leader1.png" alt="">
+                            <img class="img-fluid" src="uploaded_img/Camila.jpg" alt="">
                             </div>
                             <div class="team-content">
                                 <h6 class="team-name font--bold mt-5">Camila Similhana</h6>
-                                <span class="team-title">Coordenação</span>
+                                <span class="team-title">Coordenação
+                            
+                                
+                                </span>
                                 <ul class="team-social pos-absolute">
                                     <li><a href="#"><i class="ion-social-facebook"></i></a></li>
                                     <li><a href="#"><i class="ion-social-twitter"></i></a></li>
@@ -139,7 +142,7 @@
                     <div class="col-xl-3 mb-5">
                         <div class="team-single" data-aos="fade-up" data-aos-delay="200">
                             <div class="team-img">
-                                <img class="img-fluid" src="assets/images/team/leader2.png" alt="">
+                                <img class="img-fluid" src="uploaded_img/Alejandro.jpeg" alt="">
                             </div>
                             <div class="team-content">
                                 <h6 class="team-name font--bold mt-5">Alejandro Martins</h6>

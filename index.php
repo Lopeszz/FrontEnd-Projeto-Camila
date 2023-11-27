@@ -61,7 +61,7 @@ if (isset($_SESSION['user_id'])) {
     ?>
 
     <!-- Start Hero Slider Section-->
-    <div class="hero-slider-section">
+    <div class="hero-slider-section " data-aos="fade-up" data-aos-delay="250">
         <!-- Slider main container -->
         <div class="hero-slider-active swiper-container">
             <!-- Additional required wrapper -->
@@ -75,11 +75,11 @@ if (isset($_SESSION['user_id'])) {
                     <!-- Hero Slider Content -->
                     <div class="hero-slider-wrapper">
                         <div class="container">
-                            <div class="row">
+                            <div class="row-index">
                                 <div class="col-auto">
                                     <div class="hero-slider-content">
-                                        <h4 class="subtitle">New collection</h4>
-                                        <h2 class="title">Centro de documentação São João Evangelista</h2>
+                                        <h4 class="subtitle">Centro de documentação</h4>
+                                        <h2 class="title">São João Evangelista</h2>
                                     </div>
                                 </div>
                             </div>
@@ -158,7 +158,7 @@ if (isset($_SESSION['user_id'])) {
             </div>
 
         </div>
-        <div class="carousel-container">
+        <div class="carousel-container" data-aos="fade-up" data-aos-delay="200">
             <i class="arrow fas fa-chevron-left arrow-left"></i>
             <div class="carousel-content">
                 <div class="carousel-item">
