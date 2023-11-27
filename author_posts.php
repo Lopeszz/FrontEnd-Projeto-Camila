@@ -50,7 +50,21 @@ include 'components/like_post.php';
    <?php include 'components/user_header-blog-not-view.php'; ?>
    <!-- header section ends -->
 
+ <!-- ...:::: Start Breadcrumb Section:::... -->
+ <div class="breadcrumb-section breadcrumb-bg-color--golden" style="margin-top: -5%;">
+      <div class="breadcrumb-wrapper">
+         <div class="container">
+            <div class="row">
+               <div class="col-12">
+                  <h4 class="title-category-user"><?= $author; ?></h3>
+                  <div class="breadcrumb-nav breadcrumb-nav-color--black breadcrumb-nav-hover-color--golden">
 
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div> <!-- ...:::: End Breadcrumb Section:::... -->
    <div class="blog-section">
       <div class="container">
          <div class="row">

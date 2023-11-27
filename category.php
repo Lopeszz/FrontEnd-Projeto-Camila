@@ -38,7 +38,21 @@ $category = isset($_GET['category']) ? $_GET['category'] : '';
    <?php
    require_once("menu.php");
    ?>
+   <!-- ...:::: Start Breadcrumb Section:::... -->
+   <div class="breadcrumb-section breadcrumb-bg-color--golden" style="margin-top: -5%;">
+      <div class="breadcrumb-wrapper">
+         <div class="container">
+            <div class="row">
+               <div class="col-12">
+                  <h4 class="title-category-user"><?= $category; ?></h3>
+                  <div class="breadcrumb-nav breadcrumb-nav-color--black breadcrumb-nav-hover-color--golden">
 
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div> <!-- ...:::: End Breadcrumb Section:::... -->
    <div class="blog-section">
       <div class="container">
          <div class="row">

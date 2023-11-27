@@ -20967,3 +20967,12 @@ footer{
     }
 
 /**/
+.title-category-user{
+    text-transform: uppercase;
+    font-size: 25px;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+.blog-wrapper{
+    margin-bottom: 10%;
+}
