@@ -1,7 +1,8 @@
 <?php
 
-include '../components/connect.php';
+define('BASE', $_SERVER['DOCUMENT_ROOT'] . '\FrontEnd-Projeto-Camila');
 
+include BASE . '/components/connect.php';
 session_start();
 
 $admin_id = $_SESSION['admin_id'];
@@ -87,13 +88,12 @@ if (isset($_POST['delete_comment'])) {
 
             <form method="post">
                <input type="hidden" name="post_id" value="<?= $post_id; ?>">
-               <div class="status"
-                  style="background-color:<?php if ($fetch_posts['status'] == 'active') {
-                     echo 'limegreen';
-                  } else {
-                     echo 'coral';
-                  }
-                  ; ?>;">
+               <div class="status" style="background-color:<?php if ($fetch_posts['status'] == 'active') {
+                  echo 'limegreen';
+               } else {
+                  echo 'coral';
+               }
+               ; ?>;">
                   <?= $fetch_posts['status']; ?>
                </div>
                <?php if ($fetch_posts['image'] != '') { ?>

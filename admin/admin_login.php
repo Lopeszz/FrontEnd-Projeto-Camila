@@ -1,7 +1,8 @@
 <?php
 
-include '../components/connect.php';
+define('BASE', $_SERVER['DOCUMENT_ROOT'] . '\FrontEnd-Projeto-Camila');
 
+include BASE . '/components/connect.php';
 session_start();
 
 if (isset($_POST['submit'])) {
