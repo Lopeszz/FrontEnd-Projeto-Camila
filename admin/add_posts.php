@@ -122,7 +122,7 @@ if (isset($_POST['draft'])) {
    $image = filter_var($image, FILTER_SANITIZE_STRING);
    $image_size = $_FILES['image']['size'];
    $image_tmp_name = $_FILES['image']['tmp_name'];
-   $image_folder = BASE . '/uploaded_img/' . $image;
+   $image_folder = '../uploaded_img/' . $image;
 
    $select_image = $conn->prepare("SELECT * FROM `posts` WHERE image = ? AND admin_id = ?");
    $select_image->execute([$image, $admin_id]);
