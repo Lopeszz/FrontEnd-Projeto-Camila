@@ -1,5 +1,5 @@
 <?php
-define('BASE', $_SERVER['DOCUMENT_ROOT'] . '\html');
+define('BASE', $_SERVER['DOCUMENT_ROOT'] . '\FrontEnd-Projeto-Camila');
 
 include BASE . '/components/connect.php';
 
