@@ -1,7 +1,6 @@
 <?php
-define('BASE', $_SERVER['DOCUMENT_ROOT'] . '\FrontEnd-Projeto-Camila');
+include '../components/connect.php';
 
-include BASE . '/components/connect.php';
 
 session_start();
 
