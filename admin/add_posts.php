@@ -26,13 +26,13 @@ if (isset($_POST['publish'])) {
    $image = filter_var($image, FILTER_SANITIZE_STRING);
    $image_size = $_FILES['image']['size'];
    $image_tmp_name = $_FILES['image']['tmp_name'];
-   $image_folder = BASE . '/uploaded_img/' . $image;
+   $image_folder = '../uploaded_img/' . $image;
 
    $file = $_FILES['file']['name'];
    $file = filter_var($file, FILTER_SANITIZE_STRING);
    $file_size = $_FILES['file']['size'];
    $file_tmp_name = $_FILES['file']['tmp_name'];
-   $file_folder = BASE . '/uploaded_file/' . $file;
+   $file_folder = '../uploaded_file/' . $file;
 
    $select_image = $conn->prepare("SELECT * FROM `posts` WHERE image = ? AND admin_id = ?");
    $select_image->execute([$image, $admin_id]);
