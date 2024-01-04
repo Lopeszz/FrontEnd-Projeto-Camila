@@ -186,27 +186,11 @@ if (isset($_POST['draft'])) {
          <p>Categoria da postagem <span>*</span></p>
          <select name="category" class="box" required>
             <option value="" selected disabled>-- Selecione a categoria* </option>
-            <option value="natureza">Natureza</option>
-            <option value="educação">Educação</option>
-            <option value="animais e pets">Animais e Pets</option>
-            <option value="tecnologia">Tecnologia</option>
-            <option value="moda">Moda</option>
-            <option value="entretenimento">Entretenimento</option>
-            <option value="filmes e animações">Filmes</option>
-            <option value="games">Games</option>
-            <option value="música">Música</option>
-            <option value="esportes">Esportes</option>
-            <option value="notícias">Notícias</option>
-            <option value="viagens">Viagens</option>
-            <option value="comédia">Comédia</option>
-            <option value="design e desenvolvimento">Design e Desenvolvimento</option>
-            <option value="comida e bebida">Comida e Bebida</option>
-            <option value="estilo de vida">Estilo de Vida</option>
-            <option value="pessoal">Pessoal</option>
-            <option value="saúde e fitness">Saúde e Fitness</option>
-            <option value="negócios">Negócios</option>
-            <option value="compras">Compras</option>
-            <option value="animações">Animações</option>
+            <option value="fotos">Fotos</option>
+            <option value="manuscritos">Manuscritos</option>
+            <option value="jornais">Jornais</option>
+            <option value="historia-oral">História Oral</option>
+            <option value="historia-local">História Local</option>
          </select>
          <p>Imagem da postagem</p>
          <input type="file" name="image" class="box" accept="image/jpg, image/jpeg, image/png, image/webp">

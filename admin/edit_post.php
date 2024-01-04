@@ -148,27 +148,11 @@ if (isset($_POST['delete_image'])) {
                   <option value="<?= $fetch_posts['category']; ?>" selected>
                      <?= $fetch_posts['category']; ?>
                   </option>
-                  <option value="nature">Natureza</option>
-                  <option value="education">Educação</option>
-                  <option value="pets and animals">Animais de Estimação</option>
-                  <option value="technology">Tecnologia</option>
-                  <option value="fashion">Moda</option>
-                  <option value="entertainment">Entretenimento</option>
-                  <option value="movies and animations">Filmes</option>
-                  <option value="gaming">Jogos</option>
-                  <option value="music">Música</option>
-                  <option value="sports">Esportes</option>
-                  <option value="news">Notícias</option>
-                  <option value="travel">Viagem</option>
-                  <option value="comedy">Comédia</option>
-                  <option value="design and development">Design e Desenvolvimento</option>
-                  <option value="food and drinks">Comida e Bebida</option>
-                  <option value="lifestyle">Estilo de Vida</option>
-                  <option value="personal">Pessoal</option>
-                  <option value="health and fitness">Saúde e Fitness</option>
-                  <option value="business">Negócios</option>
-                  <option value="shopping">Compras</option>
-                  <option value="animations">Animações</option>
+                  <option value="fotos">Fotos</option>
+                  <option value="manuscritos">Manuscritos</option>
+                  <option value="jornais">Jornais</option>
+                  <option value="historia-oral">História Oral</option>
+                  <option value="historia-local">História Local</option>
                </select>
                <p>Imagem da postagem</p>
                <input type="file" name="image" class="box" accept="image/jpg, image/jpeg, image/png, image/webp">

@@ -82,16 +82,12 @@ include 'components/like_post.php';
             <div class="box">
                 <p>categories</p>
                 <div class="flex-box">
-                    <a href="category.php?category=nature" class="links">nature</a>
-                    <a href="category.php?category=education" class="links">education</a>
-                    <a href="category.php?category=business" class="links">business</a>
-                    <a href="category.php?category=travel" class="links">travel</a>
-                    <a href="category.php?category=news" class="links">news</a>
-                    <a href="category.php?category=gaming" class="links">gaming</a>
-                    <a href="category.php?category=sports" class="links">sports</a>
-                    <a href="category.php?category=design" class="links">design</a>
-                    <a href="category.php?category=fashion" class="links">fashion</a>
-                    <a href="category.php?category=persional" class="links">persional</a>
+                    <a href="category.php?category=fotos" class="links">Fotos</a>
+                    <a href="category.php?category=manuscritos" class="links">Manuscritos</a>
+                    <a href="category.php?category=jornais" class="links">Jornais</a>
+                    <a href="category.php?category=historia-oral" class="links">História Oral</a>
+                    <a href="category.php?category=historia-local" class="links">História Local</a>
+
                     <a href="all_category.php" class="btn">view all</a>
                 </div>
             </div>

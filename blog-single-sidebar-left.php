@@ -178,14 +178,12 @@ if ($select_posts->rowCount() > 0) {
                             <h6 class="sidebar-title">Categorias</h6>
                             <div class="sidebar-content">
                                 <ul class="sidebar-menu">
-                                    <li><a href="category.php?category=viagens">Viagens</a></li>
-                                    <li><a href="#">Company</a></li>
-                                    <li><a href="#">Gallery</a></li>
-                                    <li><a href="#">Other</a></li>
-                                    <li><a href="#">Travel</a></li>
-                                    <li><a href="#"> Uncategorized</a></li>
-                                    <li><a href="#"> Video</a></li>
-                                    <li><a href="#">Wordpress</a></li>
+                                    <li><a href="category.php?category=fotos">Fotos</a></li>
+                                    <li><a href="category.php?category=manuscritos">Manuscritos</a></li>
+                                    <li><a href="category.php?category=jornais">Jornais</a></li>
+                                    <li><a href="category.php?category=historia-oral">História Oral</a></li>
+                                    <li><a href="category.php?category=historia-local">História Local</a></li>
+    
                                 </ul>
                             </div>
                         </div> <!-- End Single Sidebar Widget -->
