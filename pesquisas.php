@@ -47,10 +47,10 @@ include 'components/like_post.php';
     <link rel="stylesheet" href="assets/css/vendor/vendor.min.css">
     <link rel="stylesheet" href="assets/css/plugins/plugins.min.css">
     <link rel="stylesheet" href="assets/css/style.min.css">
-
+    
 </head>
 
-<body>
+<body class="content-all">
     <?php
     require_once("menu.php");
     ?>
@@ -173,12 +173,9 @@ include 'components/like_post.php';
 
     <!-- Main JS -->
     <script src="assets/js/main.js"></script>
-
+    <?php
+    require_once("footer.php");
+    ?>
 </body>
 
-
 </html>
-
-<?php
-require_once("footer.php");
-?>

@@ -1,3 +1,14 @@
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    .blog-section {
+        flex: 1 1 0;
+    }
+</style>
 <!-- Start Footer Section -->
 <footer class="footer-section footer-bg " style="padding-top: 0px; margin-top: auto;">
     <!-- Start Footer Bottom -->
