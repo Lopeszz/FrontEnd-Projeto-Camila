@@ -113,14 +113,10 @@ include 'components/like_post.php';
                                                         </li>
                                                     </ul>
                                                     <h6 class="title">
-                                                        <a
-                                                            href="blog-single-sidebar-left.php?post_id=<?= $post_id; ?>">
+                                                        <a href="blog-single-sidebar-left.php?post_id=<?= $post_id; ?>">
                                                             <?= $fetch_posts['title']; ?>
                                                         </a>
                                                     </h6>
-                                                    <p>
-                                                        <?= $fetch_posts['content']; ?>
-                                                    </p>
                                                     <a href="blog-single-sidebar-left.php?post_id=<?= $post_id; ?>"
                                                         class="read-more-btn icon-space-left">Leia mais
                                                         <span class="icon">
