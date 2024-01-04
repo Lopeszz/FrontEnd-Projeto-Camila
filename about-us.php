@@ -41,13 +41,16 @@
 </head>
 <style>
     .img-fluid {
-    border-radius: 50%;
-    width: 200px; /* ou o tamanho que você desejar */
-    height: 200px; /* deve ser igual à largura para um círculo perfeito */
-    object-fit: cover; /* isso garante que a imagem cubra todo o espaço sem ser distorcida */
-}
-
+        border-radius: 50%;
+        width: 200px;
+        /* ou o tamanho que você desejar */
+        height: 200px;
+        /* deve ser igual à largura para um círculo perfeito */
+        object-fit: cover;
+        /* isso garante que a imagem cubra todo o espaço sem ser distorcida */
+    }
 </style>
+
 <body>
     <!-- Start Header Area -->
     <?php
@@ -64,14 +67,18 @@
                 <div class="col-md-6">
                     <div class="about-img" data-aos="fade-up" data-aos-delay="0">
                         <div class="img-responsive">
-                            <img src="uploaded_img/lampada.jpg" alt="">
+                            <img src="assets/images/about/lampada.jpg" alt="">
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="content" data-aos="fade-up" data-aos-delay="200">
                         <h3 class="title">PROJETO DE EXTENSÃO</h3>
-                        <p>O projeto de extensão realizado no Instituto Federal de Minas Gerais (IFMG), sob a coordenação da professora de história Camila Similhana, representa uma iniciativa significativa no campo da pesquisa histórica e da educação patrimonial. Com a participação ativa de seus alunos, o projeto teve como objetivo principal resgatar e preservar documentos históricos relacionados à cidade de São João Evangelista, em Minas Gerais.</p>
+                        <p>O projeto de extensão realizado no Instituto Federal de Minas Gerais (IFMG), sob a
+                            coordenação da professora de história Camila Similhana, representa uma iniciativa
+                            significativa no campo da pesquisa histórica e da educação patrimonial. Com a participação
+                            ativa de seus alunos, o projeto teve como objetivo principal resgatar e preservar documentos
+                            históricos relacionados à cidade de São João Evangelista, em Minas Gerais.</p>
                     </div>
                 </div>
 
@@ -104,7 +111,7 @@
                     <div class="col-xl-3 mb-5">
                         <div class="team-single" data-aos="fade-up" data-aos-delay="0">
                             <div class="team-img">
-                                <img class="img-fluid" src="uploaded_img/Camila.jpg" alt="">
+                                <img class="img-fluid" src="assets/images/about/Camila.jpg" alt="">
                             </div>
                             <div class="team-content">
                                 <h6 class="team-name font--bold mt-5">Camila Similhana</h6>
@@ -126,7 +133,7 @@
                     <div class="col-xl-3 mb-5">
                         <div class="team-single" data-aos="fade-up" data-aos-delay="200">
                             <div class="team-img">
-                                <img class="img-fluid" src="uploaded_img/shay.jpg" alt="">
+                                <img class="img-fluid" src="assets/images/about/shay.jpg" alt="">
                             </div>
                             <div class="team-content">
                                 <h6 class="team-name font--bold mt-5">Shay</h6>
@@ -145,7 +152,7 @@
                     <div class="col-xl-3 mb-5">
                         <div class="team-single" data-aos="fade-up" data-aos-delay="200">
                             <div class="team-img">
-                                <img class="img-fluid" src="uploaded_img/ale1.jpg" alt="">
+                                <img class="img-fluid" src="assets/images/about/ale1.jpg" alt="">
                             </div>
                             <div class="team-content">
                                 <h6 class="team-name font--bold mt-5">Alejandro Martins</h6>
@@ -164,7 +171,7 @@
                     <div class="col-xl-3 mb-5">
                         <div class="team-single" data-aos="fade-up" data-aos-delay="400">
                             <div class="team-img">
-                                <img class="img-fluid" src="uploaded_img/gico.jpg" alt="">
+                                <img class="img-fluid" src="assets/images/about/gico.jpg" alt="">
                             </div>
                             <div class="team-content">
                                 <h6 class="team-name font--bold mt-5">Giovani Lopes</h6>
@@ -182,7 +189,7 @@
                     <div class="col-xl-3 mb-5">
                         <div class="team-single" data-aos="fade-up" data-aos-delay="600">
                             <div class="team-img">
-                                <img class="img-fluid" src="uploaded_img/renata.jpg" alt="">
+                                <img class="img-fluid" src="assets/images/about/renata.jpg" alt="">
                             </div>
                             <div class="team-content">
                                 <h6 class="team-name font--bold mt-5">Renatas Lemes</h6>
@@ -200,7 +207,7 @@
                     <div class="col-xl-3 mb-5">
                         <div class="team-single" data-aos="fade-up" data-aos-delay="600">
                             <div class="team-img">
-                                <img class="img-fluid" src="uploaded_img/vitor.jpg" alt="">
+                                <img class="img-fluid" src="assets/images/about/vitor.jpg" alt="">
                             </div>
                             <div class="team-content">
                                 <h6 class="team-name font--bold mt-5">Vitor Dumont</h6>
@@ -218,7 +225,7 @@
                     <div class="col-xl-3 mb-5">
                         <div class="team-single" data-aos="fade-up" data-aos-delay="600">
                             <div class="team-img">
-                                <img class="img-fluid" src="uploaded_img/natan.jpg" alt="">
+                                <img class="img-fluid" src="assets/images/about/natan.jpg" alt="">
                             </div>
                             <div class="team-content">
                                 <h6 class="team-name font--bold mt-5">Natan Lemos</h6>
@@ -236,7 +243,7 @@
                     <div class="col-xl-3 mb-5">
                         <div class="team-single" data-aos="fade-up" data-aos-delay="600">
                             <div class="team-img">
-                                <img class="img-fluid" src="uploaded_img/julis.jpg" alt="">
+                                <img class="img-fluid" src="assets/images/about/julis.jpg" alt="">
                             </div>
                             <div class="team-content">
                                 <h6 class="team-name font--bold mt-5">Júlia Carvalho</h6>
@@ -254,7 +261,7 @@
                     <div class="col-xl-3 mb-5">
                         <div class="team-single" data-aos="fade-up" data-aos-delay="600">
                             <div class="team-img">
-                                <img class="img-fluid" src="uploaded_img/maria clarai3b.jpg" alt="">
+                                <img class="img-fluid" src="assets/images/about/maria clarai3b.jpg" alt="">
                             </div>
                             <div class="team-content">
                                 <h6 class="team-name font--bold mt-5">Maria Clara Lopes</h6>
@@ -272,7 +279,7 @@
                     <div class="col-xl-3 mb-5">
                         <div class="team-single" data-aos="fade-up" data-aos-delay="600">
                             <div class="team-img">
-                                <img class="img-fluid" src="uploaded_img/mariaclaramaia1.jpg" alt="">
+                                <img class="img-fluid" src="assets/images/about/mariaclaramaia1.jpg" alt="">
                             </div>
                             <div class="team-content">
                                 <h6 class="team-name font--bold mt-5">Maria Clara Maia</h6>
@@ -290,7 +297,7 @@
                     <div class="col-xl-3 mb-5">
                         <div class="team-single" data-aos="fade-up" data-aos-delay="600">
                             <div class="team-img">
-                                <img class="img-fluid" src="uploaded_img/lauany1.jpg" alt="">
+                                <img class="img-fluid" src="assets/images/about/lauany1.jpg" alt="">
                             </div>
                             <div class="team-content">
                                 <h6 class="team-name font--bold mt-5">Lauany Aparecida</h6>
@@ -307,7 +314,7 @@
                     <div class="col-xl-3 mb-5">
                         <div class="team-single" data-aos="fade-up" data-aos-delay="600">
                             <div class="team-img">
-                                <img class="img-fluid" src="uploaded_img/tauane1.jpg" alt="">
+                                <img class="img-fluid" src="assets/images/about/tauane1.jpg" alt="">
                             </div>
                             <div class="team-content">
                                 <h6 class="team-name font--bold mt-5">Tauane Fernades</h6>
@@ -321,24 +328,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 mb-5">
-                        <div class="team-single" data-aos="fade-up" data-aos-delay="600">
-                            <div class="team-img">
-                                <img class="img-fluid" src="assets/images/team/leader4.png" alt="">
-                            </div>
-                            <div class="team-content">
-                                <h6 class="team-name font--bold mt-5">Suenny Oliveira</h6>
-                                <span class="team-title">Prospecção e organização de fontes</span>
-                                <ul class="team-social pos-absolute">
-                                    <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                                    <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-                                    <li><a href="#"><i class="ion-social-instagram"></i></a></li>
-                                    <li><a href="#"><i class="ion-social-linkedin"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </div>
