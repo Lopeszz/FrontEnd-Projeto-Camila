@@ -47,6 +47,7 @@ include 'components/like_post.php';
     <link rel="stylesheet" href="assets/css/vendor/vendor.min.css">
     <link rel="stylesheet" href="assets/css/plugins/plugins.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+
 </head>
 
 <body>
@@ -80,10 +81,10 @@ include 'components/like_post.php';
                                     ?>
 
                                     <!-- Start Product Default Single Item -->
-                                    <div class="col-xl-4 col-md-6 col-12 mb-6">
+                                    <div class="col-xl-4 col-md-6 col-12 mb-6" data-aos="fade-up" data-aos-delay="0">
                                         <form>
-                                            <div class="blog-list blog-grid-single-item blog-color--golden" data-aos="fade-up"
-                                                data-aos-delay="0">
+                                            <div
+                                                class="blog-list blog-grid-single-item blog-color--golden aos-init aos-animate">
                                                 <input type="hidden" name="post_id" value="<?= $post_id; ?>">
                                                 <input type="hidden" name="admin_id" value="<?= $fetch_posts['admin_id']; ?>">
                                                 <div class="image-box">
@@ -104,13 +105,10 @@ include 'components/like_post.php';
                                                         <li>Autor: <a
                                                                 href="author_posts.php?author=<?= $fetch_posts['name']; ?>">
                                                                 <?= $fetch_posts['name']; ?>
-                                                            </a>
-                                                        </li>
-                                                        <li>ON :
-                                                            <a href="#" class="date">
+                                                            </a></li>
+                                                        <li>ON : <a href="#" class="date">
                                                                 <?= $fetch_posts['date']; ?>
-                                                            </a>
-                                                        </li>
+                                                            </a></li>
                                                     </ul>
                                                     <h6 class="title">
                                                         <a href="blog-single-sidebar-left.php?post_id=<?= $post_id; ?>">
@@ -118,11 +116,8 @@ include 'components/like_post.php';
                                                         </a>
                                                     </h6>
                                                     <a href="blog-single-sidebar-left.php?post_id=<?= $post_id; ?>"
-                                                        class="read-more-btn icon-space-left">Leia mais
-                                                        <span class="icon">
-                                                            <i class="ion-ios-arrow-thin-right"></i>
-                                                        </span>
-                                                    </a>
+                                                        class="read-more-btn icon-space-left">Leia mais <span class="icon"><i
+                                                                class="ion-ios-arrow-thin-right"></i></span></a>
                                                     <a href="category.php?category=<?= $fetch_posts['category']; ?>"
                                                         class="post-cat">
                                                         <i class="fas fa-tag"></i>
@@ -134,6 +129,7 @@ include 'components/like_post.php';
                                             </div>
                                         </form>
                                     </div>
+                                    <!-- End Product Default Single Item -->
                                     <?php
                                 }
                             } else {
@@ -146,8 +142,6 @@ include 'components/like_post.php';
             </div>
         </div>
     </div>
-
-
 
     <!-- material-scrolltop button -->
     <button class="material-scrolltop" type="button"></button>
@@ -179,11 +173,12 @@ include 'components/like_post.php';
 
     <!-- Main JS -->
     <script src="assets/js/main.js"></script>
-    <?php
-    require_once("footer.php");
-    ?>
+
 </body>
 
 
-
 </html>
+
+<?php
+require_once("footer.php");
+?>
