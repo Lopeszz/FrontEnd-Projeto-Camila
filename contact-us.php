@@ -50,7 +50,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h3 class="breadcrumb-title">Nós Contate</h3>
+                        <h3 class="breadcrumb-title">Contate-nos</h3>
                         <div class="breadcrumb-nav breadcrumb-nav-color--black breadcrumb-nav-hover-color--golden">
 
                         </div>

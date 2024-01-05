@@ -47,14 +47,29 @@ include 'components/like_post.php';
     <link rel="stylesheet" href="assets/css/vendor/vendor.min.css">
     <link rel="stylesheet" href="assets/css/plugins/plugins.min.css">
     <link rel="stylesheet" href="assets/css/style.min.css">
-    
+
 </head>
 
 <body class="content-all">
     <?php
     require_once("menu.php");
     ?>
+    <div class="breadcrumb-section breadcrumb-bg-color--golden" style="margin-top: -5%;">
+        <div class="breadcrumb-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h4 class="title-category-user">
+                            Pesquisas
+                            </h3>
+                            <div class="breadcrumb-nav breadcrumb-nav-color--black breadcrumb-nav-hover-color--golden">
 
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="blog-section">
         <div class="container">
             <div class="row">
