@@ -44,10 +44,12 @@ $category = isset($_GET['category']) ? $_GET['category'] : '';
          <div class="container">
             <div class="row">
                <div class="col-12">
-                  <h4 class="title-category-user"><?= $category; ?></h3>
-                  <div class="breadcrumb-nav breadcrumb-nav-color--black breadcrumb-nav-hover-color--golden">
+                  <h4 class="title-category-user">
+                     <?= $category; ?>
+                     </h3>
+                     <div class="breadcrumb-nav breadcrumb-nav-color--black breadcrumb-nav-hover-color--golden">
 
-                  </div>
+                     </div>
                </div>
             </div>
          </div>
@@ -113,9 +115,7 @@ $category = isset($_GET['category']) ? $_GET['category'] : '';
                                              <?= $fetch_posts['title']; ?>
                                           </a>
                                        </h6>
-                                       <p>
-                                          <?= $fetch_posts['content']; ?>
-                                       </p>
+
                                        <a href="blog-single-sidebar-left.php?post_id=<?= $post_id; ?>"
                                           class="read-more-btn icon-space-left">Leia mais
                                           <span class="icon">

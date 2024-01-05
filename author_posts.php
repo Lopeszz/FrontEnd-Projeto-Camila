@@ -120,9 +120,7 @@ include 'components/like_post.php';
                                              <?= $fetch_posts['title']; ?>
                                           </a>
                                        </h6>
-                                       <p>
-                                          <?= $fetch_posts['content']; ?>
-                                       </p>
+
                                        <a href="view_post.php?post_id=<?= $post_id; ?>"
                                           class="read-more-btn icon-space-left">Leia mais
                                           <span class="icon">
