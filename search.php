@@ -10,6 +10,9 @@ if (isset($_SESSION['user_id'])) {
 }
 
 include 'components/like_post.php';
+
+$search_box = $_POST['search_box'];
+
 ?>
 
 <!DOCTYPE html>
@@ -24,24 +27,38 @@ include 'components/like_post.php';
    <!-- Font Awesome CDN link  -->
    <link rel="stylesheet" href="assets/css/vendor/vendor.min.css">
    <link rel="stylesheet" href="assets/css/plugins/plugins.min.css">
-   <link rel="stylesheet" href="assets/css/style.css">
+   <link rel="stylesheet" href="assets/css/style.min.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 </head>
 
 <body>
    <?php require_once("menu.php"); ?>
 
-   <?php
-   if (isset($_POST['search_box']) or isset($_POST['search_btn'])) {
-      ?>
-      <div class="blog-section">
+   <div class="breadcrumb-section breadcrumb-bg-color--golden" style="margin-top: -5%;">
+      <div class="breadcrumb-wrapper">
          <div class="container">
             <div class="row">
-               <div class="col-lg-12">
-                  <div class="blog-wrapper">
-                     <div class="row mb-n6">
-                        <?php
-                        $search_box = $_POST['search_box'];
+               <div class="col-12">
+                  <h4 class="title-category-user">
+                     <?= $search_box; ?>
+                     </h3>
+                     <div class="breadcrumb-nav breadcrumb-nav-color--black breadcrumb-nav-hover-color--golden">
+
+                     </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <div class="blog-section">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-12">
+               <div class="blog-wrapper">
+                  <div class="row mb-n6">
+                     <?php
+                     if (isset($_POST['search_box']) or isset($_POST['search_btn'])) {
                         $select_posts = $conn->prepare("SELECT * FROM `posts` WHERE title LIKE '%{$search_box}%' OR category LIKE '%{$search_box}%' AND status = ?");
                         $select_posts->execute(['active']);
                         if ($select_posts->rowCount() > 0) {
@@ -128,10 +145,10 @@ include 'components/like_post.php';
          </div>
       </div>
       <?php
-   } else {
-      echo '<section><p class="empty">busque algo!</p></section>';
-   }
-   ?>
+                     } else {
+                        echo '<section><p class="empty">busque algo!</p></section>';
+                     }
+                     ?>
 
    <!-- Botão de rolar para o topo -->
    <button class="material-scrolltop" type="button"></button>

@@ -17574,7 +17574,6 @@ a.ui-button:active,
 *****************************/
 .breadcrumb-wrapper {
   padding-top: 60px;
-
   text-align: center;
 }
 
@@ -20981,12 +20980,3 @@ footer {
 }
 
 /**/
-.title-category-user {
-  text-transform: uppercase;
-  font-size: 25px;
-  margin-bottom: 12px;
-  font-weight: 500;
-}
-.blog-wrapper {
-  margin-bottom: 10%;
-}

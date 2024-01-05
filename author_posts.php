@@ -35,7 +35,7 @@ include 'components/like_post.php';
    <!-- Use the minified version files listed below for better performance and remove the files listed above -->
    <link rel="stylesheet" href="assets/css/vendor/vendor.min.css">
    <link rel="stylesheet" href="assets/css/plugins/plugins.min.css">
-   <link rel="stylesheet" href="assets/css/style.css">
+   <link rel="stylesheet" href="assets/css/style.min.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
 </head>
@@ -50,16 +50,15 @@ include 'components/like_post.php';
    <?php include 'components/user_header-blog-not-view.php'; ?>
    <!-- header section ends -->
 
- <!-- ...:::: Start Breadcrumb Section:::... -->
- <div class="breadcrumb-section breadcrumb-bg-color--golden" style="margin-top: -5%;">
+   <!-- ...:::: Start Breadcrumb Section:::... -->
+   <div class="breadcrumb-section breadcrumb-bg-color--golden" style="margin-top: -5%;">
       <div class="breadcrumb-wrapper">
          <div class="container">
             <div class="row">
                <div class="col-12">
-                  <h4 class="title-category-user"><?= $author; ?></h3>
-                  <div class="breadcrumb-nav breadcrumb-nav-color--black breadcrumb-nav-hover-color--golden">
-
-                  </div>
+                  <h4 class="title-category-user">
+                     <?= $author; ?>
+                     </h3>
                </div>
             </div>
          </div>
@@ -112,7 +111,7 @@ include 'components/like_post.php';
                                              </a>
                                           </li>
                                           <li>ON :
-                                             <a href="#" class="date">
+                                             <a class="date">
                                                 <?= $fetch_posts['date']; ?>
                                              </a>
                                           </li>
