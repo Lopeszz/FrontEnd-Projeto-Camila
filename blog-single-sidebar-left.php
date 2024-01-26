@@ -86,10 +86,6 @@ if ($select_posts->rowCount() > 0) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>
-        <?= $fetch_posts['title']; ?>
-    </title>
-
     <!-- ::::::::::::::Favicon icon::::::::::::::-->
     <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/png">
 
@@ -243,6 +239,9 @@ if ($select_posts->rowCount() > 0) {
                                     <h4 class="post-title" data-aos="fade-up" data-aos-delay="400">
                                         <?= $fetch_posts['title']; ?>
                                     </h4>
+                                    <title>
+                                        <?= $fetch_posts['title']; ?>
+                                    </title>
                                     <div class="para-content" data-aos="fade-up" data-aos-delay="600">
                                         <?= $fetch_posts['content']; ?>
                                     </div>
