@@ -2,7 +2,6 @@
 <html lang="zxx">
 
 
-<!-- Mirrored from htmldemo.hasthemes.com/hono/hono/404.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 27 Mar 2021 08:45:21 GMT -->
 <!-- Added by HTTrack -->
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 
@@ -10,7 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>HONO - Multi Purpose HTML Template</title>
+    <title>Obrigado</title>
 
     <!-- ::::::::::::::Favicon icon::::::::::::::-->
     <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/png">

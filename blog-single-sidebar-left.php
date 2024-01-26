@@ -86,7 +86,9 @@ if ($select_posts->rowCount() > 0) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>HONO - Multi Purpose HTML Template</title>
+    <title>
+        <?= $fetch_posts['title']; ?>
+    </title>
 
     <!-- ::::::::::::::Favicon icon::::::::::::::-->
     <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/png">
@@ -183,7 +185,7 @@ if ($select_posts->rowCount() > 0) {
                                     <li><a href="category.php?category=jornais">Jornais</a></li>
                                     <li><a href="category.php?category=historia-oral">História Oral</a></li>
                                     <li><a href="category.php?category=historia-local">História Local</a></li>
-    
+
                                 </ul>
                             </div>
                         </div> <!-- End Single Sidebar Widget -->
