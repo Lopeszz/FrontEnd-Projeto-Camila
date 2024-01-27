@@ -15541,6 +15541,7 @@ input {
 .hero-slider-content {
   position: absolute;
   top: 50%;
+  left: 15%;
   transform: translateY(-50%);
 }
 
@@ -19788,7 +19789,6 @@ Pages - Contact
 
 .mobile-menu-logo .logo {
   width: 100px;
-  overflow: hidden;
 }
 
 .mobile-menu-logo .logo img {
@@ -20163,7 +20163,7 @@ footer {
 /*Mobile Menu Bottom Area*/
 .offcanvas-menu {
   margin: 20px 0;
-  margin-bottom: 50%;
+  margin-bottom: 20%;
 }
 
 .offcanvas-menu li {
@@ -20218,8 +20218,8 @@ footer {
 .mobile-contact-info {
   text-align: center;
   margin: 0 auto;
-}
 
+}
 .mobile-contact-info .logo {
   margin: 0 auto;
   width: 100px;
@@ -20267,7 +20267,7 @@ footer {
 }
 
 .mobile-contact-info .user-link {
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 .mobile-contact-info .user-link li {

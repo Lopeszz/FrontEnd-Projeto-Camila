@@ -135,49 +135,11 @@
             <!-- Start Mobile Menu Nav -->
             <div class="offcanvas-menu">
                 <ul>
-                    <li>
-                        <a href="#"><span>Apresentação</span></a>
-                    </li>
-
-                    <li>
-                        <a href="centro-documentacao.php">Centro de Documentação</a>
-                    </li>
-
-                    <li>
-                        <a href="pesquisas.php">Pesquisas</a>
-                    </li>
-                    <li>
-                        <a href="contact-us.php">Colabore</a>
-                    </li>
-                    <!-- <li>
-                        <a href="#"><span>Blogs</span></a>
-                        <ul class="mobile-sub-menu">
-                            <li>
-                                <a href="#">Blog Grid</a>
-                                <ul class="mobile-sub-menu">
-                                    <li><a href="blog-grid-sidebar-left.php">Blog Grid Sidebar left</a></li>
-                                    <li><a href="blog-grid-sidebar-right.php">Blog Grid Sidebar Right</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="blog-full-width.php">Blog Full Width</a>
-                            </li>
-                            <li>
-                                <a href="#">Blog List</a>
-                                <ul class="mobile-sub-menu">
-                                    <li><a href="blog-list-sidebar-left.php">Blog List Sidebar left</a></li>
-                                    <li><a href="blog-list-sidebar-right.php">Blog List Sidebar Right</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">Blog Single</a>
-                                <ul class="mobile-sub-menu">
-                                    <li><a href="blog-single-sidebar-left.php">Blog Single Sidebar left</a></li>
-                                    <li><a href="blog-single-sidebar-right.php">Blog Single Sidebar Right</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li> -->
+                    <li><a href="#">Apresentação</a></li>
+                    <li><a href="centro-documentacao.php">Centro de Documentação</a></li>
+                    <li><a href="pesquisas.php">Pesquisas</a></li>
+                    <li><a href="contact-us.php">Colabore</a></li>
+                    <li><a href="about-us.php">Sobre nós</a></li>
                 </ul>
             </div> <!-- End Mobile Menu Nav -->
         </div> <!-- End Mobile Menu -->
@@ -185,24 +147,25 @@
         <!-- Start Mobile contact Info -->
         <div class="mobile-contact-info">
             <div class="logo">
-                <a href="index.php"><img src="assets/images/logo/logo_black.png" alt=""></a>
+                <a href="index.html"><img src="assets/images/logo/logo_white.png" alt=""></a>
             </div>
 
             <address class="address">
-                <span>Endereço: ----------</span>
-                <span>Telefone: +55 31 9940-8134</span>
-                <span>Email: simelliana@gmail.com </span>
+                <span>Endereço: IFMG Campus São João Evangelista.</span>
+                <span>Email: demo@example.com</span>
             </address>
 
             <ul class="social-link">
                 <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                 <li><a href="#"><i class="fa fa-instagram"></i></a></li>
                 <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
             </ul>
 
             <ul class="user-link">
-                <li><a href="wishlist.php">login</a></li>
-                <li><a href="cart.php">registro</a></li>
+                <li><a href="login.php">Login</a></li>
+                <li><a href="register.php">Register</a></li>
+                <li><a href="login_admin.php">Admin</a></li>
             </ul>
         </div>
         <!-- End Mobile contact Info -->
@@ -224,13 +187,13 @@
         </div>
 
         <address class="address">
-            <span>Endereço: ----------</span>
-            <span>Telefone: +55 31 9940-8134</span>
-            <span>Email: simelliana@gmail.com </span>
+            <span>Endereço: IFMG Campus São João Evangelista.</span>
+            <span>Email: demo@example.com</span>
         </address>
 
         <ul class="social-link">
             <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
             <li><a href="#"><i class="fa fa-instagram"></i></a></li>
             <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
         </ul>
@@ -238,13 +201,12 @@
         <ul class="user-link">
             <li><a href="login.php">Login</a></li>
             <li><a href="register.php">Register</a></li>
-        </ul>
-        <ul class="user-link">
             <li><a href="login_admin.php">Admin</a></li>
         </ul>
     </div>
     <!-- End Mobile contact Info -->
 </div> <!-- ...:::: End Offcanvas Mobile Menu Section:::... -->
+
 
 <!-- Start Offcanvas Search Bar Section -->
 <div id="search" class="search-modal">
