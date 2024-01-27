@@ -19,33 +19,43 @@
     <link rel="stylesheet" href="assets/css/plugins/plugins.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 
-</head>
+    <style>
+        @media (max-width: 600px) {
+            .main-container{
+                padding: 0;
+            }
+            .content-container{
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    </style>
 
 </head>
+
 
 <body>
     <?php require_once("menu.php"); ?>
-
-    <div class="slider-spacer"></div>
-
-    <div class="main-container" data-aos="fade-up" data-aos-delay="200">
-        <div class="content-container">
-            <div class="text-section content-block">
-                <h3 class="content-title">DEFINIÇÃO</h3>
-                <p>Um Centro de Documentação é uma instituição dedicada à coleta, conservação de documentos antigos
-                    considerados importantes para a história, cultura e conhecimento.Um Centro de Documentação é uma
-                    instituição dedicada à coleta, conservação de documentos antigos considerados importantes para a
-                    história, cultura e conhecimento.Um Centro de Documentação é uma instituição dedicada à coleta,
-                    conservação de documentos antigos considerados importantes para a história, cultura e conhecimento.
-                </p>    
-            </div>
-            <div class="image-section">
-                <img src="assets/images/hero-slider/home-1/hero-slider-1.jpg" alt="Café Especial">
+    <div class="container">
+        <div class="slider-spacer"></div>
+        <div class="main-container" data-aos="fade-up" data-aos-delay="200">
+            <div class="content-container">
+                <div class="text-section content-block">
+                    <h3 class="content-title">DEFINIÇÃO</h3>
+                    <p>Um Centro de Documentação é uma instituição dedicada à coleta, conservação de documentos antigos
+                        considerados importantes para a história, cultura e conhecimento.Um Centro de Documentação é uma
+                        instituição dedicada à coleta, conservação de documentos antigos considerados importantes para a
+                        história, cultura e conhecimento.Um Centro de Documentação é uma instituição dedicada à coleta,
+                        conservação de documentos antigos considerados importantes para a história, cultura e
+                        conhecimento.
+                    </p>
+                </div>
+                <div class="image-section">
+                    <img src="assets/images/hero-slider/home-1/hero-slider-1.jpg" alt="Café Especial">
+                </div>
             </div>
         </div>
     </div>
-    <!-- ...:::: End Error Section :::... -->
-
     <?php
     require_once("footer.php");
     ?>
