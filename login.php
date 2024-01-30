@@ -90,7 +90,7 @@ if (isset($_POST['submit'])) {
                         <div class="breadcrumb-nav breadcrumb-nav-color--black breadcrumb-nav-hover-color--golden">
                             <nav aria-label="breadcrumb">
                                 <ul>
-                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="index.php">Home</a></li>
                                     <li class="active" aria-current="page">Login</li>
                                 </ul>
                             </nav>

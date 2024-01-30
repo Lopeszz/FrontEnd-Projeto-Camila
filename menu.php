@@ -147,7 +147,7 @@
         <!-- Start Mobile contact Info -->
         <div class="mobile-contact-info">
             <div class="logo">
-                <a href="index.html"><img src="assets/images/logo/logo_white.png" alt=""></a>
+                <a href="index.php"><img src="assets/images/logo/logo_white.png" alt=""></a>
             </div>
 
             <address class="address">
@@ -156,10 +156,8 @@
             </address>
 
             <ul class="social-link">
-                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="https://www.instagram.com/cdoc.virtualsje"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/lopes-giovani/"><i class="fa fa-linkedin"></i></a></li>
             </ul>
 
             <ul class="user-link">

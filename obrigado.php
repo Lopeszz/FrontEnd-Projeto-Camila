@@ -46,7 +46,7 @@
 
                                 <button class="default-search-style-input-btn" type="submit"></button>
                             </div>
-                            <a href="index.html" class="btn btn-md btn-black-default-hover mt-7" data-aos="fade-up"
+                            <a href="index.php" class="btn btn-md btn-black-default-hover mt-7" data-aos="fade-up"
                                 data-aos-delay="800">Back to home page</a>
                         </div>
                     </div>
