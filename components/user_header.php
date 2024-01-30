@@ -15,7 +15,7 @@ if (isset($message)) {
 
    <section class="flex">
 
-      <a href="home.php" class="logo">Blogo.</a>
+      <a href="index.php" class="logo">Blogo.</a>
 
       <form action="search.php" method="POST" class="search-form">
          <input type="text" name="search_box" class="box" maxlength="100" placeholder="search for blogs" required>
@@ -29,7 +29,7 @@ if (isset($message)) {
       </div>
 
       <nav class="navbar">
-         <a href="home.php"> <i class="fas fa-angle-right"></i> home</a>
+         <a href="index.php"> <i class="fas fa-angle-right"></i> home</a>
          <a href="posts.php"> <i class="fas fa-angle-right"></i> posts</a>
          <a href="all_category.php"> <i class="fas fa-angle-right"></i> category</a>
          <a href="authors.php"> <i class="fas fa-angle-right"></i> authors</a>
