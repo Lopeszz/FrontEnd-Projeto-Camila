@@ -39,7 +39,7 @@ if (isset($_POST['submit'])) {
             $row = $select_user->fetch(PDO::FETCH_ASSOC);
             if ($select_user->rowCount() > 0) {
                 $_SESSION['user_id'] = $row['id'];
-                header('location:index.php');
+                header('location:login.php');
             }
         }
     }
