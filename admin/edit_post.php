@@ -14,13 +14,13 @@ if (isset($_POST['save'])) {
 
    $post_id = $_GET['id'];
    $title = $_POST['title'];
-   $title = filter_var($title, FILTER_SANITIZE_STRING);
+   $title = filter_var($title, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
    $content = $_POST['content'];
-   $content = filter_var($content, FILTER_SANITIZE_STRING);
+   $content = filter_var($content, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
    $category = $_POST['category'];
-   $category = filter_var($category, FILTER_SANITIZE_STRING);
+   $category = filter_var($category, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
    $status = $_POST['status'];
-   $status = filter_var($status, FILTER_SANITIZE_STRING);
+   $status = filter_var($status, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
    $update_post = $conn->prepare("UPDATE `posts` SET title = ?, content = ?, category = ?, status = ? WHERE id = ?");
    $update_post->execute([$title, $content, $category, $status, $post_id]);
@@ -29,7 +29,7 @@ if (isset($_POST['save'])) {
 
    $old_image = $_POST['old_image'];
    $image = $_FILES['image']['name'];
-   $image = filter_var($image, FILTER_SANITIZE_STRING);
+   $image = filter_var($image, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
    $image_size = $_FILES['image']['size'];
    $image_tmp_name = $_FILES['image']['tmp_name'];
    $image_folder = '../uploaded_img/' . $image;
@@ -59,7 +59,7 @@ if (isset($_POST['save'])) {
 if (isset($_POST['delete_post'])) {
 
    $post_id = $_POST['post_id'];
-   $post_id = filter_var($post_id, FILTER_SANITIZE_STRING);
+   $post_id = filter_var($post_id, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
    $delete_image = $conn->prepare("SELECT * FROM `posts` WHERE id = ?");
    $delete_image->execute([$post_id]);
    $fetch_delete_image = $delete_image->fetch(PDO::FETCH_ASSOC);
@@ -78,7 +78,7 @@ if (isset($_POST['delete_image'])) {
 
    $empty_image = '';
    $post_id = $_POST['post_id'];
-   $post_id = filter_var($post_id, FILTER_SANITIZE_STRING);
+   $post_id = filter_var($post_id, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
    $delete_image = $conn->prepare("SELECT * FROM `posts` WHERE id = ?");
    $delete_image->execute([$post_id]);
    $fetch_delete_image = $delete_image->fetch(PDO::FETCH_ASSOC);

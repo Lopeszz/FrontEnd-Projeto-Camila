@@ -13,23 +13,23 @@ if (!isset($admin_id)) {
 if (isset($_POST['publish'])) {
 
    $name = $_POST['name'];
-   $name = filter_var($name, FILTER_SANITIZE_STRING);
+   $name = filter_var($name, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
    $title = $_POST['title'];
-   $title = filter_var($title, FILTER_SANITIZE_STRING);
+   $title = filter_var($title, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
    $content = $_POST['content'];
-   $content = filter_var($content, FILTER_SANITIZE_STRING);
+   $content = filter_var($content, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
    $category = $_POST['category'];
-   $category = filter_var($category, FILTER_SANITIZE_STRING);
+   $category = filter_var($category, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
    $status = 'active';
 
    $image = $_FILES['image']['name'];
-   $image = filter_var($image, FILTER_SANITIZE_STRING);
+   $image = filter_var($image, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
    $image_size = $_FILES['image']['size'];
    $image_tmp_name = $_FILES['image']['tmp_name'];
    $image_folder = '../uploaded_img/' . $image;
 
    $file = $_FILES['file']['name'];
-   $file = filter_var($file, FILTER_SANITIZE_STRING);
+   $file = filter_var($file, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
    $file_size = $_FILES['file']['size'];
    $file_tmp_name = $_FILES['file']['tmp_name'];
    $file_folder = '../uploaded_file/' . $file;
@@ -109,17 +109,17 @@ if (isset($_POST['publish'])) {
 if (isset($_POST['draft'])) {
 
    $name = $_POST['name'];
-   $name = filter_var($name, FILTER_SANITIZE_STRING);
+   $name = filter_var($name, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
    $title = $_POST['title'];
-   $title = filter_var($title, FILTER_SANITIZE_STRING);
+   $title = filter_var($title, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
    $content = $_POST['content'];
-   $content = filter_var($content, FILTER_SANITIZE_STRING);
+   $content = filter_var($content, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
    $category = $_POST['category'];
-   $category = filter_var($category, FILTER_SANITIZE_STRING);
+   $category = filter_var($category, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
    $status = 'deactive';
 
    $image = $_FILES['image']['name'];
-   $image = filter_var($image, FILTER_SANITIZE_STRING);
+   $image = filter_var($image, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
    $image_size = $_FILES['image']['size'];
    $image_tmp_name = $_FILES['image']['tmp_name'];
    $image_folder = '../uploaded_img/' . $image;

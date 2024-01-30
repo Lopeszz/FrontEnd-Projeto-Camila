@@ -13,7 +13,7 @@ if (!isset($admin_id)) {
 if (isset($_POST['delete'])) {
 
    $p_id = $_POST['post_id'];
-   $p_id = filter_var($p_id, FILTER_SANITIZE_STRING);
+   $p_id = filter_var($p_id, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
    $delete_image = $conn->prepare("SELECT * FROM `posts` WHERE id = ?");
 

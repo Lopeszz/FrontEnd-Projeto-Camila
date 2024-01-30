@@ -13,7 +13,7 @@ if (!isset($admin_id)) {
 if (isset($_POST['delete_comment'])) {
 
    $comment_id = $_POST['comment_id'];
-   $comment_id = filter_var($comment_id, FILTER_SANITIZE_STRING);
+   $comment_id = filter_var($comment_id, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
    $delete_comment = $conn->prepare("DELETE FROM `comments` WHERE id = ?");
    $delete_comment->execute([$comment_id]);
    $message[] = 'Comentário excluído!';

@@ -18,11 +18,11 @@ $get_id = $_GET['post_id'];
 if (isset($_POST['add_comment'])) {
 
     $admin_id = $_POST['admin_id'];
-    $admin_id = filter_var($admin_id, FILTER_SANITIZE_STRING);
+    $admin_id = filter_var($admin_id, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $user_name = $_POST['user_name'];
-    $user_name = filter_var($user_name, FILTER_SANITIZE_STRING);
+    $user_name = filter_var($user_name, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $comment = $_POST['comment'];
-    $comment = filter_var($comment, FILTER_SANITIZE_STRING);
+    $comment = filter_var($comment, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
     $verify_comment = $conn->prepare("SELECT * FROM `comments` WHERE post_id = ? AND admin_id = ? AND user_id = ? AND user_name = ? AND comment = ?");
     $verify_comment->execute([$get_id, $admin_id, $user_id, $user_name, $comment]);
@@ -39,9 +39,9 @@ if (isset($_POST['add_comment'])) {
 
 if (isset($_POST['edit_comment'])) {
     $edit_comment_id = $_POST['edit_comment_id'];
-    $edit_comment_id = filter_var($edit_comment_id, FILTER_SANITIZE_STRING);
+    $edit_comment_id = filter_var($edit_comment_id, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $comment_edit_box = $_POST['comment_edit_box'];
-    $comment_edit_box = filter_var($comment_edit_box, FILTER_SANITIZE_STRING);
+    $comment_edit_box = filter_var($comment_edit_box, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
     $verify_comment = $conn->prepare("SELECT * FROM `comments` WHERE comment = ? AND id = ?");
     $verify_comment->execute([$comment_edit_box, $edit_comment_id]);
@@ -57,7 +57,7 @@ if (isset($_POST['edit_comment'])) {
 
 if (isset($_POST['delete_comment'])) {
     $delete_comment_id = $_POST['comment_id'];
-    $delete_comment_id = filter_var($delete_comment_id, FILTER_SANITIZE_STRING);
+    $delete_comment_id = filter_var($delete_comment_id, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $delete_comment = $conn->prepare("DELETE FROM `comments` WHERE id = ?");
     $delete_comment->execute([$delete_comment_id]);
     $message[] = 'comment deleted successfully!';
@@ -355,7 +355,7 @@ if ($select_posts->rowCount() > 0) {
                                         <?php
                                         if (isset($_POST['open_edit_box'])) {
                                             $comment_id = $_POST['comment_id'];
-                                            $comment_id = filter_var($comment_id, FILTER_SANITIZE_STRING);
+                                            $comment_id = filter_var($comment_id, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
                                             ?>
                                             <section class="comment-edit-form">
                                                 <p>Edite seu comentário</p>
