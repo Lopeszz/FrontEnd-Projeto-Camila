@@ -78,7 +78,7 @@ if (isset($_SESSION['user_id'])) {
                             <div class="row-index">
                                 <div class="col-auto">
                                     <div class="hero-slider-content">
-                                        <h4 class="subtitle">Centro de documentação</h4>
+                                        <h4 class="subtitle">Centro de Documentação <br>Virtual</h4>
                                         <h2 class="title">São João Evangelista</h2>
                                     </div>
                                 </div>

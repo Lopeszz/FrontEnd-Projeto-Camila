@@ -23,7 +23,7 @@
                             Feito com
                             <i class="fa fa-heart text-danger"></i>
                             por
-                            <a href="https://therankme.com/" target="_blank"> ALUNOS DA CAMILA</a>
+                            <a href="https://www.linkedin.com/in/lopes-giovani/" target="_blank"> ALUNOS DA CAMILA</a>
                         </p>
                     </div>
                 </div>

@@ -67,8 +67,8 @@
 
                 <div class="col-lg-8">
                     <div class="contact-form section-top-gap-100" data-aos="fade-up" data-aos-delay="200">
-                        <h3>Nos envie um email.</h3>
-                        <form action="https://formsubmit.co/ale.fazer.bosta@gmail.com" method="POST"
+                        <h3>Envie-nos um e-mail.</h3>
+                        <form action="https://formsubmit.co/simelliana@gmail.com" method="POST"
                             enctype="multipart/form-data">
                             <input type="hidden" name="_template" value="box">
                             <div class="row">

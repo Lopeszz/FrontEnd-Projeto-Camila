@@ -120,10 +120,10 @@
 
                                 </span>
                                 <ul class="team-social pos-absolute">
-                                    <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                                    <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-                                    <li><a href="#"><i class="ion-social-instagram"></i></a></li>
-                                    <li><a href="#"><i class="ion-social-linkedin"></i></a></li>
+                                    <li><a href="https://www.instagram.com/similhana/"><i
+                                                class="ion-social-instagram"></i></a></li>
+                                    <li><a href="https://www.linkedin.com/in/camilasosouza/"><i
+                                                class="ion-social-linkedin"></i></a></li>
 
                                 </ul>
                             </div>
@@ -139,9 +139,8 @@
                                 <h6 class="team-name font--bold mt-5">Shay</h6>
                                 <span class="team-title">Gestão e revisão de conteúdo</span>
                                 <ul class="team-social pos-absolute">
-                                    <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                                    <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-                                    <li><a href="#"><i class="ion-social-instagram"></i></a></li>
+                                    <li><a href="https://www.instagram.com/shay.patielle/"><i
+                                                class="ion-social-instagram"></i></a></li>
                                     <li><a href="#"><i class="ion-social-linkedin"></i></a></li>
 
                                 </ul>
@@ -158,10 +157,10 @@
                                 <h6 class="team-name font--bold mt-5">Alejandro Martins</h6>
                                 <span class="team-title">Web Designer</span>
                                 <ul class="team-social pos-absolute">
-                                    <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                                    <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-                                    <li><a href="#"><i class="ion-social-instagram"></i></a></li>
-                                    <li><a href="#"><i class="ion-social-linkedin"></i></a></li>
+                                    <li><a href="https://www.instagram.com/aledefreitas_/"><i
+                                                class="ion-social-instagram"></i></a></li>
+                                    <li><a href="https://www.linkedin.com/in/alejandro-martins-0b397a250/"><i
+                                                class="ion-social-linkedin"></i></a></li>
 
                                 </ul>
                             </div>
@@ -177,10 +176,10 @@
                                 <h6 class="team-name font--bold mt-5">Giovani Lopes</h6>
                                 <span class="team-title">Web Designer</span>
                                 <ul class="team-social pos-absolute">
-                                    <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                                    <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-                                    <li><a href="#"><i class="ion-social-instagram"></i></a></li>
-                                    <li><a href="#"><i class="ion-social-linkedin"></i></a></li>
+                                    <li><a href="https://www.instagram.com/giovani_lopesnt/"><i
+                                                class="ion-social-instagram"></i></a></li>
+                                    <li><a href="https://www.linkedin.com/in/lopes-giovani/"><i
+                                                class="ion-social-linkedin"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -195,10 +194,10 @@
                                 <h6 class="team-name font--bold mt-5">Renatas Lemes</h6>
                                 <span class="team-title">Web Designer</span>
                                 <ul class="team-social pos-absolute">
-                                    <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                                    <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-                                    <li><a href="#"><i class="ion-social-instagram"></i></a></li>
-                                    <li><a href="#"><i class="ion-social-linkedin"></i></a></li>
+                                    <li><a href="https://www.instagram.com/renatalemesalves/"><i
+                                                class="ion-social-instagram"></i></a></li>
+                                    <li><a href="https://www.linkedin.com/in/renata-lemes-alves-b44859251/"><i
+                                                class="ion-social-linkedin"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -213,10 +212,10 @@
                                 <h6 class="team-name font--bold mt-5">Vitor Dumont</h6>
                                 <span class="team-title">Web Designer</span>
                                 <ul class="team-social pos-absolute">
-                                    <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                                    <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-                                    <li><a href="#"><i class="ion-social-instagram"></i></a></li>
-                                    <li><a href="#"><i class="ion-social-linkedin"></i></a></li>
+                                    <li><a href="https://www.instagram.com/__vitordumont/"><i
+                                                class="ion-social-instagram"></i></a></li>
+                                    <li><a href="https://www.linkedin.com/in/vitor-dumont/"><i
+                                                class="ion-social-linkedin"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -231,10 +230,10 @@
                                 <h6 class="team-name font--bold mt-5">Natan Lemos</h6>
                                 <span class="team-title">Web Designer</span>
                                 <ul class="team-social pos-absolute">
-                                    <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                                    <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-                                    <li><a href="#"><i class="ion-social-instagram"></i></a></li>
-                                    <li><a href="#"><i class="ion-social-linkedin"></i></a></li>
+                                    <li><a href="https://www.instagram.com/natan.lemos100/"><i
+                                                class="ion-social-instagram"></i></a></li>
+                                    <li><a href="https://www.linkedin.com/in/natan-lemos-506465192/"><i
+                                                class="ion-social-linkedin"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -249,10 +248,10 @@
                                 <h6 class="team-name font--bold mt-5">Júlia Carvalho</h6>
                                 <span class="team-title">Prospecção e organização de fontes</span>
                                 <ul class="team-social pos-absolute">
-                                    <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                                    <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-                                    <li><a href="#"><i class="ion-social-instagram"></i></a></li>
-                                    <li><a href="#"><i class="ion-social-linkedin"></i></a></li>
+                                    <li><a href="https://www.instagram.com/juliacarv.oliveira/"><i
+                                                class="ion-social-instagram"></i></a></li>
+                                    <li><a href="https://www.linkedin.com/in/jucarv/"><i
+                                                class="ion-social-linkedin"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -267,9 +266,8 @@
                                 <h6 class="team-name font--bold mt-5">Maria Clara Lopes</h6>
                                 <span class="team-title">Prospecção e organização de fontes</span>
                                 <ul class="team-social pos-absolute">
-                                    <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                                    <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-                                    <li><a href="#"><i class="ion-social-instagram"></i></a></li>
+                                    <li><a href="https://www.instagram.com/mariaclaralopes016/"><i
+                                                class="ion-social-instagram"></i></a></li>
                                     <li><a href="#"><i class="ion-social-linkedin"></i></a></li>
                                 </ul>
                             </div>
@@ -285,9 +283,8 @@
                                 <h6 class="team-name font--bold mt-5">Maria Clara Maia</h6>
                                 <span class="team-title">Prospecção e organização de fontes</span>
                                 <ul class="team-social pos-absolute">
-                                    <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                                    <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-                                    <li><a href="#"><i class="ion-social-instagram"></i></a></li>
+                                    <li><a href="https://www.instagram.com/mariaclaramaias_/"><i
+                                                class="ion-social-instagram"></i></a></li>
                                     <li><a href="#"><i class="ion-social-linkedin"></i></a></li>
                                 </ul>
                             </div>
@@ -303,9 +300,8 @@
                                 <h6 class="team-name font--bold mt-5">Lauany Aparecida</h6>
                                 <span class="team-title">Prospecção e organização de fontes</span>
                                 <ul class="team-social pos-absolute">
-                                    <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                                    <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-                                    <li><a href="#"><i class="ion-social-instagram"></i></a></li>
+                                    <li><a href="https://www.instagram.com/lauany_mend93/"><i
+                                                class="ion-social-instagram"></i></a></li>
                                     <li><a href="#"><i class="ion-social-linkedin"></i></a></li>
                                 </ul>
                             </div>
@@ -320,9 +316,8 @@
                                 <h6 class="team-name font--bold mt-5">Tauane Fernades</h6>
                                 <span class="team-title">Prospecção e organização de fontes</span>
                                 <ul class="team-social pos-absolute">
-                                    <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                                    <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-                                    <li><a href="#"><i class="ion-social-instagram"></i></a></li>
+                                    <li><a href="https://www.instagram.com/tauanefpaula/"><i
+                                                class="ion-social-instagram"></i></a></li>
                                     <li><a href="#"><i class="ion-social-linkedin"></i></a></li>
                                 </ul>
                             </div>
