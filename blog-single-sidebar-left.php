@@ -135,11 +135,7 @@ if ($select_posts->rowCount() > 0) {
 
                         <div class="breadcrumb-nav breadcrumb-nav-color--black breadcrumb-nav-hover-color--golden">
                             <nav aria-label="breadcrumb">
-                                <!-- <ul>
-                                    <li><a href="index.html">Home</a></li>
-                                    <li><a href="blog-grid-sidebar-left.html">Blog</a></li>
-                                    <li class="active" aria-current="page">Blog Single Left Sidebar</li>
-                                </ul> -->
+
                             </nav>
                         </div>
                     </div>
