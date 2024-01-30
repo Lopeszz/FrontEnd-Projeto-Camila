@@ -64,7 +64,6 @@ if (isset($_POST['submit'])) {
 
       <form action="" method="POST">
          <h3>Faça login agora</h3>
-         <p>Nome de usuário padrão = <span>admin</span> e senha = <span>111</span></p>
          <input type="text" name="name" maxlength="20" required placeholder="Digite seu nome de usuário" class="box"
             oninput="this.value = this.value.replace(/\s/g, '')">
          <input type="password" name="pass" maxlength="20" required placeholder="Digite sua senha" class="box"
