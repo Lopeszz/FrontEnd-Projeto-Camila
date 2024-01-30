@@ -25,10 +25,10 @@ $search_box = $_POST['search_box'];
    <title>Página de Busca</title>
 
    <!-- Font Awesome CDN link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
    <link rel="stylesheet" href="assets/css/vendor/vendor.min.css">
    <link rel="stylesheet" href="assets/css/plugins/plugins.min.css">
-   <link rel="stylesheet" href="assets/css/style.min.css">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>

@@ -146,6 +146,10 @@ if (isset($_POST['submit'])) {
         </div>
     </div>
     <!-- ...:::: End Customer Login Section :::... -->
+    <br>
+    <br>
+    <br>
+    <br>
 
     <?php
     require_once("footer.php");

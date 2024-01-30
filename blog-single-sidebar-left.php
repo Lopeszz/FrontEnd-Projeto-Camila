@@ -108,10 +108,10 @@ if ($select_posts->rowCount() > 0) {
     <!-- <link rel="stylesheet" href="assets/sass/style.css"> -->
 
     <!-- Use the minified version files listed below for better performance and remove the files listed above -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="assets/css/vendor/vendor.min.css">
     <link rel="stylesheet" href="assets/css/plugins/plugins.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
 
 </head>
@@ -456,6 +456,9 @@ if ($select_posts->rowCount() > 0) {
     <button class="material-scrolltop" type="button"></button>
 
     <!-- End Blog Slider Section -->
+    <br>
+    <br>
+    <br>
     <?php
     require_once("footer.php");
     ?>

@@ -29,14 +29,15 @@ include 'components/like_post.php';
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>author</title>
+   <title>Autor</title>
 
+   <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/png">
 
    <!-- Use the minified version files listed below for better performance and remove the files listed above -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
    <link rel="stylesheet" href="assets/css/vendor/vendor.min.css">
    <link rel="stylesheet" href="assets/css/plugins/plugins.min.css">
-   <link rel="stylesheet" href="assets/css/style.min.css">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+   <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
 
@@ -183,6 +184,11 @@ include 'components/like_post.php';
 
    <!-- Main JS -->
    <script src="assets/js/main.js"></script>
+   <br>
+   <br>
+   <br>
+   <br>
+
    <?php
    require_once("footer.php");
    ?>

@@ -21,6 +21,7 @@ include 'components/like_post.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/png">
 
     <title>Pesquisas</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
@@ -188,6 +189,9 @@ include 'components/like_post.php';
 
     <!-- Main JS -->
     <script src="assets/js/main.js"></script>
+    <br>
+    <br>
+    <br>
     <?php
     require_once("footer.php");
     ?>
